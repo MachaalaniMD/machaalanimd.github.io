@@ -1,27 +1,31 @@
-# Medical tools by Marc Machaalani
+# Tools for medicine
 
-Prepared for https://machaalanimd.github.io/. This static site introduces Sage and Folio. It uses no backend, account system, analytics or persistent user-state storage.
+Static source for https://machaalanimd.github.io/. The collection introduces Sage and Folio, without accounts, analytics, a backend or persistent user-state storage.
 
-- Sage: https://machaalanimd.github.io/sage/ (separate existing repository).
-- Folio: `/folio/`, a specialty/topic reader for supplied 2025–26 manual content.
+- Sage: the separate repository/site at `/sage/`.
+- Folio: `/folio/`, a searchable reader for the supplied 2025–26 manual.
 
 ## Folio
 
-The reader contains 210 topic entries, 18 specialties, 266 original source pages and 830 focused source sections. Clinical material is preserved as lossless visual source sections, keeping tables, figures, citations and dose alignment intact. It is searchable through a text index built from retained characters, with abbreviation-aware title ranking. Topic sections can be selected individually, filtered by source heading, enlarged and zoomed. A reading list is kept in memory for the current session.
+Folio presents the retained source content as selectable, reflowing HTML paragraphs, headings, lists and tables. Table cells retain their source row/column relationships and merged spans. Tables scroll within their own containers on mobile. ECGs, imaging examples, anatomy and clinical illustrations remain individual source figures. Imported PDF clipping boundaries are respected so invisible template text is excluded. Illustrations in data tables remain inside the corresponding source cells. Diagrams assembled from embedded image fragments are consolidated into optional original-diagram views, alongside the reflowing text. Full-page screenshot assets are not shipped.
 
-The original source is the MGH Department of Medicine Housestaff Manual, July 2025–June 2026, edited by Christopher Radcliffe, MD and Natalia Sutherland, MD, with its original contributors. Marc Machaalani created this interface, not the source clinical material. `folio/source-manifest.json` records edition, editors, source SHA-256 and omission scope. The underlying PDF is not bundled or republished as an unfiltered file.
+The original source is the MGH Department of Medicine Housestaff Manual, July 2025–June 2026, edited by Christopher Radcliffe, MD and Natalia Sutherland, MD, with its original contributors. Marc Machaalani created the reader interface, not the clinical material. The reader retains the 210 topics, 18 specialties and 266 included source pages. Its source manifest records the edition, editors, source SHA-256 and conversion scope. The underlying PDF is not bundled as an unfiltered file.
 
-295 identified institution-specific fragments or protocol units were omitted, including local routing, phone/pager numbers, order sets, formulary notes and explicitly local algorithms. The full hospital directory is omitted. The title, institutional preface and static contents page are replaced by reader metadata and navigation. Source authorship and citations are retained. Each topic reports its local-omission count. Regional legal/administrative passages retain their original geographic scope and date; the reader does not assert their universal applicability. This is a bounded source-content adaptation, not clinical validation or a guarantee that every institutional practice has been identified.
+Identified institutional routing, phone/pager numbers, order sets, formulary notes and local protocol units are omitted, along with the hospital directory. The title page, preface and static contents are replaced by reader metadata/navigation. Regional legal and administrative material retains its source scope/date. This is a bounded source adaptation, not medical validation or a guarantee that every local practice has been identified.
 
-No clinical wording is rewritten, modernized, or replaced with new recommendations. The source edition is dated and is not a live guideline service. Any clinical use requires checking current primary sources and applicable local policy.
+Clinical wording is not modernized or replaced with new recommendations. Source errors or ambiguities are not silently corrected. Some original illustrations remain visual content. Transcribed raster tables were compared with their source figures; the original table is optionally available beside them. This is the dated source edition, not a live guideline service.
 
-## Preview and verify
+The reader supports full-text/abbreviation search, specialty filters, section focus, adjustable text in a focus dialog and a session reading list. Search and reading state remain in memory and clear on reload. URL hashes identify static topics only.
+
+## Run and verify
 
 ```sh
 node scripts/verify.mjs
-python3 -m http.server 8000 --bind 127.0.0.1
+python3 -m http.server 5173
 ```
 
-Open the printed URL. The verifier checks topic/page coverage, source identity, section continuity, image presence, abbreviation ranking, known local-index exclusions, project links and browser-only state. Representative source images were separately compared pixel-for-pixel against the supplied PDF render; pixels outside local omission rectangles were unchanged.
+The verifier checks page/topic coverage; native HTML block types; all table-grid positions and merged spans; clinically meaningful medication/dose pairings; multi-page headers; selected local omissions; source identity; PDF-native text conversion digests; safe HTML rendering; abbreviation search; and browser-only state. `folio/conversion-audit.json` explains the character digest's limits: it does not establish reading order, completeness of illustration transcription, or clinical validity. The conversion was also inspected against rendered source pages and in mobile/desktop browser views.
 
-The GitHub Actions workflow publishes the static site after verification. The intended repository is `MachaalaniMD/machaalanimd.github.io`; publication is complete only after the Pages deployment succeeds.
+## Publication
+
+GitHub Pages uses `.github/workflows/pages.yml`. Every push to `main` runs the verifier, stages only the public site files and deploys the resulting static artifact. No secrets are stored in this source.
