@@ -1,0 +1,35 @@
+{
+  "title": "Folio",
+  "edition": "2025–26",
+  "source": "MGH Department of Medicine Housestaff Manual",
+  "sourceDate": "July 2025–June 2026",
+  "editors": [
+    "Christopher Radcliffe, MD",
+    "Natalia Sutherland, MD"
+  ],
+  "sourceSha256": "8dd3c1d095fa723a06e03d14d36f245c2847e2446a4ff315b03f1921d0e70804",
+  "sourcePdfPages": 270,
+  "includedPdfPages": 266,
+  "topics": 210,
+  "contentPolicy": "Source clinical text, tables and figures retain their original wording and visual layout. Institution-specific passages and local protocols are omitted. No clinical content is updated or newly authored.",
+  "omittedWholePages": [
+    {
+      "pdfPage": 1,
+      "reason": "Institutional title page; source credited in reader metadata"
+    },
+    {
+      "pdfPage": 2,
+      "reason": "Institutional preface; editors and contributors credited"
+    },
+    {
+      "pdfPage": 3,
+      "reason": "Replaced by interactive topic navigation"
+    },
+    {
+      "pdfPage": 269,
+      "reason": "Institution-specific directory"
+    }
+  ],
+  "localOmissions": 295,
+  "geographicScope": "Jurisdiction-specific material retains its original geographic scope and source date; it must not be assumed applicable everywhere."
+}
