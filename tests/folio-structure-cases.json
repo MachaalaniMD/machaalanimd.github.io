@@ -1,0 +1,477 @@
+[
+  {
+    "pdfPage": 65,
+    "phrase": "Contraindications to transplant",
+    "type": "heading",
+    "start": true
+  },
+  {
+    "pdfPage": 65,
+    "phrase": "Late Complications",
+    "type": "heading",
+    "start": true
+  },
+  {
+    "pdfPage": 69,
+    "phrase": "Treatment for H. pylori",
+    "type": "heading",
+    "start": true
+  },
+  {
+    "pdfPage": 72,
+    "phrase": "Evaluation",
+    "type": "heading",
+    "start": true
+  },
+  {
+    "pdfPage": 73,
+    "phrase": "Diagnosis/Treatment",
+    "type": "heading",
+    "start": true
+  },
+  {
+    "pdfPage": 87,
+    "phrase": "Bleeding",
+    "type": "heading",
+    "start": true
+  },
+  {
+    "pdfPage": 87,
+    "phrase": "Screening/Surgery",
+    "type": "heading",
+    "start": true
+  },
+  {
+    "pdfPage": 116,
+    "phrase": "Diagnosis",
+    "type": "heading",
+    "start": true
+  },
+  {
+    "pdfPage": 116,
+    "phrase": "Microbiology",
+    "type": "heading",
+    "start": true
+  },
+  {
+    "pdfPage": 49,
+    "phrase": "Oxygen Therapy",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 49,
+    "phrase": "Transplant Referral",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 38,
+    "phrase": "Hypertensive emergency",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 38,
+    "phrase": "Asymptomatic elevated BP:",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 124,
+    "phrase": "Animal-to-human transmission",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 124,
+    "phrase": "Human-to-human transmission:",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 124,
+    "phrase": "Prodromal phase",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 124,
+    "phrase": "Eruptive phase",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 124,
+    "phrase": "Orthopoxvirus PCR:",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 124,
+    "phrase": "Serologic testing",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 124,
+    "phrase": "Lumbar puncture",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 124,
+    "phrase": "Biopsy",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 177,
+    "phrase": "Primary AI (Addison’s disease): ↓all adrenal hormones → ↑ACTH. Lesion localizes to bilateral adrenal glands",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 177,
+    "phrase": "Secondary AI: ↓ACTH → ↓adrenal hormone (glucocorticoids only). Lesion localizes to pituitary gland or hypothalamus",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 177,
+    "phrase": "Primary AND Secondary: Signs/symptoms: weakness, fatigue, anorexia, myalgia, nausea, vomiting, abdominal pain, fever, psychiatric",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 177,
+    "phrase": "Primary only (↓serum aldo): hyperK (only 65%), salt craving, hyperpigmentation (↑MSH), n/v, abdominal pain, ↓BP, ↑HR, shock",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 177,
+    "phrase": "Secondary only (RAAS intact): ± hypopituitarism, hypoglycemia (more common than in primary AI)",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 177,
+    "phrase": "syndromes) >> infection (TB, HIV, CMV, meningococcus, histo > all fungi except Candida; most common cause worldwide), bilateral",
+    "type": "list-item",
+    "start": false
+  },
+  {
+    "pdfPage": 177,
+    "phrase": "• 6-8 AM cortisol: highly suggestive of AI if ≤3µg/dL (<5µg/dL suggestive); AI ruled out if ≥15 µg/dL (18 µg/dL on older assays).",
+    "type": "list-item",
+    "start": true,
+    "depth": 1
+  },
+  {
+    "pdfPage": 177,
+    "phrase": "▪ Falsely low: ↓albumin (cirrhosis, nephrotic syndrome, critical illness; ↓bound and total cortisol, but free cortisol may be",
+    "type": "list-item",
+    "start": true,
+    "depth": 2
+  },
+  {
+    "pdfPage": 144,
+    "phrase": "● Clonal Hematopoiesis of Indeterminate Potential (CHIP): risk factor for MDS/AML and cardiovascular disease, variant allele",
+    "type": "list-item",
+    "start": true,
+    "depth": 0
+  },
+  {
+    "pdfPage": 144,
+    "phrase": "● Clonal Cytopenia of Unknown Significance (CCUS): unexplained cytopenia + CHIP",
+    "type": "list-item",
+    "start": true,
+    "depth": 0
+  },
+  {
+    "pdfPage": 144,
+    "phrase": "● Idiopathic Cytopenia of Unknown Significance (ICUS): unexplained cytopenia, but not CHIP (either VAF <2% or no mutation)",
+    "type": "list-item",
+    "start": true,
+    "depth": 0
+  },
+  {
+    "pdfPage": 144,
+    "phrase": "frequency (VAF) ≥2% of leukemia-associated gene, no cytopenias, <5% BM blasts, rate of progression to AML 0.5-1%/yr",
+    "type": "list-item",
+    "start": false
+  },
+  {
+    "pdfPage": 175,
+    "phrase": "Admission Orders (NEJM 2006;355:1903)",
+    "type": "heading",
+    "start": true
+  },
+  {
+    "pdfPage": 175,
+    "phrase": "a. Well-controlled: start with lispro ISS and change to basal-bolus once TDD established. Prolonged use of ISS as only anti-",
+    "type": "list-item",
+    "start": true,
+    "depth": 1
+  },
+  {
+    "pdfPage": 175,
+    "phrase": "b. Not well-controlled (BG >180mg/dL): start w/ basal (0.25U/kg/day), use 0.15U/kg in pts with ESRD, elderly, and low BMI. Then",
+    "type": "list-item",
+    "start": true,
+    "depth": 1
+  },
+  {
+    "pdfPage": 175,
+    "phrase": "hyperglycemic tx is discouraged (SSI-only reg. suboptimal unless pt well-controlled on orals) (J Hosp Med 2019;2;114)",
+    "type": "list-item",
+    "start": false
+  },
+  {
+    "pdfPage": 175,
+    "phrase": "Adjusting Insulin Dosing: in general, adjust insulin requirement by no more than 20%. ↓insulin if fasting <100 (hypoglycemia risk).",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 176,
+    "phrase": "Step 1: Volume resuscitation (typically 5-8L deficit) (QJM 2012;105:334; JAMA Netw Open 2020;3:e2024596)",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 176,
+    "phrase": "Step 2: Potassium repletion (200-400 mEq total body K defecit due to extracellular shift, osmotic diuresis, and lack of insulin; may be",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 176,
+    "phrase": "Ketosis-prone diabetes: characterized by DKA w/ hx T2DM or atypical substrate for T1DM (older age, overweight). Patients should be",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 176,
+    "phrase": "Pathophysiology: hyperglycemia → osmotic diuresis → volume depletion; ketogenesis suppressed by low (but present) insulin levels",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 176,
+    "phrase": "Precipitants: same as DKA (note: pts w/ T2DM and burnt-out pancreas can also present with DKA)",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 176,
+    "phrase": "Presentation: AMS (25-50%), obtundation, seizure, focal neuro def, volume depletion, evolves over days-weeks (vs hours-days in DKA)",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 176,
+    "phrase": "Dx: glucose >600mg/dL (frequently >1000), osmolality >320mOsm/kg, pH >7.3, absent or minimal ketones",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 176,
+    "phrase": "Management: as above for DKA w/ modifications: more aggressive IVF (~8-10L deficit); goal glucose 250-300mg/dL (in DKA, 150-200);",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 176,
+    "phrase": "normal / elevated at presentation but total body K+ is low – aggressive K+ repletion is critical as hypokalemia will limit ability to administer",
+    "type": "paragraph",
+    "start": false
+  },
+  {
+    "pdfPage": 178,
+    "phrase": "Causes: hyperfuctioning pituitary adenoma ***",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 178,
+    "phrase": "Clinical Manifestations & Diagnosis:",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 180,
+    "phrase": "Etiology: (Osteoporos Int 2022;33:2049)",
+    "type": "heading",
+    "start": true
+  },
+  {
+    "pdfPage": 180,
+    "phrase": "Management: (JCEM 2012;97:1802; JCEM 2019;104:1592; Osteoporos Int 2022;33:2049)",
+    "type": "heading",
+    "start": true
+  },
+  {
+    "pdfPage": 181,
+    "phrase": "Hyperthyroidism: Undetectable TSH (<0.01), Hypothyroidism: TSH >20 + low T4.",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 181,
+    "phrase": "Nonthyroidal illness “euthyroid sick\": alterations in thyroid fxn due to illness, not 1° endocrine disorder; may be adaptive (anti-",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 181,
+    "phrase": "Amiodarone-induced hypothyroidism: due to Wolff-Chaikoff or thyroiditis",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 168,
+    "phrase": "TAKAYASU ARTERITIS: “pulseless disease,” granulomatous inflamm. of thoracoabd. aorta & branches. Age <40, 8:1 F:M, Asian descent",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 169,
+    "phrase": "GRANULOMATOSIS WITH POLYANGIITIS (GPA): necrotizing granulomatous vasculitis commonly affecting the upper respiratory tract",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 169,
+    "phrase": "MICROSCOPIC POLYANGIITIS (MPA): necrotizing vasculitis of small vessels without granulomas. All ages (mean 50-60). Similar sx to",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 169,
+    "phrase": "EOSINOPHILIC GRANULOMATOSIS WITH POLYANGIITIS (EGPA): necrotizing granulomatous inflammation of vessels in lungs, skin,",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 190,
+    "phrase": "ED/Inpt Management: for migraine/tension HA w/o red flags",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 200,
+    "phrase": "SPEECH/LANGUAGE: Mechanics: rate, volume, prosody, articulation, and fluency. Watch for speech latency, paucity of speech,",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 200,
+    "phrase": "THOUGHT CONTENT/PERCEPTIONS: SI/HI, delusions vs. overvalued ideas, hallucinations, obsessions, poverty of content",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 200,
+    "phrase": "COGNITION: Level of consciousness, orientation, Luria sequence, MOCA",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 200,
+    "phrase": "INSIGHT/JUDGMENT: Insight: pt recognizes sx as pathological/accepts dx. Judgment: pt’s action based on insight.",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 200,
+    "phrase": "mutism, echolalia (copying provider’s speech), verbigeration (repeating meaningless phrase like a “broken record”).",
+    "type": "paragraph",
+    "start": false
+  },
+  {
+    "pdfPage": 253,
+    "phrase": "Contraindications: vein thrombosis or stenosis should prompt another site. Coagulopathy/thrombocytopenia are relative",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 253,
+    "phrase": "Catheter selection: select based on number of lumens and speed of infusion; if rapid infusion required → large bore, short length",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 253,
+    "phrase": "Infection control: scheduled exchange of catheters without evidence of infection is NOT indicated. Cultures drawn from indwelling",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 253,
+    "phrase": "volume resuscitation (Cordis/MAC); inadequate peripheral access; HD/CVVH/pheresis; to introduce other devices (PA line, temp wire)",
+    "type": "paragraph",
+    "start": false
+  },
+  {
+    "pdfPage": 254,
+    "phrase": "Dilation/line placement in an artery: consult vascular surgery BEFORE removing line; consider CT if pt stable",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 254,
+    "phrase": "Pneumothorax (IJ & subclavian): suspect if hypoxemia, hypoTN, difficult stick; obtain STAT CXR → consult thoracic surgery if PTX or",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 254,
+    "phrase": "Retroperitoneal bleed (femoral): suspect if hematoma or hypotension; STAT CT → consult vascular medicine",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 254,
+    "phrase": "Loss of wire or wire stuck in vessel: remove needle, DO NOT use excessive force to pull out wire if it is stuck → leave in place, hold",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 254,
+    "phrase": "hemoTX; if tension physiology (shock) → immediate decompression with 16G angiocath at 5th ICS, mid-axillary line (enter above the rib)",
+    "type": "paragraph",
+    "start": false
+  },
+  {
+    "pdfPage": 258,
+    "phrase": "Protocol: (JAMA 2006;296:2012)",
+    "type": "heading",
+    "start": true
+  },
+  {
+    "pdfPage": 228,
+    "phrase": "Secondary prevention: In pts w/ stable CVD, low-dose ASA ↓ incidence of CV events and all-cause mortality (AmJMed 2008;121;43)",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 270,
+    "phrase": "Responding to microaggressions OR bias from patients (MedEdPortal 2024;20:11424. JGME 2019;11:371):",
+    "type": "heading",
+    "start": true
+  },
+  {
+    "pdfPage": 177,
+    "phrase": "1",
+    "type": "paragraph",
+    "start": true
+  },
+  {
+    "pdfPage": 237,
+    "phrase": "round red-brown patch or",
+    "type": "paragraph",
+    "start": false
+  }
+]

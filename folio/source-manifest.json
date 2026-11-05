@@ -47,5 +47,10 @@
       96,
       264
     ]
+  },
+  "formatting": {
+    "revision": "blue-index-20261104",
+    "sourceStructureRegressionCases": 78,
+    "sourceLineGeometryRetained": true
   }
 }

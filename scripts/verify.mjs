@@ -36,6 +36,13 @@ assert.ok(!(await readdir(resolve(root,'folio/assets'))).some(n=>/^page-/.test(n
 for(const c of categories)assert.equal(c.count,topics.filter(t=>t.categoryId===c.id).length);
 const allText=topics.map(t=>t.text).join('\n');for(const local of ['ECMO Consult MGH','mghcardiology','p30104','Bigelow JAR','MGH Directory'])assert.ok(!allText.includes(local),local);
 const audit=JSON.parse(await readFile(resolve(root,'folio/conversion-audit.json'),'utf8'));assert.equal(audit.sourceSha256,metadata.sourceSha256);assert.equal(audit.pages.length,266);for(const p of audit.pages)assert.equal(p.retainedNativeCharacterDigest,p.htmlNativeCharacterDigest,`Native source fidelity on PDF ${p.pdfPage}`);
+// Source-reviewed paragraph ownership regressions, including the reported Addison example.
+const structureCases=JSON.parse(await readFile(resolve(root,'tests/folio-structure-cases.json'),'utf8'));
+const normalize=s=>s.normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}↑↓→≥≤±⊕]/gu,'');
+function textNodes(blocks){return blocks.flatMap(b=>[...(b.runs?[b]:[]),...textNodes(b.blocks||[]),...(b.columns||[]).flatMap(textNodes),...(b.cells||[]).flatMap(c=>textNodes(c.blocks))]);}
+for(const c of structureCases){const needle=normalize(c.phrase);const matches=textNodes(page(c.pdfPage).panels.flatMap(s=>s.blocks)).filter(b=>b.type===c.type&&normalize(b.runs.map(r=>r.t).join('')).includes(needle));assert.ok(matches.some(b=>normalize(b.runs.map(r=>r.t).join('')).startsWith(needle)===c.start&&(c.depth===undefined||b.listDepth===c.depth)),`Source structure PDF ${c.pdfPage}: ${c.phrase}`);}
+assert.match(renderBlocks([{type:'list-item',runs:[{t:'b. Original second item'}]}]),/<ol type="a"><li value="2">Original second item/);
+assert.match(renderBlocks([{type:'list-item',runs:[{t:'● Source bullet'}]}]),/<ul><li>Source bullet/);
 const cellText=c=>blockText(c.blocks).replace(/\s+/g,' ').trim();
 // Regression checks address clinically meaningful alignment risks observed in this PDF.
 const doses=tablesByPage.get(26).find(t=>t.rows===4&&t.cols===10);assert.ok(doses);
@@ -56,4 +63,4 @@ const home=await readFile(resolve(root,'index.html'),'utf8');assert.ok(home.incl
 const reader=await readFile(resolve(root,'folio/folio.js'),'utf8');for(const api of ['localStorage','sessionStorage','sendBeacon','XMLHttpRequest','sourceSvg'])assert.ok(!reader.includes(api));assert.equal((reader.match(/fetch\(/g)||[]).length,1);
 for(const [q,name] of [['AKI','Acute Kidney Injury'],['HFpEF','Heart Failure'],['AF','Atrial Fibrillation & Flutter']]){const ranked=topics.map(t=>({t,n:scoreTopic(t,q)})).filter(x=>x.n>0).sort((a,b)=>b.n-a.n);assert.equal(ranked[0].t.title,name);}
 assert.equal(scoreTopic({title:'Acute Liver Injury',category:'GI',text:'Liver disease'},'AKI'),0);
-console.log(`Verified ${topics.length} topics, ${pages.length} source pages, ${blockCount} semantic blocks, ${tableCount} native tables, table grids/dose alignment, retained PDF text digests, omissions, safe rendering, search and memory-only state.`);
+console.log(`Verified ${topics.length} topics, ${pages.length} source pages, ${blockCount} semantic blocks, ${tableCount} native tables, table grids/dose alignment, retained PDF text digests, omissions, safe rendering, 78 source-structure cases, search and memory-only state.`);

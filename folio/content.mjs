@@ -1,17 +1,18 @@
 export const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const esc=escapeHtml;
 export function renderRuns(runs=[]){return runs.map(r=>{let text=esc(r.t);if(r.b)text=`<strong>${text}</strong>`;if(r.i)text=`<em>${text}</em>`;if(r.href&&/^https?:\/\//.test(r.href))text=`<a href="${esc(r.href)}" target="_blank" rel="noreferrer">${text}</a>`;return text;}).join('');}
-function listRuns(runs){const text=runs.map(r=>r.t).join('');const m=text.match(/^\s*(?:[•▪◦]|o(?=\s)|[-–](?=\s)|\d+[.)](?=\s))\s*/);let remove=m?m[0].length:0;return runs.map(r=>{const trim=Math.min(remove,r.t.length);remove-=trim;return {...r,t:r.t.slice(trim)};});}
+function listRuns(runs){const text=runs.map(r=>r.t).join('');const m=text.match(/^\s*(?:[•▪◦●○]|o(?=\s)|[-–](?=\s)|(?:\d+|[a-z])[.)](?=\s))\s*/);let remove=m?m[0].length:0;return runs.map(r=>{const trim=Math.min(remove,r.t.length);remove-=trim;return {...r,t:r.t.slice(trim)};});}
 export function renderBlocks(blocks=[],context={}){
  let result='';
  for(let i=0;i<blocks.length;i++){
   const b=blocks[i];
-  if(b.type==='paragraph')result+=`<p>${renderRuns(b.runs)}</p>`;
+  if(b.type==='paragraph')result+=`<p${b.style==='lead'?' class="source-lead"':''}>${renderRuns(b.runs)}</p>`;
   else if(b.type==='heading')result+=`<h3>${renderRuns(b.runs)}</h3>`;
   else if(b.type==='list-item'){
-   const ordered=/^\s*\d+[.)]/.test(b.runs.map(r=>r.t).join(''));const tag=ordered?'ol':'ul';let items='';
-   do{const sourceText=blocks[i].runs.map(r=>r.t).join('');const number=sourceText.match(/^\s*(\d+)[.)]\s/);const subpoint=/^\s*[◦o]\s/.test(sourceText);items+=`<li${number?` value="${number[1]}"`:''}${subpoint?' class="subpoint"':''}>${renderRuns(listRuns(blocks[i].runs))}</li>`;i++;}while(i<blocks.length&&blocks[i].type==='list-item'&&/^\s*\d+[.)]/.test(blocks[i].runs.map(r=>r.t).join(''))===ordered);i--;
-   result+=`<${tag}>${items}</${tag}>`;
+   const kind=block=>/^\s*\d+[.)]\s/.test(block.runs.map(r=>r.t).join(''))?'number':/^\s*[a-z][.)]\s/.test(block.runs.map(r=>r.t).join(''))?'letter':'bullet';
+   const mode=kind(b),tag=mode==='bullet'?'ul':'ol';let items='';
+   do{const sourceText=blocks[i].runs.map(r=>r.t).join('');const marker=sourceText.match(/^\s*(\d+|[a-z])[.)]\s/);const value=marker?(mode==='letter'?marker[1].charCodeAt(0)-96:Number(marker[1])):null;const subpoint=/^\s*[◦○o]\s/.test(sourceText);items+=`<li${value?` value="${value}"`:''}${subpoint?' class="subpoint"':''}${blocks[i].sourceIndent!==undefined?` style="margin-left:${Math.min(3,blocks[i].sourceIndent/18)}em"`:''}>${renderRuns(listRuns(blocks[i].runs))}</li>`;i++;}while(i<blocks.length&&blocks[i].type==='list-item'&&kind(blocks[i])===mode);i--;
+   result+=`<${tag}${mode==='letter'?' type="a"':''}>${items}</${tag}>`;
   }else if(b.type==='columns')result+=`<div class="text-columns">${b.columns.map(col=>`<div>${renderBlocks(col,context)}</div>`).join('')}</div>`;
   else if(b.type==='callout')result+=`<div class="source-callout">${renderBlocks(b.blocks,context)}</div>`;
   else if(b.type==='table'){

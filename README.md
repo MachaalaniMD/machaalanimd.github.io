@@ -15,7 +15,7 @@ Identified institutional routing, phone/pager numbers, order sets, formulary not
 
 Clinical wording is not modernized or replaced with new recommendations. Source errors or ambiguities are not silently corrected. Some original illustrations remain visual content. Transcribed raster tables were compared with their source figures; the original table is optionally available beside them. This is the dated source edition, not a live guideline service.
 
-The reader supports full-text/abbreviation search, specialty filters, section focus, adjustable text in a focus dialog and a session reading list. Search and reading state remain in memory and clear on reload. URL hashes identify static topics only.
+Folio uses a blue manual/index design. Its home page shows the 18 original table-of-contents systems as a compact directory. Each system opens a topic list, and search always spans the whole manual. Static system/topic hashes support direct links. The reader supports a mobile section selector, section focus, adjustable text in a focus dialog and a session reading list. Search and reading state remain in memory and clear on reload. URL hashes identify static topics only.
 
 ## Run and verify
 
@@ -29,3 +29,5 @@ The verifier checks page/topic coverage; native HTML block types; all table-grid
 ## Publication
 
 GitHub Pages uses `.github/workflows/pages.yml`. Every push to `main` runs the verifier, stages only the public site files and deploys the resulting static artifact. No secrets are stored in this source.
+
+Source-formatting boundaries are derived from source line positions, hanging indents, list markers and title typography, rather than a blanket continuation tolerance. `scripts/folio_text_structure.py` records the authoring rule; it requires pdfplumber in the optional PDF-authoring environment. `tests/folio-structure-cases.json` records source-reviewed boundary and wrap regression examples checked against the shipped data by CI.
