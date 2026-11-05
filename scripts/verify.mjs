@@ -27,7 +27,7 @@ async function checkBlocks(blocks,p){
    assert.ok(grid.every(row=>row.every(n=>n===1)),`Table overlap or missing structural cell on PDF ${p.pdfPage}`);
    const rendered=renderBlocks([b],{pdfPage:p.pdfPage});assert.match(rendered,/<table[ >]/);assert.match(rendered,/<caption[ >]/);assert.ok(!rendered.includes('page-0')); // Genuine illustrations may occupy source table cells.
   }
-  if(b.type==='figure'){assert.match(b.src,/^assets\/(figure|diagram)-\d{4}-\d{2}\.webp$/);assert.ok(b.width>0&&b.height>0);figures.add(b.src);assert.ok((await stat(resolve(root,'folio',b.src))).size>30);}
+  if(b.type==='figure'){assert.match(b.src,/^assets\/(?:(?:figure|diagram)-\d{4}-\d{2}|ekg-\d{4}-[a-z-]+)\.webp$/);assert.ok(b.width>0&&b.height>0);figures.add(b.src);assert.ok((await stat(resolve(root,'folio',b.src))).size>30);}
  }
 }
 for(const t of topics){assert.ok(t.title.length>2);assert.ok(categories.some(c=>c.id===t.categoryId));assert.ok(t.pages.length);for(const p of t.pages){assert.ok(!p.image,'Page screenshots must not be reader content');assert.ok(p.panels.length);for(const s of p.panels){assert.ok(!ids.has(s.id));ids.add(s.id);assert.ok(s.blocks.length);await checkBlocks(s.blocks,p);}}}
@@ -66,3 +66,4 @@ assert.equal(scoreTopic({title:'Acute Liver Injury',category:'GI',text:'Liver di
 console.log(`Verified ${topics.length} topics, ${pages.length} source pages, ${blockCount} semantic blocks, ${tableCount} native tables, table grids/dose alignment, retained PDF text digests, omissions, safe rendering, 78 source-structure cases, search and memory-only state.`);
 await import('./verify-reading.mjs');
 await import('./verify-compact.mjs');
+await import('./verify-annotations.mjs');

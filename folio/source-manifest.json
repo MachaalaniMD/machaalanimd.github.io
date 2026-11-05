@@ -34,12 +34,12 @@
   "geographicScope": "Jurisdiction-specific material retains its original geographic scope and source date; it must not be assumed applicable everywhere.",
   "format": "semantic-html",
   "conversion": {
-    "tables": 311,
-    "figures": 213,
+    "tables": 309,
+    "figures": 207,
     "nativeCharacters": 1353309,
     "verifiedNativePages": 266,
     "date": "2026-11-05",
-    "sections": 801,
+    "sections": 807,
     "transcribedFigureTablePages": [
       30,
       47,
@@ -53,7 +53,7 @@
     "sourceStructureRegressionCases": 78,
     "sourceLineGeometryRetained": true
   },
-  "readingRevision": "20261105-rhythm2",
+  "readingRevision": "20261105-annotations",
   "formattingChanges": [
     "Attribution consolidated in About → Source, including all printed contributor and acknowledgement names.",
     "Paper citations separated from section titles; original links retained.",
@@ -63,7 +63,10 @@
     "Source-region reconstruction of bradycardia/tachycardia diagrams with preserved doses, conditions, branches and citations.",
     "Conservative source line continuation repairs and source-marker cleanup; numeric minus signs retained.",
     "Compact paragraphs and tables; table cells size to content instead of stretching to the reader width.",
-    "Actual PDF underlining restored using source glyph/rule geometry without inferring emphasis."
+    "Actual PDF underlining restored using source glyph/rule geometry without inferring emphasis.",
+    "Rebuild ECG pages from visible source clinical text; tight waveform figures; shorten organizational section headings.",
+    "Restore source baseline direction for rotated table labels and rebuild trauma-informed examination rows.",
+    "Place marked footnotes on separate lines; source-reviewed marker links and return navigation."
   ],
   "pathwayMaskCorrection": [
     {

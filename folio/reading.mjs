@@ -1,4 +1,4 @@
-import {readingPlans} from './reading-plans.mjs?v=20261105-rhythm2';
+import {readingPlans} from './reading-plans.mjs?v=20261105-annotations';
 export const textOf=runs=>runs.map(r=>r.t).join('');
 export function sliceRuns(runs,start,end){let at=0;return runs.flatMap(r=>{const a=Math.max(0,start-at),b=Math.min(r.t.length,end-at);at+=r.t.length;return b>a?[{...r,t:r.t.slice(a,b)}]:[];});}
 const citationPattern=/(?:19|20)\d{2}|pubmed|doi:|guidelines|Harrison[’']s|Pink Book|\b(?:NEJM|JAMA|Lancet|Circulation)\b/i;
