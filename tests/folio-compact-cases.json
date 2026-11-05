@@ -1,0 +1,923 @@
+{
+  "sourceSha256": "8dd3c1d095fa723a06e03d14d36f245c2847e2446a4ff315b03f1921d0e70804",
+  "wrapPositives": [
+    {
+      "id": "aki-history-post-strep",
+      "pdfPage": 93,
+      "expectedText": "1) History/exam: review vitals for HTN/HoTN, volume status, exposures (contrast, meds), recent infection (IgA nephropathy 1-2d, post-strep GN in 10-14d), active infection (sepsis can induce ATN independent of BP or ↓RBF (JASN2011;22:999)), trauma/myalgias/found down (rhabdomyolysis), rashes (AIN, vasculitis)",
+      "type": "list-item"
+    },
+    {
+      "id": "aki-fena-symbol-metric",
+      "pdfPage": 93,
+      "expectedText": "◦ FENa: FENa <1% c/w pre-renal AKI, >2% c/w ATN. ONLY verified in oliguric AKI, not useful if on diuretics or after IVF. Interpret with caution in baseline CKD or chronic prerenal disease (CHF/cirrhosis). GN, rhabdo, & IV contrast can all cause FENa <1%. Overall limited use in hospital setting, except to rule out HRS with ↑FeNa (JHospMed2016;11:77)",
+      "type": "list-item"
+    },
+    {
+      "id": "aki-urine-protein-symbol-metric",
+      "pdfPage": 93,
+      "expectedText": "◦ Urine protein: if proteinuria on UA, send serum albumin, urine total protein, urine microalbumin, & urine Cr. Urine albumin/protein ratio (APR) >0.4 suggests glomerular > tubulointerstitial process (Sn 88%, Sp 99%) (NephroDialTrans2012;27:1534).",
+      "type": "list-item"
+    },
+    {
+      "id": "ttm-flush-left-wrap",
+      "pdfPage": 5,
+      "expectedText": "- Stepwise approach to shivering in pts undergoing TTM (1st line: PR/PO acetaminophen 650q6 → IV, Mg >3, 2nd line: skin counterwarming + dexmedetomidine OR propofol OR hydromorphone boluses, 3rd line: propofol + hydromorphone gtt, consider buspirone 30q8, 4th line: NMBA) (Neurocrit Care 2011;14:389)",
+      "type": "list-item"
+    },
+    {
+      "id": "chest-pain-low-intermediate",
+      "pdfPage": 16,
+      "expectedText": "- Stress test: r/o ACS if low-intermediate risk",
+      "type": "list-item"
+    },
+    {
+      "id": "cta-moderate-risk-label-like-wrap",
+      "pdfPage": 23,
+      "expectedText": "◦ Asymptomatic pts: NOT for screening use. Low-risk pts with sx: high NPV (99%) for CAD rule-out (JACC2008;52:1724). Moderate-risk pts with sx: reasonable for risk stratification (especially after equivocal stress test).",
+      "type": "list-item"
+    },
+    {
+      "id": "low-flow-as-label-like-wrap",
+      "pdfPage": 32,
+      "expectedText": "◦ Low-flow/low-gradient AS: severity underestimated in reduced EF as ↓ flow →↓ gradient. Subsets distinguished by flow (low-flow: SVi <35 mL/m2), gradient (low-gradient: <40mmHg), LVEF, and dobutamine stress TTE (DSE) (Circ 2011;124:739)",
+      "type": "list-item"
+    },
+    {
+      "id": "vte-nonmodifiable",
+      "pdfPage": 51,
+      "expectedText": "- indefinite: low bleeding risk AND non provoked, active cancer, other non-modifiable risk factors (IBD, nephrotic syndrome, etc.)",
+      "type": "list-item"
+    },
+    {
+      "id": "ph-tte-flush-left",
+      "pdfPage": 52,
+      "expectedText": "- TTE (w/ agitated bubble): eval for left HF and shunt (& whether severity explains PH); ↑ RVSP may suggest PH but is not sufficient to diagnose/categorize",
+      "type": "list-item"
+    },
+    {
+      "id": "ph-cpet-flush-left",
+      "pdfPage": 52,
+      "expectedText": "- CPET: determine etiology of exercise intolerance (cardiac vs pulmonary/PAH vs other)",
+      "type": "list-item"
+    },
+    {
+      "id": "abdominal-liver-list-wrap",
+      "pdfPage": 68,
+      "expectedText": "• Liver pathologies (hepatitis, abscess, Budd-Chiari, portal vein thrombus, Fitz-Hugh-Curtis)",
+      "type": "list-item"
+    },
+    {
+      "id": "abdominal-biliary-list-wrap",
+      "pdfPage": 68,
+      "expectedText": "• Biliary pathologies (cholelithiasis/biliary colic, cholecystitis, cholangitis, Sphincter of Oddi dysfunction)",
+      "type": "list-item"
+    }
+  ],
+  "boundaryNegatives": [
+    {
+      "id": "primary-secondary-ai",
+      "pdfPage": 177,
+      "leftText": "Primary AI (Addison’s disease): ↓all adrenal hormones → ↑ACTH. Lesion localizes to bilateral adrenal glands",
+      "rightText": "Secondary AI: ↓ACTH → ↓adrenal hormone (glucocorticoids only). Lesion localizes to pituitary gland or hypothalamus"
+    },
+    {
+      "id": "primary-secondary-symptom-groups",
+      "pdfPage": 177,
+      "leftText": "Primary only (↓serum aldo): hyperK (only 65%), salt craving, hyperpigmentation (↑MSH), n/v, abdominal pain, ↓BP, ↑HR, shock",
+      "rightText": "Secondary only (RAAS intact): ± hypopituitarism, hypoglycemia (more common than in primary AI)"
+    },
+    {
+      "id": "aki-next-numbered-step",
+      "pdfPage": 93,
+      "leftText": "1) History/exam: review vitals for HTN/HoTN, volume status, exposures (contrast, meds), recent infection (IgA nephropathy 1-2d, post-",
+      "rightText": "2) Urinalysis (UA): see Urinalysis. If AKI and UA demonstrate unexplained blood and protein, consider GN and renal c/s."
+    },
+    {
+      "id": "aki-fena-feurea",
+      "pdfPage": 93,
+      "leftText": "◦ FENa: FENa <1% c/w pre-renal AKI, >2% c/w ATN. ONLY verified in oliguric AKI, not useful if on diuretics or after IVF. Interpret",
+      "rightText": "◦ FEUrea: if on diuretics and high pretest prob. of pre-renal physiology. FEUrea <35% c/w with pre-renal (KidInt2002;62:2223)"
+    },
+    {
+      "id": "hhs-new-labels",
+      "pdfPage": 176,
+      "leftText": "Pathophysiology: hyperglycemia → osmotic diuresis → volume depletion; ketogenesis suppressed by low (but present) insulin levels",
+      "rightText": "Precipitants: same as DKA (note: pts w/ T2DM and burnt-out pancreas can also present with DKA)"
+    },
+    {
+      "id": "procedural-new-steps",
+      "pdfPage": 253,
+      "leftText": "Catheter selection: select based on number of lumens and speed of infusion; if rapid infusion required → large bore, short length (Cordis/MAC). Right IJ catheter length: 16cm. Left IJ catheter length: 20cm",
+      "rightText": "Infection control: scheduled exchange of catheters without evidence of infection is NOT indicated. Cultures drawn from indwelling catheters have ↑false ⊕ rate; generally not done aside from time of sterile placement (NEJM 2003;348:1123)"
+    }
+  ],
+  "rhythmBags": [
+    {
+      "pdfPage": 6,
+      "retainedCharacterBag": {
+        "!": 1,
+        "#": 6,
+        "%": 1,
+        "&": 4,
+        "(": 12,
+        ")": 14,
+        "*": 1,
+        "+": 5,
+        ",": 26,
+        "-": 50,
+        ".": 16,
+        "/": 28,
+        "0": 19,
+        "1": 22,
+        "2": 24,
+        "3": 14,
+        "4": 4,
+        "5": 8,
+        "6": 2,
+        "7": 2,
+        "8": 2,
+        "9": 5,
+        ":": 17,
+        ";": 4,
+        "<": 1,
+        "=": 2,
+        ">": 3,
+        "?": 3,
+        "A": 50,
+        "B": 25,
+        "C": 28,
+        "D": 10,
+        "E": 33,
+        "F": 6,
+        "G": 5,
+        "H": 19,
+        "I": 57,
+        "J": 1,
+        "K": 1,
+        "L": 9,
+        "M": 19,
+        "N": 24,
+        "O": 21,
+        "P": 32,
+        "Q": 6,
+        "R": 31,
+        "S": 38,
+        "T": 29,
+        "U": 11,
+        "V": 14,
+        "W": 3,
+        "Y": 7,
+        "[": 1,
+        "]": 1,
+        "a": 171,
+        "b": 43,
+        "c": 95,
+        "d": 87,
+        "e": 220,
+        "f": 41,
+        "g": 54,
+        "h": 37,
+        "i": 190,
+        "j": 4,
+        "k": 19,
+        "l": 100,
+        "m": 78,
+        "n": 149,
+        "o": 163,
+        "p": 64,
+        "q": 5,
+        "r": 127,
+        "s": 132,
+        "t": 154,
+        "u": 67,
+        "v": 32,
+        "w": 28,
+        "x": 8,
+        "y": 30,
+        "z": 13,
+        "|": 2,
+        "~": 1,
+        "±": 1,
+        "•": 5,
+        "↑": 1,
+        "→": 7,
+        "↓": 1,
+        "◦": 6
+      },
+      "retainedNonWhitespaceNativeCharacters": 2912,
+      "sourceCharacterDigest": "8e34721b66992d676debb33c46c6d1661161ae490b954d44065b1cdab8ebedf9",
+      "reconstructedCharacterDigest": "8e34721b66992d676debb33c46c6d1661161ae490b954d44065b1cdab8ebedf9"
+    },
+    {
+      "pdfPage": 7,
+      "retainedCharacterBag": {
+        "%": 9,
+        "&": 14,
+        "(": 22,
+        ")": 22,
+        "*": 14,
+        "+": 10,
+        ",": 49,
+        "-": 50,
+        ".": 11,
+        "/": 30,
+        "0": 36,
+        "1": 36,
+        "2": 27,
+        "3": 6,
+        "4": 9,
+        "5": 23,
+        "6": 3,
+        "7": 6,
+        "8": 2,
+        "9": 1,
+        ":": 24,
+        ";": 11,
+        "<": 2,
+        "=": 2,
+        ">": 4,
+        "?": 1,
+        "A": 51,
+        "B": 11,
+        "C": 17,
+        "D": 25,
+        "E": 32,
+        "F": 12,
+        "G": 11,
+        "H": 8,
+        "I": 36,
+        "J": 1,
+        "K": 1,
+        "L": 18,
+        "M": 20,
+        "N": 20,
+        "O": 13,
+        "P": 21,
+        "Q": 7,
+        "R": 37,
+        "S": 31,
+        "T": 43,
+        "U": 10,
+        "V": 34,
+        "W": 7,
+        "Y": 3,
+        "Z": 1,
+        "a": 206,
+        "b": 30,
+        "c": 109,
+        "d": 106,
+        "e": 255,
+        "f": 67,
+        "g": 63,
+        "h": 49,
+        "i": 223,
+        "j": 1,
+        "k": 12,
+        "l": 122,
+        "m": 100,
+        "n": 185,
+        "o": 194,
+        "p": 54,
+        "q": 7,
+        "r": 189,
+        "s": 131,
+        "t": 176,
+        "u": 58,
+        "v": 36,
+        "w": 29,
+        "x": 21,
+        "y": 36,
+        "z": 2,
+        "°": 1,
+        "±": 1,
+        "½": 1,
+        "•": 13,
+        "↑": 5,
+        "→": 12,
+        "↓": 2,
+        "◦": 5
+      },
+      "retainedNonWhitespaceNativeCharacters": 3395,
+      "sourceCharacterDigest": "de8c3b5e61d26a1b14b91acd327322106775ffb706c3e3c18055f1d3f33baf12",
+      "reconstructedCharacterDigest": "de8c3b5e61d26a1b14b91acd327322106775ffb706c3e3c18055f1d3f33baf12"
+    }
+  ],
+  "underlineFixtures": [
+    {
+      "pdfPage": 93,
+      "phrase": "History/exam",
+      "sourceBox": [
+        63.601968,
+        209.77902000000006,
+        115.13482800000001,
+        219.79902000000004
+      ],
+      "expectedUnderline": false,
+      "allExpectedCharsUnderlined": false,
+      "anyExpectedCharsUnderlined": false,
+      "passed": true,
+      "note": "AKI example is bold only in source; never infer underline from a label or bold.",
+      "runs": [
+        {
+          "t": "History/exam",
+          "b": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 93,
+      "phrase": "must assume GFR",
+      "sourceBox": [
+        196.14371999999995,
+        102.08465999999999,
+        268.196538,
+        112.10465999999997
+      ],
+      "expectedUnderline": true,
+      "allExpectedCharsUnderlined": true,
+      "anyExpectedCharsUnderlined": true,
+      "passed": true,
+      "note": "True black underline spans only this phrase on the first physical line.",
+      "runs": [
+        {
+          "t": "must",
+          "b": true,
+          "u": true
+        },
+        {
+          "t": " ",
+          "u": true
+        },
+        {
+          "t": "assume",
+          "b": true,
+          "u": true
+        },
+        {
+          "t": " ",
+          "u": true
+        },
+        {
+          "t": "GFR",
+          "b": true,
+          "u": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 93,
+      "phrase": "FENa",
+      "sourceBox": [
+        90.02189999999999,
+        267.20490000000007,
+        111.03183599999998,
+        277.22490000000005
+      ],
+      "expectedUnderline": true,
+      "allExpectedCharsUnderlined": true,
+      "anyExpectedCharsUnderlined": true,
+      "passed": true,
+      "note": "First FENa label is underlined; the next ordinary FENa occurrence is not.",
+      "runs": [
+        {
+          "t": "FENa",
+          "u": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 93,
+      "phrase": "FENa",
+      "sourceBox": [
+        115.58793,
+        267.20490000000007,
+        136.597866,
+        277.22490000000005
+      ],
+      "expectedUnderline": false,
+      "allExpectedCharsUnderlined": false,
+      "anyExpectedCharsUnderlined": false,
+      "passed": true,
+      "note": "Second FENa in same line is plain; phrase matching alone cannot decide style.",
+      "runs": [
+        {
+          "t": "FENa"
+        }
+      ]
+    },
+    {
+      "pdfPage": 93,
+      "phrase": "Urine Osm",
+      "sourceBox": [
+        90.00594,
+        313.09614,
+        129.252276,
+        323.11614
+      ],
+      "expectedUnderline": true,
+      "allExpectedCharsUnderlined": true,
+      "anyExpectedCharsUnderlined": true,
+      "passed": true,
+      "note": "Underlined body-list label; colon excluded in source segment.",
+      "runs": [
+        {
+          "t": "Urine",
+          "u": true
+        },
+        {
+          "t": " Osm",
+          "u": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 93,
+      "phrase": "GLOMERULAR",
+      "sourceBox": [
+        156.96,
+        485.11614000000003,
+        214.430712,
+        495.13614
+      ],
+      "expectedUnderline": true,
+      "allExpectedCharsUnderlined": true,
+      "anyExpectedCharsUnderlined": true,
+      "passed": true,
+      "note": "Underlined text inside genuine table cell; do not exclude all in-table rules.",
+      "runs": [
+        {
+          "t": "GLOMERULAR",
+          "u": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 93,
+      "phrase": "Low complement:",
+      "sourceBox": [
+        156.94998000000004,
+        599.9223,
+        221.20824000000005,
+        609.9422999999999
+      ],
+      "expectedUnderline": true,
+      "allExpectedCharsUnderlined": true,
+      "anyExpectedCharsUnderlined": true,
+      "passed": true,
+      "note": "Italic plus underline both retained.",
+      "runs": [
+        {
+          "t": "Low",
+          "i": true,
+          "u": true
+        },
+        {
+          "t": " ",
+          "u": true
+        },
+        {
+          "t": "complement:",
+          "i": true,
+          "u": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 93,
+      "phrase": "PRE-RENAL",
+      "sourceBox": [
+        78.96,
+        465.67614000000003,
+        126.82337399999999,
+        475.69614
+      ],
+      "expectedUnderline": false,
+      "allExpectedCharsUnderlined": false,
+      "anyExpectedCharsUnderlined": false,
+      "passed": true,
+      "note": "Bold table column heading has no text underline; bottom table border is not emphasis.",
+      "runs": [
+        {
+          "t": "PRE-RENAL",
+          "b": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 177,
+      "phrase": "Causes",
+      "sourceBox": [
+        71.99592,
+        87.67614000000003,
+        99.80242199999999,
+        97.69614000000001
+      ],
+      "expectedUnderline": true,
+      "allExpectedCharsUnderlined": true,
+      "anyExpectedCharsUnderlined": true,
+      "passed": true,
+      "note": "Underlined regular label while Primary/Secondary labels nearby are bold only.",
+      "runs": [
+        {
+          "t": "Causes",
+          "u": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 177,
+      "phrase": "Primary AI",
+      "sourceBox": [
+        54.0,
+        75.49614000000008,
+        95.042922,
+        85.51614000000006
+      ],
+      "expectedUnderline": false,
+      "allExpectedCharsUnderlined": false,
+      "anyExpectedCharsUnderlined": false,
+      "passed": true,
+      "note": "Bold category is not inherently underlined.",
+      "runs": [
+        {
+          "t": "Primary",
+          "b": true
+        },
+        {
+          "t": " "
+        },
+        {
+          "t": "AI",
+          "b": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 177,
+      "phrase": "Anti-inflammatory Dose",
+      "sourceBox": [
+        145.08,
+        731.703,
+        234.5763,
+        740.703
+      ],
+      "expectedUnderline": false,
+      "allExpectedCharsUnderlined": false,
+      "anyExpectedCharsUnderlined": false,
+      "passed": true,
+      "note": "Header close to a table rule is not source-underlined.",
+      "runs": [
+        {
+          "t": "Anti-inflammatory",
+          "b": true
+        },
+        {
+          "t": " "
+        },
+        {
+          "t": "Dose",
+          "b": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 6,
+      "phrase": "ASSESS PATIENT",
+      "sourceBox": [
+        165.58,
+        144.64999999999998,
+        236.37,
+        154.64999999999998
+      ],
+      "expectedUnderline": true,
+      "allExpectedCharsUnderlined": true,
+      "anyExpectedCharsUnderlined": true,
+      "passed": true,
+      "note": "True underline inside algorithm node.",
+      "runs": [
+        {
+          "t": "ASSESS",
+          "b": true,
+          "u": true
+        },
+        {
+          "t": " ",
+          "u": true
+        },
+        {
+          "t": "PATIENT",
+          "b": true,
+          "u": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 6,
+      "phrase": "symptomatic",
+      "sourceBox": [
+        206.08,
+        89.88,
+        256.88,
+        99.88
+      ],
+      "expectedUnderline": true,
+      "allExpectedCharsUnderlined": true,
+      "anyExpectedCharsUnderlined": true,
+      "passed": true,
+      "note": "True underline, also bold, inside source algorithm.",
+      "runs": [
+        {
+          "t": "symptomatic",
+          "b": true,
+          "u": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 6,
+      "phrase": "Yes",
+      "sourceBox": [
+        405.93,
+        111.61024999999995,
+        420.04522005,
+        121.63524999999993
+      ],
+      "expectedUnderline": false,
+      "allExpectedCharsUnderlined": false,
+      "anyExpectedCharsUnderlined": false,
+      "passed": true,
+      "note": "Nearby horizontal flowchart connector must not turn its Yes label into underline.",
+      "runs": [
+        {
+          "t": "Yes"
+        }
+      ]
+    },
+    {
+      "pdfPage": 6,
+      "phrase": "No",
+      "sourceBox": [
+        468.2,
+        112.36024999999995,
+        478.77139999999997,
+        122.38524999999993
+      ],
+      "expectedUnderline": false,
+      "allExpectedCharsUnderlined": false,
+      "anyExpectedCharsUnderlined": false,
+      "passed": true,
+      "note": "Nearby horizontal flowchart connector must not turn its No label into underline.",
+      "runs": [
+        {
+          "t": "No"
+        }
+      ]
+    },
+    {
+      "pdfPage": 7,
+      "phrase": "Adenosine",
+      "sourceBox": [
+        281.88,
+        79.63,
+        323.69,
+        89.63
+      ],
+      "expectedUnderline": true,
+      "allExpectedCharsUnderlined": true,
+      "anyExpectedCharsUnderlined": true,
+      "passed": true,
+      "note": "Bold plus source underline retained independently.",
+      "runs": [
+        {
+          "t": "Adenosine",
+          "b": true,
+          "u": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 7,
+      "phrase": "relative",
+      "sourceBox": [
+        520.72,
+        90.88,
+        547.02,
+        100.88
+      ],
+      "expectedUnderline": true,
+      "allExpectedCharsUnderlined": true,
+      "anyExpectedCharsUnderlined": true,
+      "passed": true,
+      "note": "A wrapped underlined phrase keeps per-line spans, not whole surrounding sentence.",
+      "runs": [
+        {
+          "t": "relative",
+          "u": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 7,
+      "phrase": "contraindication in pts s/p heart transplant",
+      "sourceBox": [
+        281.88,
+        102.13,
+        433.43,
+        112.13
+      ],
+      "expectedUnderline": true,
+      "allExpectedCharsUnderlined": true,
+      "anyExpectedCharsUnderlined": true,
+      "passed": true,
+      "note": "Second physical line of same emphasis.",
+      "runs": [
+        {
+          "t": "contraindication",
+          "u": true
+        },
+        {
+          "t": " in",
+          "u": true
+        },
+        {
+          "t": " pts",
+          "u": true
+        },
+        {
+          "t": " s/p",
+          "u": true
+        },
+        {
+          "t": " heart",
+          "u": true
+        },
+        {
+          "t": " transplant",
+          "u": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 7,
+      "phrase": "Torsades (TdP)",
+      "sourceBox": [
+        424.93,
+        533.5,
+        481.67,
+        543.5
+      ],
+      "expectedUnderline": true,
+      "allExpectedCharsUnderlined": true,
+      "anyExpectedCharsUnderlined": true,
+      "passed": true,
+      "note": "Underlined branch label within native algorithm.",
+      "runs": [
+        {
+          "t": "Torsades",
+          "u": true
+        },
+        {
+          "t": " (TdP)",
+          "u": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 194,
+      "phrase": "Levetiracetam",
+      "sourceBox": [
+        75.96,
+        562.083,
+        122.2272,
+        571.083
+      ],
+      "expectedUnderline": false,
+      "allExpectedCharsUnderlined": false,
+      "anyExpectedCharsUnderlined": false,
+      "passed": true,
+      "note": "Drug row label in dose table is not underlined merely because row boundaries exist.",
+      "runs": [
+        {
+          "t": "Levetiracetam"
+        }
+      ]
+    },
+    {
+      "pdfPage": 194,
+      "phrase": "GET COLLATERAL",
+      "sourceBox": [
+        72.0,
+        276.27036,
+        140.761284,
+        285.75036
+      ],
+      "expectedUnderline": true,
+      "allExpectedCharsUnderlined": true,
+      "anyExpectedCharsUnderlined": true,
+      "passed": true,
+      "note": "Body emphasis independent of hyperlink status.",
+      "runs": [
+        {
+          "t": "GET",
+          "u": true
+        },
+        {
+          "t": " COLLATERAL",
+          "u": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 214,
+      "phrase": "Eligibility",
+      "sourceBox": [
+        71.99592,
+        243.01614000000006,
+        103.846494,
+        253.03614000000005
+      ],
+      "expectedUnderline": true,
+      "allExpectedCharsUnderlined": true,
+      "anyExpectedCharsUnderlined": true,
+      "passed": true,
+      "note": "Body underlined label adjacent to ordinary text.",
+      "runs": [
+        {
+          "t": "Eligibility",
+          "u": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 214,
+      "phrase": "Future Risk",
+      "sourceBox": [
+        151.14,
+        659.47614,
+        196.333206,
+        669.49614
+      ],
+      "expectedUnderline": false,
+      "allExpectedCharsUnderlined": false,
+      "anyExpectedCharsUnderlined": false,
+      "passed": true,
+      "note": "Postpartum header not underlined; header bottom border remains a rule.",
+      "runs": [
+        {
+          "t": "Future",
+          "b": true
+        },
+        {
+          "t": " "
+        },
+        {
+          "t": "Risk",
+          "b": true
+        }
+      ]
+    },
+    {
+      "pdfPage": 267,
+      "phrase": "Long Term Acute Care",
+      "sourceBox": [
+        60.525,
+        218.14,
+        157.05,
+        229.14
+      ],
+      "expectedUnderline": false,
+      "allExpectedCharsUnderlined": false,
+      "anyExpectedCharsUnderlined": false,
+      "passed": true,
+      "note": "Bold multiline row label not text-underlined.",
+      "runs": [
+        {
+          "t": "Long",
+          "b": true
+        },
+        {
+          "t": " "
+        },
+        {
+          "t": "Term",
+          "b": true
+        },
+        {
+          "t": " "
+        },
+        {
+          "t": "Acute",
+          "b": true
+        },
+        {
+          "t": " "
+        },
+        {
+          "t": "Care",
+          "b": true
+        }
+      ]
+    }
+  ]
+}

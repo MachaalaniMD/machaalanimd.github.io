@@ -1,6 +1,6 @@
-import {renderBlocks,escapeHtml as esc} from './content.mjs?v=20261105-clean';
-import {cleanTitle} from './reading.mjs?v=20261105-clean';
-import {attributionMarkup} from './about.mjs?v=20261105-clean';
+import {renderBlocks,escapeHtml as esc} from './content.mjs?v=20261105-rhythm2';
+import {cleanTitle} from './reading.mjs?v=20261105-rhythm2';
+import {attributionMarkup} from './about.mjs?v=20261105-rhythm2';
 import {scoreTopic as score} from './search.mjs';
 const main=document.querySelector('main'),$=s=>document.querySelector(s);
 let catalog,category='all',query='',view='browse',selected=null,activePanel='all',facet='all',saved=new Set(),zoomScale=1;
@@ -31,6 +31,7 @@ function bindReadingEvents(container){
  container.querySelectorAll('[data-enlarge]').forEach(b=>b.addEventListener('click',()=>openZoom(b.dataset.enlarge)));
  container.querySelectorAll('[data-table]').forEach(b=>b.addEventListener('click',()=>openTable(b.dataset.table)));
  container.querySelectorAll('[data-figure]').forEach(b=>b.addEventListener('click',()=>openFigure(b.dataset.figure,b.dataset.figureLabel)));
+ container.querySelectorAll('[data-toggle-branches]').forEach(button=>{const group=button.closest('.clinical-text'),branches=[...group.querySelectorAll('.pathway-branch')];const update=()=>{const allOpen=branches.every(d=>d.open);button.textContent=allOpen?'Collapse all branches':'Expand all branches';button.setAttribute('aria-expanded',String(allOpen));};button.addEventListener('click',()=>{const open=branches.some(d=>!d.open);branches.forEach(d=>d.open=open);update();});branches.forEach(d=>d.addEventListener('toggle',update));});
 }
 function render(){
  if(!catalog)return;
@@ -51,7 +52,7 @@ function render(){
  $('#next-topic')?.addEventListener('click',()=>{const i=catalog.topics.indexOf(selected);setHash(catalog.topics[(i+1)%catalog.topics.length].id);});
  $('#browse-nav').classList.toggle('active',view==='browse');$('#saved-nav').classList.toggle('active',view==='saved');
 }
-function route(){const id=decodeURIComponent(location.hash.slice(1));selected=catalog?.topics.find(t=>t.id===id)||null;const c=catalog?.categories.find(c=>'system/'+c.id===id);if(c){category=c.id;view='browse';}else if(!selected){category='all';}activePanel='all';facet='all';render();scrollTo({top:0,behavior:'instant'});focusMain();}
+function route(){if($('#zoom-dialog').open)$('#zoom-dialog').close();const id=decodeURIComponent(location.hash.slice(1));selected=catalog?.topics.find(t=>t.id===id)||null;const c=catalog?.categories.find(c=>'system/'+c.id===id);if(c){category=c.id;view='browse';}else if(!selected){category='all';}activePanel='all';facet='all';render();scrollTo({top:0,behavior:'instant'});focusMain();}
 function showAboutOverview(){ $('#about-overview').hidden=false;$('#about-credits').hidden=true;$('#about-dialog').setAttribute('aria-labelledby','about-title');$('#about-dialog').scrollTop=0; }
 function openAbout(){showAboutOverview();$('#about-dialog').showModal();}
 function openCredits(){const box=$('#about-credits');box.innerHTML=attributionMarkup(catalog.metadata.attribution);$('#about-overview').hidden=true;box.hidden=false;$('#about-dialog').setAttribute('aria-labelledby','credits-title');$('#credits-back').addEventListener('click',()=>{showAboutOverview();$('#attribution-open').focus();});$('#about-dialog').scrollTop=0;$('#credits-back').focus();}
@@ -64,4 +65,7 @@ function setZoom(n){zoomScale=Math.max(.75,Math.min(3,n));$('.zoom-canvas')?.sty
 $('.skip').addEventListener('click',e=>{e.preventDefault();focusMain();});$('.folio-brand').addEventListener('click',e=>{e.preventDefault();home();});
 $('#browse-nav').addEventListener('click',home);$('#saved-nav').addEventListener('click',()=>{view='saved';selected=null;category='all';query='';if(location.hash)history.replaceState(null,'',location.pathname+location.search);render();scrollTo({top:0,behavior:'instant'});});$('#about-nav').addEventListener('click',openAbout);$('#attribution-open').addEventListener('click',openCredits);$('.dialog-close').addEventListener('click',()=>$('#about-dialog').close());$('#zoom-close').addEventListener('click',()=>$('#zoom-dialog').close());$('#zoom-in').addEventListener('click',()=>setZoom(zoomScale+.25));$('#zoom-out').addEventListener('click',()=>setZoom(zoomScale-.25));
 addEventListener('hashchange',route);addEventListener('keydown',e=>{if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)&&!document.querySelector('dialog[open]')){e.preventDefault();if(selected)home();$('#topic-search')?.focus();}});
-try{const response=await fetch('catalog.json?v=20261105-clean');if(!response.ok)throw Error('Catalog unavailable');catalog=await response.json();route();}catch(e){main.innerHTML='<div class="empty"><h1>The collection could not be loaded.</h1><p>Reload the page to try again.</p><button onclick="location.reload()">Reload</button></div>';}
+let printBranches=[];
+addEventListener('beforeprint',()=>{printBranches=[...document.querySelectorAll('.pathway-branch')].map(el=>({el,open:el.open}));printBranches.forEach(({el})=>el.open=true);});
+addEventListener('afterprint',()=>{printBranches.forEach(({el,open})=>el.open=open);printBranches=[];});
+try{const response=await fetch('catalog.json?v=20261105-rhythm2');if(!response.ok)throw Error('Catalog unavailable');catalog=await response.json();route();}catch(e){main.innerHTML='<div class="empty"><h1>The collection could not be loaded.</h1><p>Reload the page to try again.</p><button onclick="location.reload()">Reload</button></div>';}

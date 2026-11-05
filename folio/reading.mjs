@@ -1,4 +1,4 @@
-import {readingPlans} from './reading-plans.mjs?v=20261105-clean';
+import {readingPlans} from './reading-plans.mjs?v=20261105-rhythm2';
 export const textOf=runs=>runs.map(r=>r.t).join('');
 export function sliceRuns(runs,start,end){let at=0;return runs.flatMap(r=>{const a=Math.max(0,start-at),b=Math.min(r.t.length,end-at);at+=r.t.length;return b>a?[{...r,t:r.t.slice(a,b)}]:[];});}
 const citationPattern=/(?:19|20)\d{2}|pubmed|doi:|guidelines|Harrison[’']s|Pink Book|\b(?:NEJM|JAMA|Lancet|Circulation)\b/i;
@@ -43,5 +43,5 @@ export function tableSizing(table){
  const plain=bs=>bs.map(b=>b.runs?textOf(b.runs):b.type==='columns'?b.columns.map(plain).join(' '):b.blocks?plain(b.blocks):b.type==='table'?b.cells.map(c=>plain(c.blocks)).join(' '):'').join(' ');
  const hasImage=bs=>bs.some(b=>b.type==='figure'||b.blocks&&hasImage(b.blocks)||(b.columns||[]).some(hasImage));
  for(const c of table.cells){if(c.colspan!==1)continue;const t=plain(c.blocks);const v=cols[c.col];v.image||=hasImage(c.blocks);if(!c.header)v.body.push(t.length);v.words.push(...t.split(/\s+/).map(s=>s.length));}
- return cols.map((c,i)=>{const avg=c.body.reduce((a,b)=>a+b,0)/Math.max(1,c.body.length),max=Math.max(0,...c.body);let width=c.image?230:max>180||avg>100?300:max>85||avg>50?230:max>38?170:table.cols>8&&!c.words.some(n=>n>0)?60:110;if(i===0)width=Math.max(width,155);return Math.min(380,Math.max(width,Math.min(300,Math.max(0,...c.words)*7+28)));});
+ return cols.map((c,i)=>{const avg=c.body.reduce((a,b)=>a+b,0)/Math.max(1,c.body.length),max=Math.max(0,...c.body);let width=c.image?200:max>180||avg>100?300:max>85||avg>50?220:max>38?160:table.cols>8&&!c.words.some(n=>n>0)?42:78;if(i===0)width=Math.max(width,130);return Math.min(360,Math.max(width,Math.min(280,Math.max(0,...c.words)*6.5+22)));});
 }

@@ -23,6 +23,12 @@ Attribution is available through the single **Source** button in About. It inclu
 
 The reader supports a mobile section selector, section focus, adjustable text in a focus dialog and a session reading list. Search and reading state remain in memory and clear on reload. URL hashes identify static topics only.
 
+The bradycardia and tachycardia pages are reconstructed from individually bounded source regions, preserving each branch, dose, condition, footnote and citation. Bradycardia's diagnostic Yes/No branches use native disclosures with an expand-all control; printing expands them automatically. Tachycardia separates assessment, the unstable branch and energy table, the four QRS patterns, drug dosing and vagal maneuvers. The original biphasic energy qualifier is retained while its institutional suffix is omitted. Source ambiguities remain unchanged.
+
+Source line continuation repairs join 580 split wrappers, including flush-left numbered items and symbol-font hanging indents; their original non-whitespace characters are preserved. Signed RASS, Hounsfield and chromosome values remain text rather than becoming bullets. Source dash markers are removed once in list display. The boxed TTE callout is separated from neighboring prose. Paragraph leading is 1.6; tables use approximately 13.6px text at the default size, 1.4 leading and compact padding, with widths driven by their content.
+
+Actual source underlining is recovered from thin PDF rules at the text baseline with matching endpoints, then aligned to the existing native text. Bold text, links, table borders and diagram connectors do not create inferred underline emphasis. Ambiguous matches and image-only table transcriptions retain their existing styling. The conversion audit records coverage and the 24 positive/negative source-style fixtures.
+
 ## Run and verify
 
 ```sh

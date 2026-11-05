@@ -65,3 +65,4 @@ for(const [q,name] of [['AKI','Acute Kidney Injury'],['HFpEF','Heart Failure'],[
 assert.equal(scoreTopic({title:'Acute Liver Injury',category:'GI',text:'Liver disease'},'AKI'),0);
 console.log(`Verified ${topics.length} topics, ${pages.length} source pages, ${blockCount} semantic blocks, ${tableCount} native tables, table grids/dose alignment, retained PDF text digests, omissions, safe rendering, 78 source-structure cases, search and memory-only state.`);
 await import('./verify-reading.mjs');
+await import('./verify-compact.mjs');

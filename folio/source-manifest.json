@@ -34,12 +34,12 @@
   "geographicScope": "Jurisdiction-specific material retains its original geographic scope and source date; it must not be assumed applicable everywhere.",
   "format": "semantic-html",
   "conversion": {
-    "tables": 312,
+    "tables": 311,
     "figures": 213,
     "nativeCharacters": 1353309,
     "verifiedNativePages": 266,
     "date": "2026-11-05",
-    "sections": 792,
+    "sections": 801,
     "transcribedFigureTablePages": [
       30,
       47,
@@ -53,12 +53,37 @@
     "sourceStructureRegressionCases": 78,
     "sourceLineGeometryRetained": true
   },
-  "readingRevision": "20261105-clean",
+  "readingRevision": "20261105-rhythm2",
   "formattingChanges": [
     "Attribution consolidated in About → Source, including all printed contributor and acknowledgement names.",
     "Paper citations separated from section titles; original links retained.",
     "Source-verified table detection, grid ownership, punctuation cells, and six PDF glyph-metric repairs.",
     "Reviewed sibling subtype lists reflow without changing wording or shared qualifiers.",
-    "Responsive blue interface with larger headings, content-sized table columns and expanded-table reading."
+    "Responsive blue interface with larger headings, content-sized table columns and expanded-table reading.",
+    "Source-region reconstruction of bradycardia/tachycardia diagrams with preserved doses, conditions, branches and citations.",
+    "Conservative source line continuation repairs and source-marker cleanup; numeric minus signs retained.",
+    "Compact paragraphs and tables; table cells size to content instead of stretching to the reader width.",
+    "Actual PDF underlining restored using source glyph/rule geometry without inferring emphasis."
+  ],
+  "pathwayMaskCorrection": [
+    {
+      "pdfPage": 7,
+      "operation": "replace-box",
+      "originalBox": [
+        482.2,
+        379.33,
+        538.13,
+        390.03
+      ],
+      "proposedBox": [
+        515.6,
+        379.3,
+        540.6,
+        390.03
+      ],
+      "omitTextExact": "(MGH)",
+      "retainTextExact": "*Biphasic",
+      "reason": "Retain the source-native biphasic qualifier for the energy table; remove only the institutional suffix. Old mask removed most of Biphasic and left the opening asterisk/initial/closing parenthesis."
+    }
   ]
 }

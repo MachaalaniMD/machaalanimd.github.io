@@ -1,21 +1,24 @@
-import {textOf,sliceRuns,splitHeading,cleanTitle,enumerationPlan,tableSizing} from './reading.mjs?v=20261105-clean';
+import {textOf,sliceRuns,splitHeading,cleanTitle,enumerationPlan,tableSizing} from './reading.mjs?v=20261105-rhythm2';
 export const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const esc=escapeHtml;
-export function renderRuns(runs=[]){return runs.map(r=>{let text=esc(r.t);if(r.b)text=`<strong>${text}</strong>`;if(r.i)text=`<em>${text}</em>`;if(r.href&&/^https?:\/\//.test(r.href))text=`<a href="${esc(r.href)}" target="_blank" rel="noreferrer">${text}</a>`;return text;}).join('');}
-function listRuns(runs){const text=textOf(runs);const m=text.match(/^\s*(?:[•▪◦●○]|o(?=\s)|[-–](?=\s)|(?:\d+|[a-z])[.)](?=\s))\s*/);return sliceRuns(runs,m?m[0].length:0,text.length);}
+export function renderRuns(runs=[]){return runs.map(r=>{let text=esc(r.t);if(r.u&&!r.href)text=`<span class="source-underline">${text}</span>`;if(r.b)text=`<strong>${text}</strong>`;if(r.i)text=`<em>${text}</em>`;if(r.href&&/^https?:\/\//.test(r.href))text=`<a href="${esc(r.href)}" target="_blank" rel="noreferrer">${text}</a>`;return text;}).join('');}
+function listRuns(runs){const text=textOf(runs);const m=text.match(/^\s*(?:[•▪◦●○]|o(?=\s)|[-–](?!\d)|(?:\d+|[a-z])[.)](?=\s))\s*/);return sliceRuns(runs,m?m[0].length:0,text.length);}
 function prose(runs,context,isList=false){
  const plan=enumerationPlan(runs,context),display=rs=>renderRuns(isList?listRuns(rs):rs);
  if(!plan)return display(runs);
  return `${display(sliceRuns(runs,...plan.prefix))}<ul class="sibling-subtypes" data-reading-plan="${esc(plan.id)}">${plan.items.map(([a,b])=>`<li>${renderRuns(sliceRuns(runs,a,b))}</li>`).join('')}</ul>${plan.suffix[1]>plan.suffix[0]?`<div class="shared-qualifier">${renderRuns(sliceRuns(runs,...plan.suffix))}</div>`:''}`;
 }
-function heading(runs,context){const h=splitHeading(runs);context.references.push(...h.references);return h.text?`<h3>${esc(cleanTitle(h.text))}</h3>`:'';}
-function cellContent(cell,context){if(cell.header&&cell.blocks.every(b=>b.runs))return cell.blocks.map(b=>{const h=splitHeading(b.runs);context.references.push(...h.references);return renderRuns(h.main);}).join(' ');return renderBlocks(cell.blocks,context);}
+function styledHeading(runs){const raw=textOf(runs),trimmed=sliceRuns(runs,raw.length-raw.trimStart().length,raw.trimEnd().length),desired=[...cleanTitle(raw)].filter(c=>! /\s/.test(c));if(desired.length!==[...textOf(trimmed)].filter(c=>! /\s/.test(c)).length)return renderRuns(trimmed);let at=0;return renderRuns(trimmed.map(r=>({...r,t:[...r.t].map(c=>/\s/.test(c)?c:desired[at++]).join('')})));}
+function heading(runs,context){const h=splitHeading(runs);context.references.push(...h.references);if(!context.inTable&&cleanTitle(h.text).toLowerCase()===context.title?.toLowerCase())return '';return h.text?context.inTable?`<div class="cell-heading">${renderRuns(h.main)}</div>`:`<h3>${styledHeading(h.main)}</h3>`:'';}
+function hasBranches(blocks){return blocks.some(b=>b.branchLabel||hasBranches(b.blocks||[])||(b.columns||[]).some(hasBranches));}
+function cellContent(cell,context){if(cell.header&&cell.blocks.every(b=>b.runs))return cell.blocks.map(b=>{const h=splitHeading(b.runs);context.references.push(...h.references);return renderRuns(h.main);}).join(' ');return renderBlocks(cell.blocks,{...context,inTable:true});}
 export function renderBlocks(blocks=[],context={}){
  const outer=!context._rendering;
  if(outer){context={...context,_rendering:true,references:[...(context.references||[])]};if(context.titleRuns)context.references.push(...splitHeading(context.titleRuns).references);}
- let result='';
+ let result=outer&&hasBranches(blocks)?'<div class="pathway-controls"><button data-toggle-branches aria-expanded="false">Expand all branches</button></div>':'';
  for(let i=0;i<blocks.length;i++){
   const b=blocks[i];
+  if(b.flowArrowBefore)result+='<div class="flow-arrow" aria-hidden="true">↓</div>';
   if(b.type==='paragraph'){const inner=prose(b.runs,context);result+=inner.includes('<ul')?`<div class="prose-group${b.style==='lead'?' source-lead':''}">${inner}</div>`:`<p${b.style==='lead'?' class="source-lead"':''}>${inner}</p>`;}
   else if(b.type==='heading')result+=heading(b.runs,context);
   else if(b.type==='list-item'){
@@ -23,15 +26,18 @@ export function renderBlocks(blocks=[],context={}){
    const mode=kind(b),tag=mode==='bullet'?'ul':'ol';let items='';
    do{const item=blocks[i],sourceText=textOf(item.runs),marker=sourceText.match(/^\s*(\d+|[a-z])[.)]\s/),value=marker?(mode==='letter'?marker[1].charCodeAt(0)-96:Number(marker[1])):null,subpoint=/^\s*[◦○o]\s/.test(sourceText);items+=`<li${value?` value="${value}"`:''}${subpoint?' class="subpoint"':''}${item.sourceIndent!==undefined?` style="margin-left:${Math.min(3,item.sourceIndent/18)}em"`:''}>${prose(item.runs,context,true)}</li>`;i++;}while(i<blocks.length&&blocks[i].type==='list-item'&&kind(blocks[i])===mode);i--;
    result+=`<${tag}${mode==='letter'?' type="a"':''}>${items}</${tag}>`;
-  }else if(b.type==='columns')result+=`<div class="text-columns">${b.columns.map(col=>`<div>${renderBlocks(col,context)}</div>`).join('')}</div>`;
-  else if(b.type==='callout')result+=`<div class="source-callout">${renderBlocks(b.blocks,context)}</div>`;
+  }else if(b.type==='columns')result+=`<div class="${b.columns.every(col=>col.length===1&&col[0].branchLabel)?'branch-columns':'text-columns'}">${b.columns.map(col=>`<div>${renderBlocks(col,context)}</div>`).join('')}</div>`;
+  else if(b.type==='callout'){
+   if(b.branchLabel){const first=b.blocks[0],hasLabel=first?.runs&&textOf(first.runs).trim().toLowerCase()===b.branchLabel.toLowerCase();result+=`<details class="pathway-branch" data-question="${esc(b.question||'')}"><summary><span class="branch-label">${hasLabel?renderRuns(first.runs):esc(b.branchLabel)}</span><span>${esc(b.question||'')}</span></summary><div class="branch-content">${renderBlocks(hasLabel?b.blocks.slice(1):b.blocks,context)}</div></details>`;}
+   else{const first=b.blocks[0],hasCondition=b.conditionLabel&&first?.runs&&textOf(first.runs).trim().toLowerCase()===b.conditionLabel.toLowerCase();result+=`<div class="source-callout">${hasCondition?`<div class="callout-condition"><strong class="branch-label">${renderRuns(first.runs)}</strong><span>${esc(b.conditionQuestion)}</span></div>`:''}${renderBlocks(hasCondition?b.blocks.slice(1):b.blocks,context)}</div>`;}
+  }
   else if(b.type==='table'){
    const first=b.cells.filter(c=>c.row===0),titleCell=b.rows>1&&first.length===1&&first[0].colspan===b.cols&&first[0].rowspan===1&&first[0].blocks.length===1&&['paragraph','heading'].includes(first[0].blocks[0].type)&&blockText(first[0].blocks).length<240?first[0]:null;
    const tableTitle=titleCell?splitHeading(titleCell.blocks[0].runs):null;if(tableTitle)context.references.push(...tableTitle.references);
    const label=cleanTitle(tableTitle?.text||b.caption||context.title||'Table'),sizes=tableSizing(b);
    const rows=Array.from({length:b.rows},(_,row)=>row===0&&titleCell?'':`<tr>${b.cells.filter(c=>c.row===row).sort((a,b)=>a.col-b.col).map(c=>{const tag=c.header?'th':'td';return `<${tag}${c.header?` scope="${c.scope||'col'}"`:''}${c.colspan>1?` colspan="${c.colspan}"`:''}${c.rowspan>1?` rowspan="${c.rowspan}"`:''}${c.color?` class="risk-cell risk-${esc(c.color)}"`:c.col===0?' class="row-label"':''}>${c.color?`<span class="sr-only">${esc(c.color)}</span>`:''}${cellContent(c,context)}</${tag}>`;}).join('')}</tr>`).join('');
    const continuedHeader=b.continuationHeaders?`<thead><tr>${b.continuationHeaders.map((text,i)=>`<th scope="col"${!text?' aria-label="Condition"':''}>${esc(text)}</th>`).join('')}</tr></thead>`:'';
-   result+=`<div class="table-block"><div class="table-tools">${titleCell?`<h3>${esc(label)}</h3>`:'<span></span>'}${b.id&&context.expand!==false?`<button data-table="${esc(b.id)}" aria-label="Expand table: ${esc(label)}">Expand table ↗</button>`:''}</div><div class="table-wrap" role="region" aria-label="${esc(label)}" tabindex="0"><table style="min-width:${sizes.reduce((a,b)=>a+b,0)}px"><caption class="sr-only">${esc(label)}</caption><colgroup>${sizes.map(w=>`<col style="width:${w}px">`).join('')}</colgroup>${continuedHeader}<tbody>${rows}</tbody></table></div></div>`;
+   result+=`<div class="table-block"><div class="table-tools">${titleCell&&label.toLowerCase()!==context.title?.toLowerCase()?`<h3>${esc(label)}</h3>`:'<span></span>'}${b.id&&context.expand!==false?`<button data-table="${esc(b.id)}" aria-label="Expand table: ${esc(label)}">Expand table ↗</button>`:''}</div><div class="table-wrap" role="region" aria-label="${esc(label)}" tabindex="0"><table style="min-width:${sizes.reduce((a,b)=>a+b,0)}px"><caption class="sr-only">${esc(label)}</caption><colgroup>${sizes.map(w=>`<col style="width:${w}px">`).join('')}</colgroup>${continuedHeader}<tbody>${rows}</tbody></table></div></div>`;
   }else if(b.type==='spectrum')result+=`<div class="spectrum-wrap" role="region" aria-label="Antibiotic spectrum chart" tabindex="0"><div class="spectrum"><div class="spectrum-head">${b.headers.map(h=>`<span style="grid-column:span ${h.colspan}">${esc(h.text)}</span>`).join('')}</div>${b.rows.map(r=>`<div class="spectrum-row">${Array.from({length:5},(_,col)=>{const filled=r.coverageSegments.some(s=>col>=s.col&&col<s.col+s.colspan);return `<span class="spectrum-cell"${filled?` style="background:rgb(${r.sourceFillRGB.map(v=>Math.round(v*255)).join(',')})"`:''}></span>`;}).join('')}<span class="spectrum-label">${esc(r.text)}</span></div>`).join('')}</div></div>`;
   else if(b.type==='figure'){const label=cleanTitle(b.label?.replace(/\s*·\s*source p\..*$/i,'').replace(/(?:Original )?source (?:figure|diagram|table)\s*[·:]?\s*(?:PDF page|p\.)?\s*\d*(?:\s*·.*)?/ig,'').trim()||context.title||'Illustration');result+=(b.optional?`<details class="source-diagram"><summary>View ${/table/i.test(b.optionalLabel||'')?'table illustration':'diagram'} ↗</summary>`:'')+`<figure class="clinical-figure"><button data-figure="${esc(b.src)}" data-figure-label="${esc(label)}" aria-label="Enlarge ${esc(label)}"><img src="${esc(b.src)}" width="${b.width}" height="${b.height}" alt="${esc(b.alt||label)}" loading="lazy"></button></figure>`+(b.optional?'</details>':'');}
  }
