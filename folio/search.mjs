@@ -1,4 +1,4 @@
-const aliases={aki:'acute kidney injury',ckd:'chronic kidney disease',hf:'heart failure',hfpef:'heart failure',hfref:'heart failure',afib:'atrial fibrillation',af:'atrial fibrillation',acs:'acute coronary syndrome',dka:'dka hhs',uti:'urinary tract infections',gi:'gastroenterology',platelets:'thrombocytopenia',mi:'myocardial infarction',pe:'pulmonary embolism',htn:'hypertensive',ppi:'peptic ulcer',antibiotics:'antimicrobials'};
+const aliases={addison:'adrenal insufficiency',aki:'acute kidney injury',ckd:'chronic kidney disease',hf:'heart failure',hfpef:'heart failure',hfref:'heart failure',afib:'atrial fibrillation',af:'atrial fibrillation',acs:'acute coronary syndrome',dka:'dka hhs',uti:'urinary tract infections',gi:'gastroenterology',platelets:'thrombocytopenia',mi:'myocardial infarction',pe:'pulmonary embolism',htn:'hypertensive',ppi:'peptic ulcer',antibiotics:'antimicrobials'};
 const plain=s=>String(s).toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'');
 const escape=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 const includesTerm=(text,term)=>new RegExp(`(^|[^a-z0-9])${escape(term)}${term.length<4?'([^a-z0-9]|$)':''}`).test(text);

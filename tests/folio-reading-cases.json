@@ -1,0 +1,506 @@
+{
+  "sourceSha256": "8dd3c1d095fa723a06e03d14d36f245c2847e2446a4ff315b03f1921d0e70804",
+  "verifiedGrids": [
+    {
+      "pdfPage": 9,
+      "id": "table-9-1",
+      "rows": 5,
+      "cols": 5
+    },
+    {
+      "pdfPage": 9,
+      "id": "table-9-2",
+      "rows": 1,
+      "cols": 2
+    },
+    {
+      "pdfPage": 26,
+      "id": "table-26-1",
+      "rows": 4,
+      "cols": 10
+    },
+    {
+      "pdfPage": 79,
+      "id": "table-79-1",
+      "rows": 11,
+      "cols": 2
+    },
+    {
+      "pdfPage": 138,
+      "id": "table-138-1",
+      "rows": 3,
+      "cols": 3
+    },
+    {
+      "pdfPage": 138,
+      "id": "table-138-2",
+      "rows": 14,
+      "cols": 4
+    },
+    {
+      "pdfPage": 139,
+      "id": "table-139-1",
+      "rows": 6,
+      "cols": 5
+    },
+    {
+      "pdfPage": 139,
+      "id": "table-139-2",
+      "rows": 3,
+      "cols": 5
+    },
+    {
+      "pdfPage": 139,
+      "id": "table-139-3",
+      "rows": 2,
+      "cols": 4
+    },
+    {
+      "pdfPage": 170,
+      "id": "table-170-1",
+      "rows": 29,
+      "cols": 4
+    },
+    {
+      "pdfPage": 172,
+      "id": "table-172-1",
+      "rows": 27,
+      "cols": 3
+    },
+    {
+      "pdfPage": 174,
+      "id": "table-174-1",
+      "rows": 18,
+      "cols": 5
+    },
+    {
+      "pdfPage": 177,
+      "id": "table-177-1",
+      "rows": 6,
+      "cols": 5
+    },
+    {
+      "pdfPage": 185,
+      "id": "table-185-1",
+      "rows": 5,
+      "cols": 5
+    },
+    {
+      "pdfPage": 185,
+      "id": "table-185-2",
+      "rows": 10,
+      "cols": 5
+    },
+    {
+      "pdfPage": 186,
+      "id": "table-186-1",
+      "rows": 3,
+      "cols": 4
+    },
+    {
+      "pdfPage": 189,
+      "id": "table-189-1",
+      "rows": 10,
+      "cols": 5
+    },
+    {
+      "pdfPage": 192,
+      "id": "table-192-1",
+      "rows": 11,
+      "cols": 3
+    },
+    {
+      "pdfPage": 194,
+      "id": "table-194-1",
+      "rows": 11,
+      "cols": 5
+    },
+    {
+      "pdfPage": 200,
+      "id": "table-200-1",
+      "rows": 9,
+      "cols": 12
+    },
+    {
+      "pdfPage": 202,
+      "id": "table-202-1",
+      "rows": 15,
+      "cols": 11
+    },
+    {
+      "pdfPage": 210,
+      "id": "table-210-1",
+      "rows": 28,
+      "cols": 16
+    },
+    {
+      "pdfPage": 210,
+      "id": "table-210-2",
+      "rows": 8,
+      "cols": 10
+    },
+    {
+      "pdfPage": 211,
+      "id": "table-211-1",
+      "rows": 8,
+      "cols": 16
+    },
+    {
+      "pdfPage": 211,
+      "id": "table-211-2",
+      "rows": 8,
+      "cols": 10
+    },
+    {
+      "pdfPage": 211,
+      "id": "table-211-3",
+      "rows": 16,
+      "cols": 7
+    },
+    {
+      "pdfPage": 213,
+      "id": "table-213-1",
+      "rows": 14,
+      "cols": 5
+    },
+    {
+      "pdfPage": 214,
+      "id": "table-214-1",
+      "rows": 3,
+      "cols": 4
+    },
+    {
+      "pdfPage": 222,
+      "id": "table-222-1",
+      "rows": 5,
+      "cols": 3
+    },
+    {
+      "pdfPage": 222,
+      "id": "table-222-2",
+      "rows": 7,
+      "cols": 4
+    },
+    {
+      "pdfPage": 231,
+      "id": "table-231-1",
+      "rows": 5,
+      "cols": 6
+    },
+    {
+      "pdfPage": 236,
+      "id": "table-236-1",
+      "rows": 2,
+      "cols": 6
+    },
+    {
+      "pdfPage": 237,
+      "id": "table-237-1",
+      "rows": 5,
+      "cols": 6
+    },
+    {
+      "pdfPage": 261,
+      "id": "table-261-1",
+      "rows": 11,
+      "cols": 7
+    },
+    {
+      "pdfPage": 261,
+      "id": "table-261-2",
+      "rows": 11,
+      "cols": 3
+    },
+    {
+      "pdfPage": 267,
+      "id": "table-267-1",
+      "rows": 5,
+      "cols": 6
+    }
+  ],
+  "printedContributorNameForms": [
+    "Aaron Baggish",
+    "Adam Gross",
+    "Adrienne Yang",
+    "Afkera Daniel",
+    "Albert Shaw",
+    "Alec Ohanian",
+    "Alexander Jacobs",
+    "Alexandra Doms",
+    "Alexandra Miller",
+    "Alexandra Wick",
+    "Alexandria Young",
+    "Alexis Strahan",
+    "Amanda Jowell",
+    "Amanda Ward",
+    "Amara Plaza-Jennings",
+    "Andie Gong",
+    "Andrea Martinez",
+    "Andrew Yee",
+    "Ang Li",
+    "Anika Agarwal",
+    "Anna Crosetti",
+    "Azfar Hossain",
+    "Baris Alten",
+    "Barry Kitch",
+    "Benjamin Teasdale",
+    "Bernard Sarmiento",
+    "Bill Lester",
+    "Bobby Yeh",
+    "Brenda Varriano",
+    "Brian Huang",
+    "Brittni Driscoll",
+    "C. Charles Jain",
+    "Camille Mathey-Andrews",
+    "Cassandra Fiorino",
+    "Chandler Bronkema",
+    "Chris Radcliffe",
+    "Christian Bonilla",
+    "Christina Kottooran",
+    "Christine Ganser",
+    "Christopher Radcliffe",
+    "Christopher Salazar-Thomson",
+    "Christopher Schenck",
+    "Dan Weiner",
+    "Daniel Camejo Patino",
+    "Daniel Fulop",
+    "Daniel Gromer",
+    "Daniel Ikeda",
+    "Daniel Restifo",
+    "Daniel Weiner",
+    "David Dudzinski",
+    "David Sallman",
+    "Doniya Milani",
+    "Dustin Shaw",
+    "Eashwar Somasundaram",
+    "Ekelemnna Obiejesie",
+    "Elaine Luterstein",
+    "Eli Patt",
+    "Elizabeth Gay",
+    "Elizabeth Guancial",
+    "Ellen Kendall",
+    "Emily Manning",
+    "Emily Stephens",
+    "Emma Kurz",
+    "Ethiopia Getachew",
+    "Eugene Rhee",
+    "Evan Barnes",
+    "Felicita Kuperwasser",
+    "Folake Adegboye",
+    "Frederick Lang",
+    "Gabby Mills",
+    "Gabrielle Bromberg",
+    "George Anesi",
+    "Ginny Sun",
+    "Giovana Jaen",
+    "Gita Bhattacharya",
+    "Hailey Harris",
+    "Hannah Abrams",
+    "Heba Al Tarawneh",
+    "Heba Altarawneh",
+    "Hendrik Greve",
+    "Hugh Shirley",
+    "Ishir Bhan",
+    "Jacqueline Henson",
+    "Jade Connor",
+    "James Nguyen",
+    "Jehan Alladina",
+    "Jessica Bourque",
+    "Jessica Nino de Rivera",
+    "Jonathan Salik",
+    "Jose Florez",
+    "Joseph Replogle",
+    "Julia Page",
+    "Justin Cheung",
+    "Karina Ruiz-Esteves",
+    "Kelly Buchanan",
+    "Kelsey Lau-Min",
+    "Kerry Massman",
+    "Kristiana Nasto",
+    "Kristin Harrington",
+    "Lauren Nguyen",
+    "Leanna Travis",
+    "Leslie Chang",
+    "Lianet Vazquez",
+    "Libby Cunningham",
+    "Linda Morris",
+    "Lucas Cofer",
+    "Madison Masters",
+    "Magdalena Fay",
+    "Maggie Selesky",
+    "Maha Farhat",
+    "Marc Sabatine",
+    "Margaret Koester",
+    "Margaret Mitchell",
+    "Margot Manning",
+    "Marie McGourty",
+    "Marta Stevanovic",
+    "Matthew Adan",
+    "Max Quinn",
+    "Maxwell Green",
+    "Megan Marshall",
+    "Melissa Lumish",
+    "Micayla Flores",
+    "Michael Abers",
+    "Michael Trinh",
+    "Michelle Long",
+    "Mihir Parikh",
+    "Mike Kelly",
+    "Mirai Matsuura",
+    "Miriam Singer",
+    "Mitu Bhattatiry",
+    "Molly Paras",
+    "Monica Cheng",
+    "Nada Abdallah",
+    "Natalia Sutherland",
+    "Nelson Gil",
+    "Nicholas Roig",
+    "Nick Peterson",
+    "Nicolas Trad",
+    "Nino Mihatov",
+    "Noemie Levy",
+    "Olivia Davies",
+    "Olivia Kahn-Boesel",
+    "Oluwaferanmi Bello",
+    "Ore Olakunle",
+    "Oreoluwa Olakunle",
+    "Paul Cremer",
+    "Paula Prout",
+    "Preethiya Sekar",
+    "Rachel Ancar",
+    "Rachel Bukis",
+    "Rachel Wittenberg",
+    "Rajeev Malhotra",
+    "Ravi Thadhani",
+    "Reena Goswami",
+    "Richard Suarez",
+    "Roby Bhattacharya",
+    "Saaket Agrawal",
+    "Sahar Shahamatdar",
+    "Sam Hahn",
+    "Sanjana Srinivasan",
+    "Sarah (SK) Kler",
+    "Savo Bou Zein Eddine",
+    "Sepideh Ashrafzadeh",
+    "Shannon Cleary",
+    "Shawna Walsh",
+    "Sheridan Chappelle",
+    "Sherri-Ann Burnett",
+    "Shilpa Sharma",
+    "Shraddha Damaraju",
+    "Sirus Jesudasen",
+    "Sophie Nick",
+    "Sophie Pan",
+    "Spencer Flynn",
+    "Tay Boyd",
+    "Tessa Steel",
+    "Thomas Ituarte",
+    "Tristan Lim",
+    "Tushar Kamath",
+    "Vilas Patwardhan",
+    "W. Steve Sigler",
+    "William Kormos",
+    "Yi-Bin Chen",
+    "Yichi Zhang",
+    "Zaven Sargsyan",
+    "Zoe Adams"
+  ],
+  "glyphGeometryFixes": [
+    {
+      "pdfPage": 178,
+      "text": "↓",
+      "oldBox": [
+        370.2498,
+        799.2293,
+        374.9392,
+        809.2493
+      ],
+      "proposedBox": [
+        370.2498,
+        777.61614,
+        374.93916,
+        787.63614
+      ]
+    },
+    {
+      "pdfPage": 195,
+      "text": "⊝",
+      "oldBox": [
+        348.5088,
+        745.1093,
+        358.4787,
+        755.1293
+      ],
+      "proposedBox": [
+        348.5088420000001,
+        723.49614,
+        358.47874200000007,
+        733.51614
+      ]
+    },
+    {
+      "pdfPage": 195,
+      "text": ",",
+      "oldBox": [
+        358.3876,
+        745.1093,
+        360.4417,
+        755.1293
+      ],
+      "proposedBox": [
+        358.38756000000006,
+        723.49614,
+        360.44166000000007,
+        733.51614
+      ]
+    },
+    {
+      "pdfPage": 214,
+      "text": "⊝",
+      "oldBox": [
+        308.3573,
+        716.6693,
+        318.3272,
+        726.6893
+      ],
+      "proposedBox": [
+        308.35734,
+        695.05614,
+        318.32724,
+        705.07614
+      ]
+    },
+    {
+      "pdfPage": 224,
+      "text": "⊝",
+      "oldBox": [
+        477.42,
+        538.1093,
+        487.3899,
+        548.1293
+      ],
+      "proposedBox": [
+        477.42,
+        516.49614,
+        487.3899,
+        526.51614
+      ]
+    },
+    {
+      "pdfPage": 261,
+      "text": "⊝",
+      "oldBox": [
+        431.94,
+        343.0987,
+        441.3726,
+        352.5787
+      ],
+      "proposedBox": [
+        431.94,
+        322.65036000000003,
+        441.3726,
+        332.13036000000005
+      ]
+    }
+  ]
+}

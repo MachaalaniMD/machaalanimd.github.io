@@ -15,7 +15,13 @@ Identified institutional routing, phone/pager numbers, order sets, formulary not
 
 Clinical wording is not modernized or replaced with new recommendations. Source errors or ambiguities are not silently corrected. Some original illustrations remain visual content. Transcribed raster tables were compared with their source figures; the original table is optionally available beside them. This is the dated source edition, not a live guideline service.
 
-Folio uses a blue manual/index design. Its home page shows the 18 original table-of-contents systems as a compact directory. Each system opens a topic list, and search always spans the whole manual. Static system/topic hashes support direct links. The reader supports a mobile section selector, section focus, adjustable text in a focus dialog and a session reading list. Search and reading state remain in memory and clear on reload. URL hashes identify static topics only.
+Folio uses a modern blue interface with a compact 18-system directory, larger section headings and rounded reading surfaces. Each system opens a topic list, and search always spans the whole manual. Static system/topic hashes support direct links. Tables use content-sized columns, contained horizontal scrolling and an expanded reading view. Multi-page illustrated tables repeat their original column headings. Source-verified table repairs separate fused grids and keep internal drug-class bands inside their original tables. Standalone minus signs are retained as cell values. The antibiotic-spectrum chart preserves disjoint colored segments, including the source's unfilled anaerobes segment for cefepime.
+
+Paper citations are moved below section titles into a References disclosure with their original links. Twenty source-reviewed subtype groups reflow as sibling bullets, with shared qualifiers kept outside the group; nine negative cases guard against splitting conditional treatment instructions. Eighty-five headings have PDF tracking artifacts removed using the original glyph positions, allowing only whitespace changes with the same ordered characters.
+
+Attribution is available through the single **Source** button in About. It includes the edition and original institutional app link, editors, all chapter/topic credits (including omitted material), previous editors and preface acknowledgements, and all 185 exact printed name forms. The institutional app link is not represented as a public download of this PDF edition. The reading interface has no repeated provenance counters or contributor footers.
+
+The reader supports a mobile section selector, section focus, adjustable text in a focus dialog and a session reading list. Search and reading state remain in memory and clear on reload. URL hashes identify static topics only.
 
 ## Run and verify
 
@@ -24,7 +30,7 @@ node scripts/verify.mjs
 python3 -m http.server 5173
 ```
 
-The verifier checks page/topic coverage; native HTML block types; all table-grid positions and merged spans; clinically meaningful medication/dose pairings; multi-page headers; selected local omissions; source identity; PDF-native text conversion digests; safe HTML rendering; abbreviation search; and browser-only state. `folio/conversion-audit.json` explains the character digest's limits: it does not establish reading order, completeness of illustration transcription, or clinical validity. The conversion was also inspected against rendered source pages and in mobile/desktop browser views.
+The verifier checks page/topic coverage; native HTML block types; all table-grid positions and merged spans; clinically meaningful medication/dose pairings; multi-page headers; selected local omissions; source identity; PDF-native text conversion digests; safe HTML rendering; abbreviation search; and browser-only state. It also checks reviewed table shapes, punctuation cells, subtype partitions and conditional guards, contributor-name coverage, and citation placement. `folio/conversion-audit.json` explains the character digest's limits: it does not establish reading order, completeness of illustration transcription, or clinical validity. The conversion was also inspected against rendered source pages and in mobile/desktop browser views.
 
 ## Publication
 

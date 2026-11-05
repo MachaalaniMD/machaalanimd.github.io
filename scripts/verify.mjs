@@ -19,13 +19,13 @@ async function checkBlocks(blocks,p){
   if(b.runs){assert.ok(b.runs.length);for(const r of b.runs){assert.equal(typeof r.t,'string');assert.ok(!/[\uE000-\uF8FF]/.test(r.t),'Unmapped PDF symbol');if(r.href)assert.match(r.href,/^(https?:\/\/|mailto:)/);}}
   if(b.type==='columns'){assert.ok(b.columns.length);for(const col of b.columns)await checkBlocks(col,p);}
   if(b.blocks)await checkBlocks(b.blocks,p);
-  if(b.type==='spectrum'){assert.equal(b.headers.reduce((n,h)=>n+h.colspan,0),5);assert.deepEqual(b.rows.map(r=>r.coverageColspan),[1,2,3,5,4,5]);}
+  if(b.type==='spectrum'){assert.equal(b.headers.reduce((n,h)=>n+h.colspan,0),5);assert.deepEqual(b.rows.map(r=>r.coverageSegments.map(s=>[s.col,s.colspan])),[[[0,1]],[[0,2]],[[0,3]],[[0,3],[4,1]],[[0,4]],[[0,5]]]);}
   if(b.type==='table'){
    tableCount++;if(!tablesByPage.has(p.pdfPage))tablesByPage.set(p.pdfPage,[]);tablesByPage.get(p.pdfPage).push(b);
    assert.ok(b.rows>0&&b.cols>1);const grid=Array.from({length:b.rows},()=>Array(b.cols).fill(0));
    for(const c of b.cells){assert.ok(c.row>=0&&c.col>=0&&c.rowspan>0&&c.colspan>0);assert.ok(c.row+c.rowspan<=b.rows&&c.col+c.colspan<=b.cols,`Bounds on ${p.pdfPage}`);for(let r=c.row;r<c.row+c.rowspan;r++)for(let col=c.col;col<c.col+c.colspan;col++)grid[r][col]++;await checkBlocks(c.blocks,p);}
    assert.ok(grid.every(row=>row.every(n=>n===1)),`Table overlap or missing structural cell on PDF ${p.pdfPage}`);
-   const rendered=renderBlocks([b],{page:p.printedPage});assert.match(rendered,/<table>/);assert.match(rendered,/<caption>/);assert.ok(!rendered.includes('page-0')); // Genuine illustrations may occupy source table cells.
+   const rendered=renderBlocks([b],{pdfPage:p.pdfPage});assert.match(rendered,/<table[ >]/);assert.match(rendered,/<caption[ >]/);assert.ok(!rendered.includes('page-0')); // Genuine illustrations may occupy source table cells.
   }
   if(b.type==='figure'){assert.match(b.src,/^assets\/(figure|diagram)-\d{4}-\d{2}\.webp$/);assert.ok(b.width>0&&b.height>0);figures.add(b.src);assert.ok((await stat(resolve(root,'folio',b.src))).size>30);}
  }
@@ -64,3 +64,4 @@ const reader=await readFile(resolve(root,'folio/folio.js'),'utf8');for(const api
 for(const [q,name] of [['AKI','Acute Kidney Injury'],['HFpEF','Heart Failure'],['AF','Atrial Fibrillation & Flutter']]){const ranked=topics.map(t=>({t,n:scoreTopic(t,q)})).filter(x=>x.n>0).sort((a,b)=>b.n-a.n);assert.equal(ranked[0].t.title,name);}
 assert.equal(scoreTopic({title:'Acute Liver Injury',category:'GI',text:'Liver disease'},'AKI'),0);
 console.log(`Verified ${topics.length} topics, ${pages.length} source pages, ${blockCount} semantic blocks, ${tableCount} native tables, table grids/dose alignment, retained PDF text digests, omissions, safe rendering, 78 source-structure cases, search and memory-only state.`);
+await import('./verify-reading.mjs');

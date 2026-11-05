@@ -34,12 +34,12 @@
   "geographicScope": "Jurisdiction-specific material retains its original geographic scope and source date; it must not be assumed applicable everywhere.",
   "format": "semantic-html",
   "conversion": {
-    "tables": 333,
+    "tables": 312,
     "figures": 213,
     "nativeCharacters": 1353309,
     "verifiedNativePages": 266,
-    "date": "2026-11-04",
-    "sections": 818,
+    "date": "2026-11-05",
+    "sections": 792,
     "transcribedFigureTablePages": [
       30,
       47,
@@ -52,5 +52,13 @@
     "revision": "blue-index-20261104",
     "sourceStructureRegressionCases": 78,
     "sourceLineGeometryRetained": true
-  }
+  },
+  "readingRevision": "20261105-clean",
+  "formattingChanges": [
+    "Attribution consolidated in About → Source, including all printed contributor and acknowledgement names.",
+    "Paper citations separated from section titles; original links retained.",
+    "Source-verified table detection, grid ownership, punctuation cells, and six PDF glyph-metric repairs.",
+    "Reviewed sibling subtype lists reflow without changing wording or shared qualifiers.",
+    "Responsive blue interface with larger headings, content-sized table columns and expanded-table reading."
+  ]
 }
