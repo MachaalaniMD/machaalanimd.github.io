@@ -4,3 +4,5 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 /* Folio has its own blue index identity. */
 .folio-project{background:#f9fbff;border-color:#d6e1f2}.folio-project .project-number{color:#6486b9}.folio-project h2{color:#173674}.folio-project h2>span{color:#4176ce}.folio-project h3{color:#335886}.folio-project p{color:#7489a8}.folio-project .project-tags>span{border-color:#d8e4f7;color:#6488bb}.folio-project .project-action{background:#2459cc}.folio-project .project-action:hover{background:#163e9b}.folio-visual{background:#1d4699;border-color:#3560ae;color:#f1f6ff}.folio-visual .visual-foot{color:#98b7ed}.folio-preview-title{color:#f1f6ff}.folio-preview-search{border-color:#5279bd;color:#b6cdf4}.folio-preview-subjects>span{border-color:#4169b1;color:#91b1e5}.folio-preview-subjects small{color:#d9e7ff}
+
+.folio-preview-top>.folio-preview-brand{display:inline-flex;align-items:center;gap:12px;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:26px;font-weight:700;letter-spacing:-.8px}.folio-preview-brand img{display:block;border-radius:11px;box-shadow:0 4px 12px #112a6a33}
