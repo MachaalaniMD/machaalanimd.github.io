@@ -54,4 +54,4 @@ assert.ok(!renderRuns([{t:'*',noteId:'bad"><script>',noteRefId:'x'}]).includes('
 const js=await readFile(new URL('../folio/folio.js',import.meta.url),'utf8');assert.match(js,/jumpToNote/);assert.match(js,/parent\.open=true/);
 console.log('Verified visible ECG source characters, rotated labels and row associations, trauma exam rows, 86 separate note paragraphs, 24 source-reviewed marker links, repeated-symbol scopes, formula guards and focus-dialog IDs.');
 
-const uti=blocks(112).find(b=>b.id==='table-112-1');assert.ok(uti.cells.every(c=>!c.header));const utiHtml=renderBlocks([uti]);assert.match(utiHtml,/<ul>/);assert.match(utiHtml,/Uncomplicated UTI/);assert.ok(!/<th[ >]/.test(utiHtml));
+const uti=blocks(112).find(b=>b.id==='table-112-1');assert.ok(uti.cells.every(c=>!c.header));const utiHtml=renderBlocks([uti]);assert.match(utiHtml,/<ul>/);assert.match(blockText([uti]),/Uncomplicated UTI/);assert.ok(!/<th[ >]/.test(utiHtml));
