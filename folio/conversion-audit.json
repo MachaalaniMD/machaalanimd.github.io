@@ -1,6 +1,6 @@
 {
   "sourceSha256": "8dd3c1d095fa723a06e03d14d36f245c2847e2446a4ff315b03f1921d0e70804",
-  "checkedAt": "2026-11-05",
+  "checkedAt": "2026-11-07",
   "method": "Retained native PDF character counts, including alphanumerics and clinical math/arrow symbols, compared to structured HTML before separately transcribed figure tables. Clipped, invisible imported-template text and native text occluded by genuine figures are excluded and the rendered illustration is retained instead. Whitespace, list-marker glyphs and reading order are not validated by this digest. Table grids and selected dose/column pairings are separately tested. This is conversion verification, not medical validation.",
   "pages": [
     {
@@ -224,8 +224,9 @@
     },
     {
       "pdfPage": 47,
-      "retainedNativeCharacterDigest": "f59706b50b06934200eaf46f2ece155d20224694c646ce939ad17b5d18fea2ba",
-      "htmlNativeCharacterDigest": "f59706b50b06934200eaf46f2ece155d20224694c646ce939ad17b5d18fea2ba"
+      "retainedNativeCharacterDigest": "2237d526d2666c48cc34fadc9c4812b4be1f78de17e4db4b137f707adcaded66",
+      "htmlNativeCharacterDigest": "2237d526d2666c48cc34fadc9c4812b4be1f78de17e4db4b137f707adcaded66",
+      "methodOverride": "All non-whitespace characters: unchanged page content plus source-bounded COPD treatment and inhaler reconstruction. Source bold/italic/href signature independently verified."
     },
     {
       "pdfPage": 48,
@@ -1575,7 +1576,7 @@
     "unmatchedBlocks": 273,
     "sourceSegments": 8201
   },
-  "readingRevision": "20261105-annotations",
+  "readingRevision": "20261107-cardiopulm",
   "annotationRepairs": {
     "date": "2026-11-05",
     "sourceNativeEcgChecks": [
@@ -2467,5 +2468,5720 @@
       "linkingPolicy": "20 explicitly source-reviewed reference ranges plus four source-reviewed nearest-callout PDF7 markers; other notes are separated without inferred links."
     },
     "clinicalContentUpdated": false
+  },
+  "cardiopulmonaryLayout": {
+    "date": "2026-11-07",
+    "copdSourceReconstruction": {
+      "sourceNonWhitespaceCharacters": 2449,
+      "reconstructedNonWhitespaceCharacters": 2449,
+      "sourceCharacterStyleSignatureMatches": true,
+      "unassignedCharacters": [],
+      "sourceSignature": [
+        {
+          "character": "$",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "%",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "&",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 5
+        },
+        {
+          "character": "&",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 25
+        },
+        {
+          "character": "(",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32579807/",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 24
+        },
+        {
+          "character": ")",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "*",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "+",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 19
+        },
+        {
+          "character": ",",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": ",",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 28
+        },
+        {
+          "character": ",",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "-",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 28
+        },
+        {
+          "character": "-",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": ".",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 8
+        },
+        {
+          "character": ".",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "/",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "/",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "/",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 2
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 2
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 15
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 2
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 3
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 2
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 3
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 3
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 3
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 2
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 3
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 3
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 2
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 2
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 2
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 2
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 2
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 14
+        },
+        {
+          "character": "2",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 3
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 2
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 1
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 2
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "4",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": "4",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 2
+        },
+        {
+          "character": "4",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 3
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 12
+        },
+        {
+          "character": "6",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "6",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "6",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "7",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "7",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "7",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "7",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 4
+        },
+        {
+          "character": "7",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 3
+        },
+        {
+          "character": "8",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 1
+        },
+        {
+          "character": "8",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "8",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 2
+        },
+        {
+          "character": "8",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "8",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "8",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "8",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "9",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "9",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "9",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "9",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 2
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 18
+        },
+        {
+          "character": ":",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 2
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 2
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 2
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29668352",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "<",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": ">",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 9
+        },
+        {
+          "character": ">",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 2
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 2
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29668352",
+          "count": 1
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 2
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 46
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "A",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 27
+        },
+        {
+          "character": "B",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "B",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 1
+        },
+        {
+          "character": "B",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "B",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 13
+        },
+        {
+          "character": "B",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "B",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 8
+        },
+        {
+          "character": "C",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "C",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29668352",
+          "count": 1
+        },
+        {
+          "character": "C",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "C",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "C",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "C",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 14
+        },
+        {
+          "character": "C",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "C",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "D",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": "D",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "D",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "D",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "E",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32579807/",
+          "count": 1
+        },
+        {
+          "character": "E",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "E",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 1
+        },
+        {
+          "character": "E",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "E",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "E",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "E",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 13
+        },
+        {
+          "character": "E",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 10
+        },
+        {
+          "character": "F",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": "F",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "F",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "G",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": "G",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 5
+        },
+        {
+          "character": "H",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32579807/",
+          "count": 1
+        },
+        {
+          "character": "H",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 5
+        },
+        {
+          "character": "H",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "I",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 1
+        },
+        {
+          "character": "I",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29668352",
+          "count": 1
+        },
+        {
+          "character": "I",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 11
+        },
+        {
+          "character": "I",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "I",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "J",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 1
+        },
+        {
+          "character": "J",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "J",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 1
+        },
+        {
+          "character": "J",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "L",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": "L",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 1
+        },
+        {
+          "character": "L",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "L",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "L",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "L",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 25
+        },
+        {
+          "character": "L",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 15
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 1
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29668352",
+          "count": 1
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 1
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 10
+        },
+        {
+          "character": "M",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 8
+        },
+        {
+          "character": "N",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "N",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "N",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "N",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "N",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "O",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": "O",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32579807/",
+          "count": 1
+        },
+        {
+          "character": "O",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "O",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "O",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 13
+        },
+        {
+          "character": "O",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 9
+        },
+        {
+          "character": "P",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29668352",
+          "count": 1
+        },
+        {
+          "character": "P",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": "P",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "P",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "P",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "Q",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "R",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "S",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32579807/",
+          "count": 1
+        },
+        {
+          "character": "S",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "S",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 2
+        },
+        {
+          "character": "S",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 19
+        },
+        {
+          "character": "S",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "S",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 9
+        },
+        {
+          "character": "T",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32579807/",
+          "count": 1
+        },
+        {
+          "character": "T",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 2
+        },
+        {
+          "character": "T",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29668352",
+          "count": 1
+        },
+        {
+          "character": "T",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "T",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": "T",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "T",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "U",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 1
+        },
+        {
+          "character": "U",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": "U",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "V",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "V",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "Z",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 2
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 100
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "a",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 17
+        },
+        {
+          "character": "b",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 22
+        },
+        {
+          "character": "b",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "b",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 2
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 56
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "c",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "d",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "d",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 33
+        },
+        {
+          "character": "d",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "d",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 1
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 2
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 2
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 2
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 116
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "e",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 20
+        },
+        {
+          "character": "f",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "f",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 22
+        },
+        {
+          "character": "f",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "g",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 1
+        },
+        {
+          "character": "g",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 22
+        },
+        {
+          "character": "g",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "g",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "h",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "h",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "h",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "h",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "h",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 26
+        },
+        {
+          "character": "h",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "h",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "i",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 3
+        },
+        {
+          "character": "i",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "i",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "i",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 107
+        },
+        {
+          "character": "i",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 8
+        },
+        {
+          "character": "i",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 11
+        },
+        {
+          "character": "k",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 5
+        },
+        {
+          "character": "k",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "k",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "l",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": "l",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "l",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 79
+        },
+        {
+          "character": "l",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 8
+        },
+        {
+          "character": "m",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 1
+        },
+        {
+          "character": "m",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 48
+        },
+        {
+          "character": "m",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 5
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 3
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 2
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 78
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "n",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 21
+        },
+        {
+          "character": "o",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 2
+        },
+        {
+          "character": "o",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "o",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "o",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "o",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 117
+        },
+        {
+          "character": "o",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "o",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 13
+        },
+        {
+          "character": "p",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 34
+        },
+        {
+          "character": "p",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "p",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "q",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "r",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 1
+        },
+        {
+          "character": "r",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "r",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "r",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "r",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "r",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 98
+        },
+        {
+          "character": "r",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "r",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 12
+        },
+        {
+          "character": "s",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 2
+        },
+        {
+          "character": "s",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": "s",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "s",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 76
+        },
+        {
+          "character": "s",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "s",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 13
+        },
+        {
+          "character": "t",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 1
+        },
+        {
+          "character": "t",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "t",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "t",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "t",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "t",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 99
+        },
+        {
+          "character": "t",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "t",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 18
+        },
+        {
+          "character": "u",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 1
+        },
+        {
+          "character": "u",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 45
+        },
+        {
+          "character": "u",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 5
+        },
+        {
+          "character": "v",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "v",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "v",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "v",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 15
+        },
+        {
+          "character": "v",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "w",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "w",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "x",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "x",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 10
+        },
+        {
+          "character": "x",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "x",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "y",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 27
+        },
+        {
+          "character": "y",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "z",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "β",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "↑",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "↑",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "↓",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "≤",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 5
+        },
+        {
+          "character": "≥",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 1
+        }
+      ],
+      "reconstructedSignature": [
+        {
+          "character": "$",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "%",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "&",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 5
+        },
+        {
+          "character": "&",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": "(",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 25
+        },
+        {
+          "character": "(",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32579807/",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": ")",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 24
+        },
+        {
+          "character": ")",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "*",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "+",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 19
+        },
+        {
+          "character": ",",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": ",",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 28
+        },
+        {
+          "character": ",",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "-",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 28
+        },
+        {
+          "character": "-",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": ".",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 8
+        },
+        {
+          "character": ".",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "/",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "/",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "/",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 2
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 2
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 15
+        },
+        {
+          "character": "0",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 2
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 3
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 2
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 3
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 3
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 3
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": "1",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 2
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 3
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 3
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 2
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 2
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 2
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 2
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 2
+        },
+        {
+          "character": "2",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 14
+        },
+        {
+          "character": "2",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 3
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 2
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 1
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 2
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "3",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "4",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": "4",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 2
+        },
+        {
+          "character": "4",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 3
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "5",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 12
+        },
+        {
+          "character": "6",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "6",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "6",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "7",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "7",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "7",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "7",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 4
+        },
+        {
+          "character": "7",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 3
+        },
+        {
+          "character": "8",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 1
+        },
+        {
+          "character": "8",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "8",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 2
+        },
+        {
+          "character": "8",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "8",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "8",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "8",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "9",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "9",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "9",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "9",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 2
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": ":",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 18
+        },
+        {
+          "character": ":",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 2
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 2
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 2
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29668352",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": ";",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "<",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": ">",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 9
+        },
+        {
+          "character": ">",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 2
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 2
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29668352",
+          "count": 1
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 2
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 46
+        },
+        {
+          "character": "A",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "A",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 27
+        },
+        {
+          "character": "B",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "B",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 1
+        },
+        {
+          "character": "B",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "B",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 13
+        },
+        {
+          "character": "B",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "B",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 8
+        },
+        {
+          "character": "C",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "C",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29668352",
+          "count": 1
+        },
+        {
+          "character": "C",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "C",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "C",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "C",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 14
+        },
+        {
+          "character": "C",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "C",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "D",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": "D",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "D",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "D",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "E",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32579807/",
+          "count": 1
+        },
+        {
+          "character": "E",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "E",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 1
+        },
+        {
+          "character": "E",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "E",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "E",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "E",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 13
+        },
+        {
+          "character": "E",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 10
+        },
+        {
+          "character": "F",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": "F",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "F",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "G",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": "G",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 5
+        },
+        {
+          "character": "H",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32579807/",
+          "count": 1
+        },
+        {
+          "character": "H",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 5
+        },
+        {
+          "character": "H",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "I",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 1
+        },
+        {
+          "character": "I",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29668352",
+          "count": 1
+        },
+        {
+          "character": "I",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 11
+        },
+        {
+          "character": "I",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "I",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "J",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 1
+        },
+        {
+          "character": "J",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "J",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 1
+        },
+        {
+          "character": "J",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "L",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": "L",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 1
+        },
+        {
+          "character": "L",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "L",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "L",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "L",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 25
+        },
+        {
+          "character": "L",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 15
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32396181/",
+          "count": 1
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29668352",
+          "count": 1
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28528348",
+          "count": 1
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "M",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 10
+        },
+        {
+          "character": "M",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 8
+        },
+        {
+          "character": "N",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/31553837",
+          "count": 1
+        },
+        {
+          "character": "N",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=28877027",
+          "count": 1
+        },
+        {
+          "character": "N",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "N",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "N",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "O",
+          "bold": false,
+          "italic": false,
+          "href": "https://goldcopd.org/2025-gold-report/",
+          "count": 1
+        },
+        {
+          "character": "O",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32579807/",
+          "count": 1
+        },
+        {
+          "character": "O",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "O",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "O",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 13
+        },
+        {
+          "character": "O",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 9
+        },
+        {
+          "character": "P",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29668352",
+          "count": 1
+        },
+        {
+          "character": "P",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": "P",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "P",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "P",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "Q",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "R",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "R",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "S",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32579807/",
+          "count": 1
+        },
+        {
+          "character": "S",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "S",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 2
+        },
+        {
+          "character": "S",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 19
+        },
+        {
+          "character": "S",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "S",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 9
+        },
+        {
+          "character": "T",
+          "bold": false,
+          "italic": false,
+          "href": "https://pubmed.ncbi.nlm.nih.gov/32579807/",
+          "count": 1
+        },
+        {
+          "character": "T",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 2
+        },
+        {
+          "character": "T",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29668352",
+          "count": 1
+        },
+        {
+          "character": "T",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "T",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": "T",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "T",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "U",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/29429593",
+          "count": 1
+        },
+        {
+          "character": "U",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+          "count": 1
+        },
+        {
+          "character": "U",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "V",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "V",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "Z",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 2
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 100
+        },
+        {
+          "character": "a",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "a",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 17
+        },
+        {
+          "character": "b",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 22
+        },
+        {
+          "character": "b",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "b",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 2
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 56
+        },
+        {
+          "character": "c",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "c",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "d",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "d",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 33
+        },
+        {
+          "character": "d",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "d",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 1
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 2
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 2
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 2
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 116
+        },
+        {
+          "character": "e",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "e",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 20
+        },
+        {
+          "character": "f",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "f",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 22
+        },
+        {
+          "character": "f",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "g",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 1
+        },
+        {
+          "character": "g",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 22
+        },
+        {
+          "character": "g",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "g",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "h",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "h",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "h",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "h",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "h",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 26
+        },
+        {
+          "character": "h",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "h",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "i",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 3
+        },
+        {
+          "character": "i",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "i",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "i",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 107
+        },
+        {
+          "character": "i",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 8
+        },
+        {
+          "character": "i",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 11
+        },
+        {
+          "character": "k",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 5
+        },
+        {
+          "character": "k",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "k",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "l",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": "l",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "l",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 79
+        },
+        {
+          "character": "l",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 8
+        },
+        {
+          "character": "m",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 1
+        },
+        {
+          "character": "m",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 48
+        },
+        {
+          "character": "m",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 5
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 3
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 2
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 78
+        },
+        {
+          "character": "n",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "n",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 21
+        },
+        {
+          "character": "o",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 2
+        },
+        {
+          "character": "o",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "o",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "o",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "o",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 117
+        },
+        {
+          "character": "o",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "o",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 13
+        },
+        {
+          "character": "p",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 34
+        },
+        {
+          "character": "p",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "p",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "q",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "r",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 1
+        },
+        {
+          "character": "r",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "r",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "r",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "r",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa2303951",
+          "count": 1
+        },
+        {
+          "character": "r",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 98
+        },
+        {
+          "character": "r",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "r",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 12
+        },
+        {
+          "character": "s",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 2
+        },
+        {
+          "character": "s",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/15710956",
+          "count": 1
+        },
+        {
+          "character": "s",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "s",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 76
+        },
+        {
+          "character": "s",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 7
+        },
+        {
+          "character": "s",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 13
+        },
+        {
+          "character": "t",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 1
+        },
+        {
+          "character": "t",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24385182",
+          "count": 1
+        },
+        {
+          "character": "t",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/24746000",
+          "count": 1
+        },
+        {
+          "character": "t",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/25684586",
+          "count": 1
+        },
+        {
+          "character": "t",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29331313",
+          "count": 1
+        },
+        {
+          "character": "t",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 99
+        },
+        {
+          "character": "t",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "t",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 18
+        },
+        {
+          "character": "u",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.lung.org/getmedia/e6be8c67-a793-44a8-bd7c-96629e57c20d/fy22-ala-respiratory-medication-chart-final_rev2_7-20-2022.pdf",
+          "count": 1
+        },
+        {
+          "character": "u",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 45
+        },
+        {
+          "character": "u",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 5
+        },
+        {
+          "character": "v",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed/30376188",
+          "count": 1
+        },
+        {
+          "character": "v",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=25705944",
+          "count": 1
+        },
+        {
+          "character": "v",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=26490945",
+          "count": 1
+        },
+        {
+          "character": "v",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 15
+        },
+        {
+          "character": "v",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 3
+        },
+        {
+          "character": "w",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "w",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "x",
+          "bold": false,
+          "italic": false,
+          "href": "https://www.mdcalc.com/calc/3916/bode-index-copd-survival",
+          "count": 1
+        },
+        {
+          "character": "x",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 10
+        },
+        {
+          "character": "x",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "x",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 4
+        },
+        {
+          "character": "y",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 27
+        },
+        {
+          "character": "y",
+          "bold": true,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "z",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "β",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 2
+        },
+        {
+          "character": "↑",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "↑",
+          "bold": false,
+          "italic": true,
+          "href": null,
+          "count": 1
+        },
+        {
+          "character": "↓",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 6
+        },
+        {
+          "character": "≤",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 5
+        },
+        {
+          "character": "≥",
+          "bold": false,
+          "italic": false,
+          "href": null,
+          "count": 1
+        }
+      ],
+      "diagnosisPanelTouched": false,
+      "sourceVisuallyVerifiedAtDpi": 175,
+      "scope": "Only stable management and inhaled-therapy sections on PDF47; no production edits."
+    },
+    "clinicalGuidanceUpdated": false
   }
 }

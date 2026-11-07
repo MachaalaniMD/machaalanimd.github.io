@@ -1,4 +1,4 @@
-import {readingPlans} from './reading-plans.mjs?v=20261105-annotations';
+import {readingPlans} from './reading-plans.mjs?v=20261107-cardiopulm';
 export const textOf=runs=>runs.map(r=>r.t).join('');
 export function sliceRuns(runs,start,end){let at=0;return runs.flatMap(r=>{const a=Math.max(0,start-at),b=Math.min(r.t.length,end-at);at+=r.t.length;return b>a?[{...r,t:r.t.slice(a,b)}]:[];});}
 const citationPattern=/(?:19|20)\d{2}|pubmed|doi:|guidelines|Harrison[’']s|Pink Book|\b(?:NEJM|JAMA|Lancet|Circulation)\b/i;
@@ -14,9 +14,9 @@ export function splitHeading(runs){
  let at=0,main=[];for(const[a,b]of merged){main.push(...sliceRuns(runs,at,a));at=b;}main.push(...sliceRuns(runs,at,text.length));
  return {main,references:merged.map(([a,b])=>sliceRuns(runs,a,b)),text:textOf(main).replace(/\s+/g,' ').replace(/^[\s|:–—-]+|[\s|–—-]+$/g,'')};
 }
-const acronyms=new Set('DM HLD CVD CA HPV RSV MMR PCV15 PPSV23 PCV20 COVID-19 CT MRI PET CTA MRA MRCP ERCP EGD EUS CXR ABG VBG PFT PFTs PPM SND AVB SVT VT VF WPW LBBB RBBB LAFB LPFB LUTS OHS OSA CPAP BiPAP SpO2 PaO2 FiO2 HFNC NIPPV CPP CCM ICD GFR TMA TTP ITP MTC MEN2 AI AKI CKD GDMT HF HFrEF HFpEF HFmrEF HFimpEF HIV HBV HCV AAA DKA HHS ARDS COPD ICU SDU CCU IV PO TTM ACLS AV LV RV EF PPX BP HTN IDA TTE TEE ECG EKG VTE PE DVT ACS MI STEMI NSTEMI TIA CNS PNS SLE RA GI IBD IBS GERD PUD PPI INR PTT UFH LMWH DOAC LDL HDL ASCVD BMI A1C TSH T4 T3 CSF RBC WBC ANC MDS MPN AML ALL CLL CML GBM ANCA MRSA MSSA AIN ATN HRS BPH NAFLD NASH MASLD ASH HSV VZV TB UTI HAP VAP CAP CGRP JAK CAR-T'.split(' '));
+const acronyms=new Set('WHO GOLD HAVB DM HLD CVD CA HPV RSV MMR PCV15 PPSV23 PCV20 COVID-19 CT MRI PET CTA MRA MRCP ERCP EGD EUS CXR ABG VBG PFT PFTs PPM SND AVB SVT VT VF WPW LBBB RBBB LAFB LPFB LUTS OHS OSA CPAP BiPAP SpO2 PaO2 FiO2 HFNC NIPPV CPP CCM ICD GFR TMA TTP ITP MTC MEN2 AI AKI CKD GDMT HF HFrEF HFpEF HFmrEF HFimpEF HIV HBV HCV AAA DKA HHS ARDS COPD ICU SDU CCU IV PO TTM ACLS AV LV RV EF PPX BP HTN IDA TTE TEE ECG EKG VTE PE DVT ACS MI STEMI NSTEMI TIA CNS PNS SLE RA GI IBD IBS GERD PUD PPI INR PTT UFH LMWH DOAC LDL HDL ASCVD BMI A1C TSH T4 T3 CSF RBC WBC ANC MDS MPN AML ALL CLL CML GBM ANCA MRSA MSSA AIN ATN HRS BPH NAFLD NASH MASLD ASH HSV VZV TB UTI HAP VAP CAP CGRP JAK CAR-T'.split(' '));
 const canonicalAcronyms=new Map([...acronyms].map(w=>[w.toLowerCase(),w]));
-export function cleanTitle(text){const t=splitHeading([{t:text}]).text;if(t===t.toUpperCase()&&/[A-Z]/.test(t))return t.replace(/[A-Za-z][A-Za-z0-9-]*/g,w=>canonicalAcronyms.get(w.toLowerCase())||w[0]+w.slice(1).toLowerCase());return t.replace(/[A-Za-z][A-Za-z0-9-]*/g,w=>canonicalAcronyms.get(w.toLowerCase())||w);}
+export function cleanTitle(text){const t=splitHeading([{t:text}]).text;if(t===t.toUpperCase()&&/[A-Z]/.test(t))return t.replace(/[A-Za-z][A-Za-z0-9-]*/g,w=>w.split('-').map(part=>canonicalAcronyms.get(part.toLowerCase())||part[0]+part.slice(1).toLowerCase()).join('-'));return t.replace(/[A-Za-z][A-Za-z0-9-]*/g,w=>w.split('-').map(part=>canonicalAcronyms.get(part.toLowerCase())||part).join('-'));}
 function compact(s){return s.normalize('NFKC').replace(/\s/g,'');}
 function positions(s){let value='',map=[];for(let i=0;i<s.length;){const ch=String.fromCodePoint(s.codePointAt(i));for(const c of ch.normalize('NFKC'))if(!/\s/.test(c)){value+=c;for(let k=0;k<c.length;k++)map.push(i);}i+=ch.length;}map.push(s.length);return {value,map};}
 const positive=readingPlans.positive.map(p=>({...p,key:compact(p.exactOriginalText)}));const negative=new Set(readingPlans.negative.map(p=>`${p.page}:${compact(p.exactOriginalText)}`));
@@ -40,6 +40,8 @@ export function enumerationPlan(runs,context={}){
  return {id:'source-emphasized-siblings',prefix:[0,siblings[0].start],items:siblings.map((l,i)=>[l.start,siblings[i+1]?.start??text.length]),suffix:[text.length,text.length],reviewed:false};
 }
 export function tableSizing(table){
+ if(table.columnWidths?.length===table.cols&&table.columnWidths.every(n=>Number.isFinite(n)&&n>=60&&n<=700))return table.columnWidths;
+
  const cols=Array.from({length:table.cols},()=>({body:[],words:[],image:false}));
  const plain=bs=>bs.map(b=>b.runs?textOf(b.runs):b.type==='columns'?b.columns.map(plain).join(' '):b.blocks?plain(b.blocks):b.type==='table'?b.cells.map(c=>plain(c.blocks)).join(' '):'').join(' ');
  const hasImage=bs=>bs.some(b=>b.type==='figure'||b.blocks&&hasImage(b.blocks)||(b.columns||[]).some(hasImage));

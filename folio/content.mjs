@@ -1,6 +1,6 @@
-import {screeningGroups} from './screening.mjs?v=20261107-screening';
-import {textOf,sliceRuns,splitHeading,cleanTitle,enumerationPlan,tableSizing} from './reading.mjs?v=20261107-screening';
-import {noteDomId} from './notes.mjs?v=20261107-screening';
+import {screeningGroups} from './screening.mjs?v=20261107-cardiopulm';
+import {textOf,sliceRuns,splitHeading,cleanTitle,enumerationPlan,tableSizing} from './reading.mjs?v=20261107-cardiopulm';
+import {noteDomId} from './notes.mjs?v=20261107-cardiopulm';
 export const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const esc=escapeHtml;
 export function renderRuns(runs=[],context={}){return runs.map(r=>{let text=esc(r.t);if(r.u&&!r.href)text=`<span class="source-underline">${text}</span>`;if(r.b)text=`<strong>${text}</strong>`;if(r.i)text=`<em>${text}</em>`;const target=noteDomId(r.noteId,context),ref=noteDomId(r.noteRefId,context);if(target&&ref)text=`<a class="footnote-ref" href="#${esc(r.noteId)}" id="${esc(ref)}" data-note-target="${esc(target)}" aria-label="Footnote ${esc(r.t)}"><sup>${text}</sup></a>`;else if(r.href&&!/hospitalpolicies\.ellucid\.com/i.test(r.href)&&/^https?:\/\//.test(r.href))text=`<a href="${esc(r.href)}" target="_blank" rel="noreferrer">${text}</a>`;return text;}).join('');}

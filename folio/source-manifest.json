@@ -34,12 +34,12 @@
   "geographicScope": "Jurisdiction-specific material retains its original geographic scope and source date; it must not be assumed applicable everywhere.",
   "format": "semantic-html",
   "conversion": {
-    "tables": 309,
+    "tables": 310,
     "figures": 207,
     "nativeCharacters": 1353309,
     "verifiedNativePages": 266,
-    "date": "2026-11-05",
-    "sections": 807,
+    "date": "2026-11-07",
+    "sections": 809,
     "transcribedFigureTablePages": [
       30,
       47,
@@ -53,7 +53,7 @@
     "sourceStructureRegressionCases": 78,
     "sourceLineGeometryRetained": true
   },
-  "readingRevision": "20261105-annotations",
+  "readingRevision": "20261107-cardiopulm",
   "formattingChanges": [
     "Attribution consolidated in About → Source, including all printed contributor and acknowledgement names.",
     "Paper citations separated from section titles; original links retained.",
