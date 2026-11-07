@@ -55,3 +55,8 @@ const js=await readFile(new URL('../folio/folio.js',import.meta.url),'utf8');ass
 console.log('Verified visible ECG source characters, rotated labels and row associations, trauma exam rows, 86 separate note paragraphs, 24 source-reviewed marker links, repeated-symbol scopes, formula guards and focus-dialog IDs.');
 
 const uti=blocks(112).find(b=>b.id==='table-112-1');assert.ok(uti.cells.every(c=>!c.header));const utiHtml=renderBlocks([uti]);assert.match(utiHtml,/<ul>/);assert.match(blockText([uti]),/Uncomplicated UTI/);assert.ok(!/<th[ >]/.test(utiHtml));
+
+assert.ok(!renderBlocks([{type:'list-item',runs:[{t:'• .'}]}]).includes('<li>'));
+assert.ok(blocks(93).some(b=>b.type==='list-item'&&text(b).includes('must assume GFR <10 if')));
+assert.ok(blocks(187).some(b=>text(b).includes('immunosuppressant (rituximab')));
+assert.ok(blocks(108).some(b=>text(b).includes('coverage. ; emerging evidence')));

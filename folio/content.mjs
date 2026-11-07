@@ -1,5 +1,5 @@
-import {textOf,sliceRuns,splitHeading,cleanTitle,enumerationPlan,tableSizing} from './reading.mjs?v=20261105-annotations';
-import {noteDomId} from './notes.mjs?v=20261105-annotations';
+import {textOf,sliceRuns,splitHeading,cleanTitle,enumerationPlan,tableSizing} from './reading.mjs?v=20261106-punctuation';
+import {noteDomId} from './notes.mjs?v=20261106-punctuation';
 export const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const esc=escapeHtml;
 export function renderRuns(runs=[],context={}){return runs.map(r=>{let text=esc(r.t);if(r.u&&!r.href)text=`<span class="source-underline">${text}</span>`;if(r.b)text=`<strong>${text}</strong>`;if(r.i)text=`<em>${text}</em>`;const target=noteDomId(r.noteId,context),ref=noteDomId(r.noteRefId,context);if(target&&ref)text=`<a class="footnote-ref" href="#${esc(r.noteId)}" id="${esc(ref)}" data-note-target="${esc(target)}" aria-label="Footnote ${esc(r.t)}"><sup>${text}</sup></a>`;else if(r.href&&/^https?:\/\//.test(r.href))text=`<a href="${esc(r.href)}" target="_blank" rel="noreferrer">${text}</a>`;return text;}).join('');}
@@ -19,6 +19,7 @@ export function renderBlocks(blocks=[],context={}){
  let result=outer&&hasBranches(blocks)?'<div class="pathway-controls"><button data-toggle-branches aria-expanded="false">Expand all branches</button></div>':'';
  for(let i=0;i<blocks.length;i++){
   const b=blocks[i];
+  if(b.type==='list-item'&&/^\s*[•◦▪]\s*[.;,]\s*$/.test(textOf(b.runs)))continue;
   if(b.footnote){const id=noteDomId(b.footnote.id,context),refs=b.footnote.refs||[];result+=`<p class="clinical-footnote" id="${esc(id)}" tabindex="-1">${renderRuns(b.runs,context)}${refs.length?` <span class="footnote-returns">${refs.map((ref,j)=>`<a class="footnote-back" href="#${esc(ref)}" data-note-target="${esc(noteDomId(ref,context))}" aria-label="Return to reference ${j+1} for footnote ${esc(b.footnote.marker)}">↩${refs.length>1?j+1:''}</a>`).join(' ')}</span>`:''}</p>`;continue;}
   if(b.flowArrowBefore)result+='<div class="flow-arrow" aria-hidden="true">↓</div>';
   if(b.type==='paragraph'){const inner=prose(b.runs,context);result+=inner.includes('<ul')?`<div class="prose-group${b.style==='lead'?' source-lead':''}">${inner}</div>`:`<p${b.style==='lead'?' class="source-lead"':''}>${inner}</p>`;}

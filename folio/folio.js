@@ -1,4 +1,4 @@
-import {renderBlocks,escapeHtml as esc} from './content.mjs?v=20261105-annotations';
+import {renderBlocks,escapeHtml as esc} from './content.mjs?v=20261106-punctuation';
 import {cleanTitle} from './reading.mjs?v=20261105-annotations';
 import {attributionMarkup} from './about.mjs?v=20261105-annotations';
 import {notesForTable,walkBlocks} from './notes.mjs?v=20261105-annotations';
@@ -71,4 +71,4 @@ addEventListener('hashchange',route);addEventListener('keydown',e=>{if(e.key==='
 let printBranches=[];
 addEventListener('beforeprint',()=>{printBranches=[...document.querySelectorAll('.pathway-branch')].map(el=>({el,open:el.open}));printBranches.forEach(({el})=>el.open=true);});
 addEventListener('afterprint',()=>{printBranches.forEach(({el,open})=>el.open=open);printBranches=[];});
-try{const response=await fetch('catalog.json?v=20261106-flow');if(!response.ok)throw Error('Catalog unavailable');catalog=await response.json();route();}catch(e){main.innerHTML='<div class="empty"><h1>The collection could not be loaded.</h1><p>Reload the page to try again.</p><button onclick="location.reload()">Reload</button></div>';}
+try{const response=await fetch('catalog.json?v=20261106-punctuation');if(!response.ok)throw Error('Catalog unavailable');catalog=await response.json();route();}catch(e){main.innerHTML='<div class="empty"><h1>The collection could not be loaded.</h1><p>Reload the page to try again.</p><button onclick="location.reload()">Reload</button></div>';}
