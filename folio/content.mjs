@@ -1,8 +1,9 @@
-import {textOf,sliceRuns,splitHeading,cleanTitle,enumerationPlan,tableSizing} from './reading.mjs?v=20261106-navigation';
-import {noteDomId} from './notes.mjs?v=20261106-navigation';
+import {screeningGroups} from './screening.mjs?v=20261107-screening';
+import {textOf,sliceRuns,splitHeading,cleanTitle,enumerationPlan,tableSizing} from './reading.mjs?v=20261107-screening';
+import {noteDomId} from './notes.mjs?v=20261107-screening';
 export const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const esc=escapeHtml;
-export function renderRuns(runs=[],context={}){return runs.map(r=>{let text=esc(r.t);if(r.u&&!r.href)text=`<span class="source-underline">${text}</span>`;if(r.b)text=`<strong>${text}</strong>`;if(r.i)text=`<em>${text}</em>`;const target=noteDomId(r.noteId,context),ref=noteDomId(r.noteRefId,context);if(target&&ref)text=`<a class="footnote-ref" href="#${esc(r.noteId)}" id="${esc(ref)}" data-note-target="${esc(target)}" aria-label="Footnote ${esc(r.t)}"><sup>${text}</sup></a>`;else if(r.href&&/^https?:\/\//.test(r.href))text=`<a href="${esc(r.href)}" target="_blank" rel="noreferrer">${text}</a>`;return text;}).join('');}
+export function renderRuns(runs=[],context={}){return runs.map(r=>{let text=esc(r.t);if(r.u&&!r.href)text=`<span class="source-underline">${text}</span>`;if(r.b)text=`<strong>${text}</strong>`;if(r.i)text=`<em>${text}</em>`;const target=noteDomId(r.noteId,context),ref=noteDomId(r.noteRefId,context);if(target&&ref)text=`<a class="footnote-ref" href="#${esc(r.noteId)}" id="${esc(ref)}" data-note-target="${esc(target)}" aria-label="Footnote ${esc(r.t)}"><sup>${text}</sup></a>`;else if(r.href&&!/hospitalpolicies\.ellucid\.com/i.test(r.href)&&/^https?:\/\//.test(r.href))text=`<a href="${esc(r.href)}" target="_blank" rel="noreferrer">${text}</a>`;return text;}).join('');}
 function listRuns(runs){const text=textOf(runs);const m=text.match(/^\s*(?:[•▪◦●○]|o(?=\s)|[-–](?!\d)|(?:\d+|[a-z])[.)](?=\s))\s*/);return sliceRuns(runs,m?m[0].length:0,text.length);}
 function prose(runs,context,isList=false){
  const plan=enumerationPlan(runs,context),display=rs=>renderRuns(isList?listRuns(rs):rs,context);
@@ -19,22 +20,25 @@ export function renderBlocks(blocks=[],context={}){
  let result=outer&&hasBranches(blocks)?'<div class="pathway-controls"><button data-toggle-branches aria-expanded="false">Expand all branches</button></div>':'';
  for(let i=0;i<blocks.length;i++){
   const b=blocks[i];
+  if(b.style==='omission-artifact'||b.runs&&/^[\s.,”“";:]+$/.test(textOf(b.runs)))continue;
   if(b.type==='list-item'&&/^\s*[•◦▪]\s*[.;,]\s*$/.test(textOf(b.runs)))continue;
   if(b.footnote){const id=noteDomId(b.footnote.id,context),refs=b.footnote.refs||[];result+=`<p class="clinical-footnote" id="${esc(id)}" tabindex="-1">${renderRuns(b.runs,context)}${refs.length?` <span class="footnote-returns">${refs.map((ref,j)=>`<a class="footnote-back" href="#${esc(ref)}" data-note-target="${esc(noteDomId(ref,context))}" aria-label="Return to reference ${j+1} for footnote ${esc(b.footnote.marker)}">↩${refs.length>1?j+1:''}</a>`).join(' ')}</span>`:''}</p>`;continue;}
   if(b.flowArrowBefore)result+='<div class="flow-arrow" aria-hidden="true">↓</div>';
-  if(b.type==='paragraph'){const inner=prose(b.runs,context);result+=inner.includes('<ul')?`<div class="prose-group${b.style==='lead'?' source-lead':''}">${inner}</div>`:`<p${b.style==='lead'?' class="source-lead"':''}>${inner}</p>`;}
+  if(b.type==='paragraph'){const inner=b.displayText?esc(b.displayText):prose(b.displayRuns||b.runs,context);result+=inner.includes('<ul')?`<div class="prose-group${b.style==='lead'?' source-lead':''}">${inner}</div>`:`<p${b.style==='lead'?' class="source-lead"':''}>${inner}</p>`;}
   else if(b.type==='heading')result+=heading(b.runs,context);
   else if(b.type==='list-item'){
    const kind=block=>/^\s*\d+[.)]\s/.test(textOf(block.runs))?'number':/^\s*[a-z][.)]\s/.test(textOf(block.runs))?'letter':'bullet';
    const mode=kind(b),tag=mode==='bullet'?'ul':'ol';let items='';
-   do{const item=blocks[i],sourceText=textOf(item.runs),marker=sourceText.match(/^\s*(\d+|[a-z])[.)]\s/),value=marker?(mode==='letter'?marker[1].charCodeAt(0)-96:Number(marker[1])):null,subpoint=/^\s*[◦○o]\s/.test(sourceText);items+=`<li${value?` value="${value}"`:''}${subpoint?' class="subpoint"':''}${item.sourceIndent!==undefined?` style="margin-left:${Math.min(3,item.sourceIndent/18)}em"`:''}>${prose(item.runs,context,true)}</li>`;i++;}while(i<blocks.length&&blocks[i].type==='list-item'&&kind(blocks[i])===mode);i--;
+   do{const item=blocks[i],sourceText=textOf(item.runs),marker=sourceText.match(/^\s*(\d+|[a-z])[.)]\s/),value=marker?(mode==='letter'?marker[1].charCodeAt(0)-96:Number(marker[1])):null,subpoint=/^\s*[◦○o]\s/.test(sourceText);if(!/^\s*[•◦▪]\s*[.;,”“]+\s*$/.test(sourceText))items+=`<li${value?` value="${value}"`:''}${subpoint?' class="subpoint"':''}${item.sourceIndent!==undefined?` style="margin-left:${Math.min(3,item.sourceIndent/18)}em"`:''}>${item.displayText?esc(item.displayText):prose(item.displayRuns||item.runs,context,true)}</li>`;i++;}while(i<blocks.length&&blocks[i].type==='list-item'&&kind(blocks[i])===mode);i--;
    result+=`<${tag}${mode==='letter'?' type="a"':''}>${items}</${tag}>`;
   }else if(b.type==='columns')result+=`<div class="${b.columns.every(col=>col.length===1&&col[0].branchLabel)?'branch-columns':'text-columns'}">${b.columns.map(col=>`<div>${renderBlocks(col,context)}</div>`).join('')}</div>`;
   else if(b.type==='callout'){
    if(b.branchLabel){const first=b.blocks[0],hasLabel=first?.runs&&textOf(first.runs).trim().toLowerCase()===b.branchLabel.toLowerCase();result+=`<details class="pathway-branch" data-question="${esc(b.question||'')}"><summary><span class="branch-label">${hasLabel?renderRuns(first.runs,context):esc(b.branchLabel)}</span><span>${esc(b.question||'')}</span></summary><div class="branch-content">${renderBlocks(hasLabel?b.blocks.slice(1):b.blocks,context)}</div></details>`;}
    else{const first=b.blocks[0],hasCondition=b.conditionLabel&&first?.runs&&textOf(first.runs).trim().toLowerCase()===b.conditionLabel.toLowerCase();result+=`<div class="source-callout">${hasCondition?`<div class="callout-condition"><strong class="branch-label">${renderRuns(first.runs,context)}</strong><span>${esc(b.conditionQuestion)}</span></div>`:''}${renderBlocks(hasCondition?b.blocks.slice(1):b.blocks,context)}</div>`;}
   }
-  else if(b.type==='table'){
+  else if(b.type==='table'&&b.presentation==='screening-cards'&&context.screeningCards){
+   result+=`<div class="screening-tools"><button data-table="${esc(b.id)}">Expand table ↗</button></div><div class="screening-cards">${screeningGroups(b).map(g=>g.band?`<div class="screening-band">${renderBlocks(g.band,context)}</div>`:`<section class="screening-card"><div class="screening-card-title">${renderBlocks([{type:'heading',runs:g.label.flatMap((b,i)=>[...(i?[{t:' '}]:[]),...(b.runs||[])])}],context)}</div>${g.parts.map(part=>`<div class="screening-age-band"><div class="screening-age-label">Ages shown: ${esc(part.ages.join(' · '))}</div>${renderBlocks(part.blocks,context)}</div>`).join('')}</section>`).join('')}</div>`;
+  }else if(b.type==='table'){
    const first=b.cells.filter(c=>c.row===0),titleCell=b.rows>1&&first.length===1&&first[0].colspan===b.cols&&first[0].rowspan===1&&first[0].blocks.length===1&&['paragraph','heading'].includes(first[0].blocks[0].type)&&blockText(first[0].blocks).length<240?first[0]:null;
    const tableTitle=titleCell?splitHeading(titleCell.blocks[0].runs):null;if(tableTitle)context.references.push(...tableTitle.references);
    const label=cleanTitle(tableTitle?.text||b.caption||context.title||'Table'),sizes=tableSizing(b);

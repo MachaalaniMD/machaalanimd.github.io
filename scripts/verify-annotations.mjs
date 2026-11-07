@@ -63,3 +63,7 @@ assert.ok(blocks(108).some(b=>text(b).includes('coverage. ; emerging evidence'))
 
 const oxygenTable=blocks(44).find(b=>b.id==='table-44-1');assert.equal(oxygenTable.rows,8);assert.ok(!blockText([oxygenTable]).includes('Target SpO2'));assert.ok(blocks(44).some(b=>b.type==='list-item'&&text(b).includes('Target SpO2')));
 assert.ok(!js.includes("['assessment','Assessment']"));assert.ok(js.includes('aria-label="Sections in this topic"'));
+
+const screening=page(210).panels[0].blocks.find(b=>b.type==='table');const cards=renderBlocks([screening],{screeningCards:true});assert.match(cards,/class="screening-card"/);assert.match(cards,/Ages shown:/);assert.ok(!cards.includes('<table'));assert.ok(renderBlocks([screening],{screeningCards:false}).includes('<table'));
+assert.ok(!renderRuns([{t:'local policy',href:'https://hospitalpolicies.ellucid.com/test'}]).includes('href='));
+const respiratory=renderBlocks(page(42).panels.flatMap(s=>s.blocks));assert.ok(respiratory.includes('Have following information ready prior to intubation'));assert.ok(!respiratory.includes('” : have following'));
