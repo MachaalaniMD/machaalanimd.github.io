@@ -44,3 +44,5 @@ assert.ok(tables(237)[0].cells.every(c=>!c.header),'A continuation body row is n
 const sizing=tableSizing({cols:2,cells:[{col:0,colspan:1,blocks:[{type:'paragraph',runs:[{t:'2'}]}]},{col:1,colspan:1,blocks:[{type:'paragraph',runs:[{t:'A long clinical explanation. '.repeat(15)}]}]}]});assert.ok(sizing[1]>=300&&sizing[1]>sizing[0]);
 const rendered=renderBlocks([dm],{title:'Non-insulin agents'});assert.match(rendered,/data-table="table-174-1"/);assert.match(rendered,/<colgroup>/);assert.ok(!/<th[^>]*><h3>/.test(rendered),'Column labels reflow together');
 console.log('Verified centralized credits, clean citation headings, 20 source-reviewed subtype groups and 9 conditional guards, repaired table shapes, punctuation and medication associations.');
+
+assert.equal(cleanTitle('CT CHEST'),'CT Chest');assert.equal(cleanTitle('Ct Chest'),'CT Chest');assert.equal(cleanTitle('HFREF MANAGEMENT'),'HFrEF Management');

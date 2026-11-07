@@ -60,3 +60,6 @@ assert.ok(!renderBlocks([{type:'list-item',runs:[{t:'• .'}]}]).includes('<li>'
 assert.ok(blocks(93).some(b=>b.type==='list-item'&&text(b).includes('must assume GFR <10 if')));
 assert.ok(blocks(187).some(b=>text(b).includes('immunosuppressant (rituximab')));
 assert.ok(blocks(108).some(b=>text(b).includes('coverage. ; emerging evidence')));
+
+const oxygenTable=blocks(44).find(b=>b.id==='table-44-1');assert.equal(oxygenTable.rows,8);assert.ok(!blockText([oxygenTable]).includes('Target SpO2'));assert.ok(blocks(44).some(b=>b.type==='list-item'&&text(b).includes('Target SpO2')));
+assert.ok(!js.includes("['assessment','Assessment']"));assert.ok(js.includes('aria-label="Sections in this topic"'));
