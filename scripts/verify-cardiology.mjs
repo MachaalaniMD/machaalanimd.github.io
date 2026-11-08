@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {cardiologyContents,cardiologyEntries,cardiologyMarkup,searchCardiology} from '../folio/cardiology.mjs';
+const fixture=JSON.parse(await readFile(new URL('../tests/cardiology-toc-cases.json',import.meta.url),'utf8'));
+assert.equal(cardiologyContents.sourceSha256,fixture.sourceSha256);assert.equal(cardiologyContents.sections.length,7);assert.equal(cardiologyEntries.length,59);
+assert.equal(new Set(cardiologyEntries.map(n=>n.id)).size,59);
+assert.deepEqual(cardiologyEntries.map(n=>({title:n.title,page:n.page,level:n.ancestors.length,tocPdfPage:n.tocPdfPage})),fixture.entries);
+assert.deepEqual(cardiologyEntries.filter(n=>n.title==='Electrophysiology Studies and Procedures').map(n=>n.page),[104,112]);
+const management=cardiologyEntries.find(n=>n.title==='Management');assert.equal(management.children.length,4);
+const vte=cardiologyEntries.find(n=>n.title==='Venous Thromboembolism');assert.equal(vte.children.length,3);
+const leaf=cardiologyEntries.find(n=>n.title==='HFpEF');assert.match(cardiologyMarkup(leaf.id),/Chapter content to follow/);assert.match(cardiologyMarkup(leaf.id),/Book page 45/);
+assert.match(cardiologyMarkup(),/7 sections/);assert.match(cardiologyMarkup('invalid-id'),/Chapter not found/);
+assert.equal(searchCardiology('transplant').length,1);assert.equal(searchCardiology('does-not-exist').length,0);assert.ok(!cardiologyMarkup('', '<script>').includes('<script>'));
+for(const n of cardiologyEntries)assert.ok(!cardiologyMarkup(n.id).includes('undefined'));
+console.log('Verified all 59 TOC entries, seven sections, nested chapter ownership, duplicate titles/page numbers, scoped search, deep links and honest chapter placeholders.');

@@ -67,3 +67,5 @@ console.log(`Verified ${topics.length} topics, ${pages.length} source pages, ${b
 await import('./verify-reading.mjs');
 await import('./verify-compact.mjs');
 await import('./verify-annotations.mjs');
+
+await import('./verify-cardiology.mjs');

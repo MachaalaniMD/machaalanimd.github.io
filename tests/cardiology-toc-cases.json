@@ -1,0 +1,359 @@
+{
+  "sourceSha256": "acab068fc02f2cf82b3692f67718629d0f21621191209b1ebfe3ea623ceae9ea",
+  "entries": [
+    {
+      "title": "INTRODUCTION TO INPATIENT CARDIOLOGY",
+      "page": 6,
+      "level": 0,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "CCU & SDU Rotation Overview",
+      "page": 6,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Overview of Cardiac Procedures Relevant to CCU/SDU Patients:",
+      "page": 9,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "ACUTE CORONARY SYNDROMES AND ISCHEMIC HEART DISEASE",
+      "page": 11,
+      "level": 0,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Classification",
+      "page": 11,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Diagnosis",
+      "page": 12,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Management",
+      "page": 17,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "ACS – pharmacologic management",
+      "page": 18,
+      "level": 2,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Coronary Angiography and Percutaneous Coronary Intervention (PCI)",
+      "page": 23,
+      "level": 2,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Post-Cath Care",
+      "page": 28,
+      "level": 2,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Cardiopulmonary Bypass Grafting (CABG)",
+      "page": 29,
+      "level": 2,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Post-MI Complications",
+      "page": 30,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Special Populations",
+      "page": 34,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "HEART FAILURE",
+      "page": 38,
+      "level": 0,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "DEFINITIONS",
+      "page": 38,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "HISTORY & INITIAL ASSESSMENT",
+      "page": 39,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "CLASSIFICATION",
+      "page": 40,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "ETIOLOGY",
+      "page": 40,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "HFpEF",
+      "page": 45,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "ACUTE RIGHT VENTRICULAR FAILURE (RV FAILURE)",
+      "page": 50,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "ADVANCED THERAPIES FOR CARDIOGENIC SHOCK: MECHANICAL CIRCULATORY SUPPORT (MCS)",
+      "page": 51,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "INTRA-AORTIC BALLOON PUMP (IABP)",
+      "page": 52,
+      "level": 2,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "ADVANCED THERAPY: LONG-TERM DURABLE MECHANICAL CIRCULATORY SUPPORT (LT-MCS)",
+      "page": 54,
+      "level": 2,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "ORTHOTOPIC HEART TRANSPLANT",
+      "page": 56,
+      "level": 2,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "ARRHYTHMIAS AND ELECTROPHYSIOLOGY",
+      "page": 62,
+      "level": 0,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Narrow Complex Tachycardias",
+      "page": 62,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Wide Complex Tachycardias",
+      "page": 79,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Conduction Diseases and Bradyarrhythmias",
+      "page": 86,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Device Therapy",
+      "page": 91,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Electrophysiology Studies and Procedures",
+      "page": 104,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Quick Reference Guide: Arrhythmias and Electrophysiology",
+      "page": 109,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Electrophysiology Studies and Procedures",
+      "page": 112,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Quick Reference Guide: Arrhythmias and Electrophysiology",
+      "page": 119,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "VALVULAR HEART DISEASE",
+      "page": 123,
+      "level": 0,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Aortic Stenosis (AS)",
+      "page": 123,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Aortic Regurgitation (AR)",
+      "page": 128,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Mitral Regurgitation (MR)",
+      "page": 133,
+      "level": 1,
+      "tocPdfPage": 1
+    },
+    {
+      "title": "Mitral Stenosis (MS)",
+      "page": 140,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Tricuspid Regurgitation (TR)",
+      "page": 144,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "VASCULAR MEDICINE",
+      "page": 146,
+      "level": 0,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Venous Thromboembolism",
+      "page": 146,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Deep Vein Thrombosis",
+      "page": 146,
+      "level": 2,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Pulmonary Embolism",
+      "page": 148,
+      "level": 2,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Catheter-associated thrombosis",
+      "page": 150,
+      "level": 2,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Peripheral Artery Disease",
+      "page": 151,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Renal Artery Stenosis",
+      "page": 154,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Aortic Aneurysm",
+      "page": 155,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Aortic Dissection",
+      "page": 158,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Quick Reference Guide: Vascular Medicine",
+      "page": 163,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Congenital Heart Disease",
+      "page": 167,
+      "level": 0,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "PATENT FORAMEN OVALE (PFO)",
+      "page": 168,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "ATRIAL SEPTAL DEFECT",
+      "page": 170,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "VENTRICULAR SEPTAL DEFECT",
+      "page": 171,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Basic Physiology of Pregnancy",
+      "page": 181,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "ACLS in Pregnancy",
+      "page": 182,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Cardiac Medications during pregnancy",
+      "page": 184,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Peripartum Cardiomyopathy (PPCM)",
+      "page": 184,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Arrhythmias in Pregnancy",
+      "page": 187,
+      "level": 1,
+      "tocPdfPage": 2
+    },
+    {
+      "title": "Pregnancy and Acute Coronary Syndrome",
+      "page": 187,
+      "level": 1,
+      "tocPdfPage": 2
+    }
+  ]
+}
