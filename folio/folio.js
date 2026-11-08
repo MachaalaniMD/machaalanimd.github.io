@@ -1,7 +1,7 @@
-import {renderBlocks,escapeHtml as esc} from './content.mjs?v=20261107-cardiopulm';
-import {cleanTitle} from './reading.mjs?v=20261107-cardiopulm';
-import {attributionMarkup} from './about.mjs?v=20261107-cardiopulm';
-import {notesForTable,walkBlocks} from './notes.mjs?v=20261107-cardiopulm';
+import {renderBlocks,escapeHtml as esc} from './content.mjs?v=20261107-collection';
+import {cleanTitle} from './reading.mjs?v=20261107-collection';
+import {attributionMarkup} from './about.mjs?v=20261107-collection';
+import {notesForTable,walkBlocks} from './notes.mjs?v=20261107-collection';
 import {scoreTopic as score} from './search.mjs';
 const main=document.querySelector('main'),$=s=>document.querySelector(s);
 let catalog,category='all',query='',view='browse',selected=null,activePanel='all',facet='all',saved=new Set(),zoomScale=1;
@@ -15,7 +15,7 @@ function updateSave(id){if(saved.has(id))saved.delete(id);else saved.add(id);$('
 function browseMarkup(){
  const isIndex=view==='browse'&&!query&&category==='all',chapter=catalog.categories.find(c=>c.id===category);
  const list=catalog.topics.filter(t=>(query||category==='all'||t.categoryId===category)&&(view!=='saved'||saved.has(t.id))).map(t=>({t,n:score(t,query)})).filter(x=>x.n>0).sort((a,b)=>query?b.n-a.n:catalog.topics.indexOf(a.t)-catalog.topics.indexOf(b.t)).map(x=>x.t);
- const title=query?'Find your next answer.':view==='saved'?'Your reading list.':chapter?chapter.title:'Medicine, within reach.';
+ const title=query?'Find your next answer.':view==='saved'?'Your reading list.':chapter?chapter.title:'A manual of medicine.';
  return `<section class="directory-intro"><div><div class="kicker">THE MEDICINE MANUAL</div><h1>${esc(title)}</h1><p>${isIndex?'Choose a system. Find a topic. Get to the part you need.':query?`Searching all ${catalog.metadata.topics} topics.`:view==='saved'?'A little space for the topics you want to come back to this session.':`${chapter?.count||list.length} topics to explore.`}</p></div><div class="collection-stamp"><strong>${catalog.metadata.topics}</strong><span>topics, thoughtfully organized</span></div></section>
  <section class="find-section"><div class="folio-search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="topic-search" type="search" autocomplete="off" aria-label="Search the manual" placeholder="Search a condition, medication or test…" value="${esc(query)}">${query?'<button id="clear-query" aria-label="Clear search">×</button>':'<kbd>/</kbd>'}</div></section>
  ${isIndex?`<section class="systems-directory" aria-labelledby="systems-title"><div class="directory-label"><h2 id="systems-title">Explore the systems</h2><span>${catalog.categories.length} chapters</span></div><div class="system-grid">${catalog.categories.map((c,i)=>`<button class="system-tile" data-category="${c.id}" aria-label="${esc(c.title)}, ${c.count} topics"><span class="system-number">${String(i+1).padStart(2,'0')}</span><span class="system-title">${esc(c.title)}</span><span class="system-count">${c.count}</span><span class="system-arrow" aria-hidden="true">↗</span></button>`).join('')}</div></section>`:
@@ -37,7 +37,7 @@ function bindReadingEvents(container){
 }
 function render(){
  if(!catalog)return;
- document.title=selected?`${selected.title} · Folio`:'Folio · Internal medicine, in focus';
+ document.title=selected?`${selected.title} · Folio`:'Folio · Internal medicine reference';
  main.innerHTML=selected?readerMarkup(selected):browseMarkup();
  $('#topic-search')?.addEventListener('input',e=>{const start=e.target.selectionStart;query=e.target.value;render();const next=$('#topic-search');next.focus();try{next.setSelectionRange(start,start);}catch{}});
  main.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>setHash(b.dataset.open)));
@@ -71,4 +71,4 @@ addEventListener('hashchange',route);addEventListener('keydown',e=>{if(e.key==='
 let printBranches=[];
 addEventListener('beforeprint',()=>{printBranches=[...document.querySelectorAll('.pathway-branch')].map(el=>({el,open:el.open}));printBranches.forEach(({el})=>el.open=true);});
 addEventListener('afterprint',()=>{printBranches.forEach(({el,open})=>el.open=open);printBranches=[];});
-try{const response=await fetch('catalog.json?v=20261107-cardiopulm');if(!response.ok)throw Error('Catalog unavailable');catalog=await response.json();route();}catch(e){main.innerHTML='<div class="empty"><h1>The collection could not be loaded.</h1><p>Reload the page to try again.</p><button onclick="location.reload()">Reload</button></div>';}
+try{const response=await fetch('catalog.json?v=20261107-collection');if(!response.ok)throw Error('Catalog unavailable');catalog=await response.json();route();}catch(e){main.innerHTML='<div class="empty"><h1>The collection could not be loaded.</h1><p>Reload the page to try again.</p><button onclick="location.reload()">Reload</button></div>';}
