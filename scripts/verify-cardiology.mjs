@@ -1,15 +1,23 @@
+import {cardiacProcedures,procedureRedactions} from '../folio/cardiac-procedures.mjs';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {cardiologyContents,cardiologyEntries,cardiologyMarkup,searchCardiology} from '../folio/cardiology.mjs';
+import {cardiologyContents,cardiologyEntries,cardiologyMarkup,searchCardiology,resolveCardiologyId} from '../folio/cardiology.mjs';
 const fixture=JSON.parse(await readFile(new URL('../tests/cardiology-toc-cases.json',import.meta.url),'utf8'));
-assert.equal(cardiologyContents.sourceSha256,fixture.sourceSha256);assert.equal(cardiologyContents.sections.length,7);assert.equal(cardiologyEntries.length,59);
-assert.equal(new Set(cardiologyEntries.map(n=>n.id)).size,59);
-assert.deepEqual(cardiologyEntries.map(n=>({title:n.title,page:n.page,level:n.ancestors.length,tocPdfPage:n.tocPdfPage})),fixture.entries);
+assert.equal(cardiologyContents.sourceSha256,fixture.sourceSha256);assert.equal(cardiologyContents.sections.length,7);assert.equal(cardiologyEntries.length,57);
+assert.equal(new Set(cardiologyEntries.map(n=>n.id)).size,57);
+assert.deepEqual(cardiologyEntries.slice(1).map(n=>({title:n.title,page:n.page,level:n.ancestors.length,tocPdfPage:n.tocPdfPage})),fixture.entries.slice(3));
 assert.deepEqual(cardiologyEntries.filter(n=>n.title==='Electrophysiology Studies and Procedures').map(n=>n.page),[104,112]);
 const management=cardiologyEntries.find(n=>n.title==='Management');assert.equal(management.children.length,4);
 const vte=cardiologyEntries.find(n=>n.title==='Venous Thromboembolism');assert.equal(vte.children.length,3);
 const leaf=cardiologyEntries.find(n=>n.title==='HFpEF');assert.match(cardiologyMarkup(leaf.id),/Chapter content to follow/);assert.match(cardiologyMarkup(leaf.id),/Book page 45/);
 assert.match(cardiologyMarkup(),/7 sections/);assert.match(cardiologyMarkup('invalid-id'),/Chapter not found/);
 assert.equal(searchCardiology('transplant').length,1);assert.equal(searchCardiology('does-not-exist').length,0);assert.ok(!cardiologyMarkup('', '<script>').includes('<script>'));
+const overview=cardiologyEntries[0];assert.equal(overview.title,'Overview of Cardiac Procedures');assert.equal(overview.children.length,0);assert.equal(overview.contentId,'cardiac-procedures');assert.equal(cardiacProcedures.length,4);
+assert.ok(!cardiologyEntries.some(n=>n.title==='CCU & SDU Rotation Overview'));assert.ok(!cardiologyEntries.some(n=>n.title==='Overview of Cardiac Procedures Relevant to CCU/SDU Patients:'));
+assert.equal(resolveCardiologyId('introduction-to-inpatient-cardiology-6'),overview.id);
+const page=cardiologyMarkup(overview.id);for(const term of ['MGH','Ellucid','Ellison 11','cardiac access fellow','Chapter content to follow'])assert.ok(!page.includes(term),term);
+for(const procedure of cardiacProcedures){assert.ok(page.includes(`id="procedure-${procedure.id}"`));assert.ok(procedure.items.some(i=>i.label==='Indications'));}
+for(const term of ['14F','180bpm','balloon deflated','bilateral neurovascular','1-6 weeks','2-5 mo'])assert.ok(page.includes(term),`Source phrase retained: ${term}`);
+assert.ok(procedureRedactions.length);assert.ok(searchCardiology('radiofrequency').some(n=>n.id===overview.id));
 for(const n of cardiologyEntries)assert.ok(!cardiologyMarkup(n.id).includes('undefined'));
-console.log('Verified all 59 TOC entries, seven sections, nested chapter ownership, duplicate titles/page numbers, scoped search, deep links and honest chapter placeholders.');
+console.log('Verified the requested introductory replacement, four procedure transcriptions/redactions, all remaining TOC entries, nested hierarchy, scoped search, links and remaining chapter placeholders.');

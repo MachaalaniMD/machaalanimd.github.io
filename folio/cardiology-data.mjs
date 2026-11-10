@@ -1,50 +1,24 @@
-// Structure transcribed from the supplied contents PDF; chapter text is not included.
+// Contents and supplied procedure text; changes to the original TOC are recorded below.
 export const cardiologyContents={
   "title": "Cardiology Reference",
-  "status": "contents-only",
+  "status": "partial-content",
   "sourceFile": "Cardiology Manual - TOC.pdf",
   "sourceSha256": "acab068fc02f2cf82b3692f67718629d0f21621191209b1ebfe3ea623ceae9ea",
   "sourcePages": 2,
   "sections": [
     {
-      "id": "introduction-to-inpatient-cardiology-6",
-      "title": "INTRODUCTION TO INPATIENT CARDIOLOGY",
-      "page": 6,
+      "id": "overview-of-cardiac-procedures",
+      "title": "Overview of Cardiac Procedures",
+      "page": 9,
       "tocPdfPage": 1,
-      "tocBox": [
-        36.02,
-        87.03,
-        575.83,
-        99.03
+      "children": [],
+      "contentId": "cardiac-procedures",
+      "replaces": [
+        "introduction-to-inpatient-cardiology-6",
+        "ccu-sdu-rotation-overview-6",
+        "overview-of-cardiac-procedures-relevant-to-ccu-sdu-patients-9"
       ],
-      "children": [
-        {
-          "id": "ccu-sdu-rotation-overview-6",
-          "title": "CCU & SDU Rotation Overview",
-          "page": 6,
-          "tocPdfPage": 1,
-          "tocBox": [
-            47.02,
-            107.28,
-            575.83,
-            118.28
-          ],
-          "children": []
-        },
-        {
-          "id": "overview-of-cardiac-procedures-relevant-to-ccu-sdu-patients-9",
-          "title": "Overview of Cardiac Procedures Relevant to CCU/SDU Patients:",
-          "page": 9,
-          "tocPdfPage": 1,
-          "tocBox": [
-            47.02,
-            126.8,
-            575.83,
-            137.8
-          ],
-          "children": []
-        }
-      ]
+      "material": "Two user-supplied screenshots; institution-specific references and workflows redacted."
     },
     {
       "id": "acute-coronary-syndromes-and-ischemic-heart-disease-11",
@@ -784,5 +758,15 @@ export const cardiologyContents={
       ]
     }
   ],
-  "tocNote": "Original hierarchy, wording, repeated titles and page numbers retained. Pregnancy entries follow Congenital Heart Disease in the supplied contents; no new parent heading has been inferred."
+  "tocNote": "Original contents order is retained except the introductory section and its two chapters, replaced by Overview of Cardiac Procedures at the user’s request. Other chapter text is not yet available.",
+  "procedureSourceImages": [
+    {
+      "file": "codex-clipboard-835c7c85-baf7-4892-a295-0de60b237bef.png",
+      "sha256": "c257daae743fe397288d557b5b525b794e901e1d9feb7e396b63a51ffc2710a2"
+    },
+    {
+      "file": "codex-clipboard-3b6b2b38-5fcb-4bf4-9135-bd4e82021526.png",
+      "sha256": "8597e7c006e916558341f5b1863e5c4359fcb349d5274449bbd108d4b9ab9a00"
+    }
+  ]
 };

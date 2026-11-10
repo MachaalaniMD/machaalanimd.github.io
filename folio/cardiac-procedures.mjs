@@ -1,0 +1,43 @@
+// Transcribed from the two user-supplied procedure screenshots. Local workflow redactions are recorded below.
+export const cardiacProcedures=[
+ {id:'coronary-angiography',title:'Coronary angiography +/- PCI',items:[
+  {label:'Indications',text:'Acute coronary syndromes, chronic coronary syndromes refractory to medical therapy or with high-risk features, workup of heart failure or unexplained ventricular tachycardia, others'},
+  {label:'Procedure overview',text:'Arterial access established via radial or femoral arteries, coronary ostia engaged with catheters and angiogram performed with injection of iodinated contrast under fluoroscopy. Functional assessment of stenotic lesions sometimes performed with fractional flow reserve (FFR) or instant wave free ratio (iFR) techniques. If indicated, stents will then be deployed, and the patient loaded with a P2Y12 inhibitor.'},
+  {label:'Pre-procedure planning',children:['NPO @ MN','Anti-coagulation management']},
+  {label:'Questions for pass-off',text:'**Procedure** (diagnostic findings and interventions), **Access** (Where and what size access was used? High stick? Do you want the sheaths pulled? When? By whom? At what PTT? Duration of bedrest? Closure devices used? TR band in place?), **Anticoagulation** (What was used in the case? Do you want heparin or bivalirudin restarted?), **Antiplatelets** (Was the patient loaded with a P2Y12? What should be ordered going forward?) **Complications**?'},
+  {label:'Post-procedure evaluation',text:'Check groin yourself for expansile mass, tenderness, bruit (suggestive of pseudoaneurysm). Document full bilateral neurovascular exam'},
+  {label:'Key complications to watch out for',text:'Access site bleeding, retroperitoneal hematoma, arterial pseudoaneurysm, limb ischemia, coronary perforation resulting in tamponade'},
+  {label:'Contingencies',text:'For an acute access site bleed, **hold pressure** proximal to arteriotomy (several cm proximal to skin puncture), page fellow who performed procedure'}
+ ],note:'For any procedural/access questions, first port-of-call for help should be cardiology or interventional cardiology fellow.'},
+ {id:'right-heart-catheterization',title:'Right Heart/Pulmonary Artery Catheterization',items:[
+  {label:'Indications',text:'Suspected cardiogenic shock, pulmonary hypertension, pericardial disease, worsening renal function in decompensated HF, others',children:['Must be inserted in cath lab (rather than bedside) if: LBBB, severe PH (PAP>70mmHg), large RV, PPM/ICD, tempwire, severe TR, prosthetic TV/PV','Contraindications: RA/RV mass/thrombosis, mechanical TV/PV, endocarditis (TV/PV)']},
+  {label:'Procedure Overview',text:'~8Fr venous sheath ("Cordis") inserted under ultrasound guidance in central vein (RIJ>LIJ>L subclav>femoral), pulmonary artery catheter inserted into SVC, balloon tip inflated, catheter advanced under fluoroscopy or while monitoring hemodynamic waveforms until wedge tracing obtained, balloon deflated, line then removed or secured in place'},
+  {label:'Pre-procedure Planning',children:['NPO @ MN','Considered a "low bleeding risk" procedure (relative to procedures requiring arterial access)','Need to decide and communicate to cath lab whether you want a one-time diagnostic RHC or "PA line to stay"']},
+  {label:'Questions for pass-off',text:'**Results** (i.e. hemodynamics measurements--be sure to note whether reported values were taken at end-expiration or as the mean value across the respiratory cycle), **Access** (Where and what size? Sheath still in place? Should they be pulled? By whom? At what PTT? Activity restrictions?), **Anticoagulation** (when to restart), **Complications**'},
+  {label:'Post-procedure evaluation',text:'Examine access site, if line left in place ensure balloon deflated and obtain CXR (waveform more useful than CXR to assess initial position but helpful to have a baseline in case of issues later)'},
+  {label:'Key complications to watch out for',text:'infection, bleeding, PTX, VT, RBBB, CHB, PA rupture (place patient on side with the catheter “bleeding side down”, order STAT CXR, CBC, coags, CT surgery consult), pulmonary infarct, PE'}
+ ]},
+ {id:'tavr',title:'TAVR (Transcatheter aortic valve replacement)',items:[
+  {label:'Indications',text:'Severe aortic stenosis with symptoms or other high-risk features (see Aortic Stenosis section for full list of indications)'},
+  {label:'Procedure Overview',text:'Femoral artery access obtained using a 14F sheath or greater, transvenous access obtained and RV pacing wire placed, guide wire placed across aortic valve and dilation performed, prosthesis moved into position under fluoro + TEE or TTE guidance, rapid ventricular pacing (>180bpm) initiated to decrease stroke volume, allowing valve to be deployed. Valve either self-expands (Medtronic CoreValve) or is expanded with a balloon (Edwards Sapien).'},
+  {label:'Pre-procedure Planning',children:['Standard pre-TAVR workup: TTE, coronary angiography +/- RHC, carotid duplex, CT surg consult, Panorex + dental evaluation','Note presence of pre-existing conduction disease, increasing the likelihood of pt requiring PPM post-TAVR','NPO @ MN for procedure','Anesthesia plan (MAC vs general)']},
+  {label:'Questions for pass-off',text:'**Results** (successful? Type and size of valve? Presence of paravalvular leak?), **Access** (Where and what size? Sheath still in place? Should they be pulled? By whom? At what PTT? Activity restrictions?), **Anticoagulation** (when to restart), **Antiplatelets** (what is antiplatelet plan? typically DAPT) **Complications** (Access site bleeding, paravalvular leak, new/worsening heart block)'},
+  {label:'Post-procedure evaluation',text:'Examine access sites, document peripheral pulses, EKG to assess for new/worsening heart block, screening neuro exam'},
+  {label:'Key complications',children:['"Big 5" TAVR Complications: Bleeding, stroke, paravalvular leak (PVL), AKI, Complete Heart Block','"Suicide LV": Acute LVOT obstruction resulting from relief of fixed afterload which unmasks increased contractility from chronically hypertrophied ventricle, resulting in reduced CO and shock (treat similar to hypertrophic cardiomyopathy with LVOT obstruction, i.e. fluids, beta blockers, phenylephrine)','Differential for shock after TAVR: Bleeding, aortic annular rupture, severe PVL, acute MI from inadvertent occlusion of coronary ostia, suicide LV (examine access sites, EKG, stat TTE)']}
+ ]},
+ {id:'pulmonary-vein-isolation',title:'Pulmonary vein isolation',items:[
+  {label:'Indications',text:'Symptomatic atrial fibrillation with failure or intolerance of anti-arrhythmic drugs'},
+  {label:'Procedure Overview',text:'Bilateral femoral venous access obtained, ablation catheters inserted from the RA->LA via atrial septal puncture, pulmonary veins isolated via radiofrequency or cryoablation. Additional lesions sometimes created such as a posterior wall isolation. Venous access sites often occluded with sutures locked in place via stopcocks.'},
+  {label:'Pre-procedure Planning',text:'Patients typically brought in by EP as outpatients'},
+  {label:'Questions for pass-off',text:"**Results** (PVI alone or additional lesions?) **Access and closure technique** (typically b/l femoral veins occluded with stopcocks), **Anticoagulation** (when to restart patient's DOAC or warfarin), **Complications** (any concern for perforation or effusion? TTE performed during procedure?) **Meds**: (Pred taper? Sucralfate?)"},
+  {label:'Post-procedure evaluation',text:'Examine groin sites, ensure stable blood pressure (high index of suspicion for perf+tamponade)'},
+  {label:'Key complications to watch out for',children:['Acute: Access site bleeding, stroke, perforation +/- tamponade (resulting from excessive overheating of atrial tissue or catheter puncture)','Subacute: atrio-esophageal fistula (presents with sepsis, endocarditis, air emboli, or GI bleeding 1-6 weeks after PVI), pulmonary vein stenosis (dyspnea, cough, hemoptysis 2-5 mo after PVI)','For any significant or sustained hypotension following PVI, page EP for consideration of formal TTE to r/o tamponade']}
+ ]}
+];
+export const procedureRedactions=[
+ 'MGH Cardiac Cath Lab Anticoagulation Guidelines and Ellucid attribution removed.',
+ 'RHC anticoagulant-hold direction tied to MGH cath lab guidelines removed; no replacement hold instruction added.',
+ 'CCU/Ellison 11 restrictions on retained PA catheters removed.',
+ 'Day/night cardiac access fellow coverage wording removed.',
+ 'SDU overnight admission workflow and local EP/general-cardiology echo coverage wording removed.'
+];
