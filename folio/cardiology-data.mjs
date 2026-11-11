@@ -758,7 +758,7 @@ export const cardiologyContents={
       ]
     }
   ],
-  "tocNote": "Original contents order is retained except the introductory section and its two chapters, replaced by Overview of Cardiac Procedures at the user’s request. Other chapter text is not yet available.",
+  "tocNote": "Original contents order is retained except the introductory section and its two chapters, replaced by Overview of Cardiac Procedures at the user’s request. Chapter text is available for Acute Coronary Syndromes and Ischemic Heart Disease.",
   "procedureSourceImages": [
     {
       "file": "codex-clipboard-835c7c85-baf7-4892-a295-0de60b237bef.png",

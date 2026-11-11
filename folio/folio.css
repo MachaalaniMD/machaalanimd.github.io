@@ -28,3 +28,15 @@ dialog{max-width:740px;width:calc(100% - 36px);padding:38px;border:1px solid #d4
 @media(max-width:760px){.cardiology-sections{grid-template-columns:1fr}.cardiology-intro h1{font-size:30px}.cardiology-section{padding:18px}.cardiology-search>span{display:none}.cardiology-entry{flex-wrap:wrap;gap:7px}.cardiology-entry span{font-size:11px}.cardiology-chapter{padding:17px;gap:13px}.cardiology-chapter strong{font-size:15px}.cardiology-page{gap:9px}.manual-switch{font-size:11px}.manual-switch>span{font-size:8px}.cardiology-intro{padding-top:22px}.cardiology-workspace .directory-label{align-items:flex-start}.cardiology-workspace .directory-label>span{font-size:10px;max-width:140px;text-align:right;line-height:1.5}}
 
 .procedure-navigation{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 22px}.procedure-navigation button{font-size:12px;line-height:1.5;padding:9px 12px;background:#eaf2f4;border:1px solid #d4e2e7;border-radius:8px;color:#426b79;text-align:left}.procedure-section{background:white;border:1px solid #d9e5e9;border-radius:13px;padding:25px 28px;margin-bottom:22px;scroll-margin-top:20px;outline:none}.procedure-section:focus{border-color:#8bb5c3}.procedure-section h2{font-size:23px;line-height:1.4;color:#2e5668;margin-bottom:21px}.procedure-section ul{padding-left:1.3em;margin:0}.procedure-section li{font-size:15px;line-height:1.65;color:#3f5362;margin:13px 0;padding-left:4px}.procedure-section li ul{margin-top:8px}.procedure-section li li{margin:7px 0;list-style-type:circle}.procedure-label{text-decoration:underline;text-decoration-color:#a1b8c3;text-underline-offset:3px}.procedure-section strong{font-weight:700}.procedure-note{font-weight:650;line-height:1.65;font-size:15px;color:#315265;border-top:1px solid #e2ebef;margin-top:22px;padding-top:17px}@media(max-width:760px){.procedure-section{padding:21px 18px}.procedure-section h2{font-size:21px}.procedure-section li{font-size:14px;line-height:1.6}.procedure-navigation button{font-size:11px}.procedure-note{font-size:14px}}
+
+.cardiology-reader{display:grid;min-width:0;gap:16px;margin-top:20px}
+.cardiology-reader .source-panel{margin:0;min-width:0;scroll-margin-top:18px}
+.cardiology-panel:focus-visible{outline:2px solid #4d7e8e;outline-offset:3px}
+.chapter-jump{border:1px solid #d9e5e9;background:#f6fafb;border-radius:11px;color:#31566b}
+.chapter-jump summary{cursor:pointer;padding:12px 16px;font-size:14px;font-weight:680}
+.chapter-jump summary span{margin-left:8px;font-size:12px;font-weight:400;color:#567383}
+.chapter-jump nav{margin:0;padding:0 14px 14px}
+.chapter-jump button{min-height:38px}
+.cardiology-panel .clinical-figure img{max-height:480px;object-fit:contain;width:auto;max-width:100%;height:auto}
+.cardiology-panel .source-callout .clinical-figure{margin-bottom:0}
+@media(max-width:760px){.cardiology-reader{gap:12px}.chapter-jump button{min-height:44px}}

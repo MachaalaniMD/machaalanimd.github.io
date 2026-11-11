@@ -1,0 +1,168 @@
+{
+  "source": {
+    "file": "Cardiology Housestaff Manual - ACS.pdf",
+    "sha256": "e20d60c985a0feffd2abed9a411e1e897bb8e814192f800f0cceca5a740b8b0a",
+    "pdfPages": 27,
+    "bookPages": [
+      11,
+      37
+    ],
+    "contributors": [
+      "Erik Dove",
+      "Peyton Hanson"
+    ],
+    "edition": null,
+    "note": "Transcription of supplied material; not a guideline update. Preserve source wording and citations. Institution policies, local assay thresholds, unit/coverage/admission details omitted."
+  },
+  "omissions": [
+    {
+      "pdfPage": 1,
+      "sourceBox": [
+        36,
+        60,
+        576,
+        128
+      ],
+      "reason": "Local STEMI paging/activation, business-hours coverage and on-call directory instructions; omit complete workflow"
+    },
+    {
+      "pdfPage": 3,
+      "reason": "Institution-specific troponin assay and cutoffs"
+    },
+    {
+      "pdfPage": 3,
+      "reason": "Assay-specific local conversion workflow"
+    },
+    {
+      "pdfPage": 3,
+      "reason": "Assay-specific local conversion example"
+    },
+    {
+      "pdfPage": 3,
+      "reason": "Assay-specific local troponin delta criterion"
+    },
+    {
+      "pdfPage": 3,
+      "reason": "Institution-specific biomarker ordering policy"
+    },
+    {
+      "pdfPage": 4,
+      "reason": "Institutional procedural policy"
+    },
+    {
+      "pdfPage": 7,
+      "reason": "Institution-specific score preference"
+    },
+    {
+      "pdfPage": 9,
+      "reason": "Local formulary preference"
+    },
+    {
+      "pdfPage": 11,
+      "reason": "Local triple-therapy protocol"
+    },
+    {
+      "pdfPage": 13,
+      "reason": "Local TR-band nursing protocol and timing"
+    },
+    {
+      "pdfPage": 13,
+      "reason": "Local access coverage workflow"
+    },
+    {
+      "pdfPage": 18,
+      "reason": "Local unit names"
+    },
+    {
+      "pdfPage": 18,
+      "reason": "Local transfer ordering responsibility"
+    },
+    {
+      "pdfPage": 18,
+      "reason": "Local post-cath order responsibility"
+    },
+    {
+      "pdfPage": 18,
+      "reason": "Local day coverage"
+    },
+    {
+      "pdfPage": 18,
+      "reason": "Local night coverage heading"
+    },
+    {
+      "pdfPage": 18,
+      "reason": "Local unit and night coverage"
+    },
+    {
+      "pdfPage": 18,
+      "reason": "Local escalation/coverage and phone number"
+    },
+    {
+      "pdfPage": 18,
+      "reason": "Local sheath-removal responsibility"
+    },
+    {
+      "pdfPage": 18,
+      "reason": "Local nursing removal workflow"
+    },
+    {
+      "pdfPage": 18,
+      "reason": "Local formulary preference label; retain device descriptions"
+    },
+    {
+      "pdfPage": 18,
+      "reason": "Local unit/nursing removal workflow"
+    },
+    {
+      "pdfPage": 19,
+      "reason": "Institution name in general Heart Team recommendation"
+    },
+    {
+      "pdfPage": 26,
+      "reason": "Institution name in general discharge introduction"
+    },
+    {
+      "pdfPage": 26,
+      "reason": "Local E10/E11 admission-template workflow"
+    },
+    {
+      "pdfPage": 27,
+      "reason": "Local clinic and service referral workflow"
+    },
+    {
+      "pdfPage": 7,
+      "reason": "Local ACS order protocol reference; medication name retained"
+    },
+    {
+      "pdfPage": 8,
+      "reason": "Local pharmacy workflow for ACS discharge"
+    },
+    {
+      "pdfPage": 18,
+      "reason": "Local post-cath holding-area workflow"
+    },
+    {
+      "pdfPage": 26,
+      "reason": "Local discharge order workflow reminder"
+    }
+  ],
+  "formattingRepairs": [
+    {
+      "pdfPage": 2,
+      "kind": "source-line-continuation",
+      "start": "B. 12-lead ECG: 50% of patients with MI have a normal or non-diag"
+    },
+    {
+      "pdfPage": 3,
+      "kind": "source-line-continuation",
+      "start": "D. Risk Stratification for non-ACS patients with chest pain: for "
+    }
+  ],
+  "nativeTableCount": 7,
+  "figureCount": 13,
+  "sourceLimitations": [
+    "Source page15 has visible missing-symbol boxes; these are retained as □ without inferring their intended meaning.",
+    "Some numeric citation markers have no bibliography or footnote definitions in the supplied excerpt. No references were invented.",
+    "Source wording Cardiopulmonary Bypass Grafting (CABG) is retained."
+  ]
+}
