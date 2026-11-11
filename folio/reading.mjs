@@ -1,9 +1,28 @@
 import {readingPlans} from './reading-plans.mjs?v=20261107-cardiopulm';
 export const textOf=runs=>runs.map(r=>r.t).join('');
 export function sliceRuns(runs,start,end){let at=0;return runs.flatMap(r=>{const a=Math.max(0,start-at),b=Math.min(r.t.length,end-at);at+=r.t.length;return b>a?[{...r,t:r.t.slice(a,b)}]:[];});}
+// Remove punctuation left behind by an omitted cross-reference. Clinical
+// signs, decimal points, and nonempty parentheticals stay in the source runs.
+export function cleanReadingRuns(runs){
+ const text=textOf(runs);
+ const ranges=[...text.matchAll(/ *\(\s*[.]?\s*\)/g)].map(m=>[m.index,m.index+m[0].length]);
+ const leading=text.match(/^(\s*(?:[•▪◦●○o]\s+)?)\.\s+(?=\p{L})/u);
+ if(leading)ranges.unshift([leading[1].length,leading[0].length]);
+ if(!ranges.length)return runs;
+ const clean=[];
+ let start=0;
+ for(const [a,b] of ranges){
+  clean.push(...sliceRuns(runs,start,a));
+  start=b;
+ }
+ clean.push(...sliceRuns(runs,start,text.length));
+ return clean;
+}
+
 const citationPattern=/(?:19|20)\d{2}|pubmed|doi:|guidelines|Harrison[’']s|Pink Book|\b(?:NEJM|JAMA|Lancet|Circulation)\b/i;
 const journalTail=/\b(?:NEJM|JAMA|Lancet|Eur Resp J|AJRCCM|Thorax|Epilepsia|Continuum|Neuro(?:logy)?|Neurosurg Focus|Stroke|JACC(?:HF)?|Circ(?:ulation)?|EHJ|J Hepatol|Hepatology|JACI|JCEM|AJG|Gastro(?:enterology)?|CGH|JHLT|JCS|CID|Chest|CHEST|Annals|Blood(?:\s*Adv)?|KDIGO|GINA|GOLD|ADA|IDSA|USPSTF|ACR|ASCO|EASL|ILTS)\s*(?:Guidelines\s*)?(?:19|20)\d{2}/ig;
 export function splitHeading(runs){
+ runs=cleanReadingRuns(runs);
  const text=textOf(runs),ranges=[];let start=-1,depth=0;
  for(let i=0;i<text.length;i++){if(text[i]==='('){if(!depth)start=i;depth++;}else if(text[i]===')'&&depth){depth--;if(!depth&&citationPattern.test(text.slice(start+1,i)))ranges.push([start,i+1]);}}
  if(depth&&start>=0&&citationPattern.test(text.slice(start+1)))ranges.push([start,text.length]);
@@ -14,9 +33,45 @@ export function splitHeading(runs){
  let at=0,main=[];for(const[a,b]of merged){main.push(...sliceRuns(runs,at,a));at=b;}main.push(...sliceRuns(runs,at,text.length));
  return {main,references:merged.map(([a,b])=>sliceRuns(runs,a,b)),text:textOf(main).replace(/\s+/g,' ').replace(/^[\s|:–—-]+|[\s|–—-]+$/g,'')};
 }
-const acronyms=new Set('WHO GOLD HAVB DM HLD CVD CA HPV RSV MMR PCV15 PPSV23 PCV20 COVID-19 CT MRI PET CTA MRA MRCP ERCP EGD EUS CXR ABG VBG PFT PFTs PPM SND AVB SVT VT VF WPW LBBB RBBB LAFB LPFB LUTS OHS OSA CPAP BiPAP SpO2 PaO2 FiO2 HFNC NIPPV CPP CCM ICD GFR TMA TTP ITP MTC MEN2 AI AKI CKD GDMT HF HFrEF HFpEF HFmrEF HFimpEF HIV HBV HCV AAA DKA HHS ARDS COPD ICU SDU CCU IV PO TTM ACLS AV LV RV EF PPX BP HTN IDA TTE TEE ECG EKG VTE PE DVT ACS MI STEMI NSTEMI TIA CNS PNS SLE RA GI IBD IBS GERD PUD PPI INR PTT UFH LMWH DOAC LDL HDL ASCVD BMI A1C TSH T4 T3 CSF RBC WBC ANC MDS MPN AML ALL CLL CML GBM ANCA MRSA MSSA AIN ATN HRS BPH NAFLD NASH MASLD ASH HSV VZV TB UTI HAP VAP CAP CGRP JAK CAR-T'.split(' '));
+const acronyms=new Set('WHO GOLD HAVB DM HLD CVD CA HPV RSV MMR PCV15 PPSV23 PCV20 COVID-19 CT MRI PET CTA MRA MRCP ERCP EGD EUS CXR ABG VBG PFT PFTs PPM SND AVB SVT VT VF WPW LBBB RBBB LAFB LPFB LUTS OHS OSA CPAP BiPAP SpO2 PaO2 FiO2 HFNC NIPPV CPP CCM ICD GFR TMA TTP ITP MTC MEN2 AI AKI CKD GDMT HF HFrEF HFpEF HFmrEF HFimpEF HIV HBV HCV AAA DKA HHS ARDS COPD ICU SDU CCU IV PO TTM ACLS AV LV RV EF PPX BP HTN IDA TTE TEE ECG EKG VTE PE DVT ACS MI STEMI NSTEMI TIA CNS PNS SLE RA GI IBD IBS GERD PUD PPI INR PTT UFH LMWH DOAC LDL HDL ASCVD BMI A1C TSH T4 T3 CSF RBC WBC ANC MDS MPN AML ALL CLL CML GBM ANCA MRSA MSSA AIN ATN HRS BPH NAFLD NASH MASLD ASH HSV VZV TB UTI HAP VAP CAP CGRP JAK CAR-T AAS AAV ACO AGEP AHTR AIHA ALD AOSD APL AS AUD AVP-D AVP-R BSI CAUTI CCD CDC CIN CPC CRRT DHTR FNHTR GAD GN GVT HCC HE HES HIT HLH HPS IABP ICI KUB LBD LTACH MCS MDD MM MTX NMS NSF OCD OD OUD PBSC PCA PCOS PEP PFO PPA PTSD RLS RTA SBP SCU SNB SNF SUD SUDs SVC TACO TLS TRALI UACS VRE VSD MCTD UCTD GPA MPA EGPA GCA PAN VEXAS IgG4 IgA eGFR CYP2C19 DSM-5-TR ARDSnet'.split(' '));
 const canonicalAcronyms=new Map([...acronyms].map(w=>[w.toLowerCase(),w]));
-export function cleanTitle(text){const t=splitHeading([{t:text}]).text;if(t===t.toUpperCase()&&/[A-Z]/.test(t))return t.replace(/[A-Za-z][A-Za-z0-9-]*/g,w=>w.split('-').map(part=>canonicalAcronyms.get(part.toLowerCase())||part[0]+part.slice(1).toLowerCase()).join('-'));return t.replace(/[A-Za-z][A-Za-z0-9-]*/g,w=>w.split('-').map(part=>canonicalAcronyms.get(part.toLowerCase())||part).join('-'));}
+const ambiguousAcronyms=new Set(['ALL','AS','HE']);
+function canonicalWord(word){
+ const acronym=canonicalAcronyms.get(word.toLowerCase());
+ return ambiguousAcronyms.has(acronym)&&word!==acronym?undefined:acronym;
+}
+export function cleanTitle(text){
+ const title=splitHeading([{t:text}]).text;
+ const allCaps=title===title.toUpperCase();
+ return title.replace(/[A-Za-z][A-Za-z0-9-]*/g,word=>{
+  const canonical=canonicalWord(word);
+  if(canonical)return canonical;
+  return word.split('-').map(part=>canonicalWord(part)||
+   (allCaps?part.slice(0,1)+part.slice(1).toLowerCase():part)).join('-');
+ });
+}
+
+export function readingSections(topic){
+ const sections=[];
+ for(const page of topic.pages){
+  for(const panel of page.panels){
+   const previous=sections.at(-1);
+   const part={panel,page};
+   if(previous&&panel.continuesSection===previous.id){
+    previous.parts.push(part);
+    continue;
+   }
+   const title=panel.readerTitle||cleanTitle(panel.title);
+   sections.push({
+    id:panel.id,
+    title:/^source content$/i.test(title)?'Overview':title||'Overview',
+    parts:[part]
+   });
+  }
+ }
+ return sections;
+}
+
 function compact(s){return s.normalize('NFKC').replace(/\s/g,'');}
 function positions(s){let value='',map=[];for(let i=0;i<s.length;){const ch=String.fromCodePoint(s.codePointAt(i));for(const c of ch.normalize('NFKC'))if(!/\s/.test(c)){value+=c;for(let k=0;k<c.length;k++)map.push(i);}i+=ch.length;}map.push(s.length);return {value,map};}
 const positive=readingPlans.positive.map(p=>({...p,key:compact(p.exactOriginalText)}));const negative=new Set(readingPlans.negative.map(p=>`${p.page}:${compact(p.exactOriginalText)}`));

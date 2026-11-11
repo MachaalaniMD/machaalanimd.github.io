@@ -34,7 +34,7 @@
   "geographicScope": "Jurisdiction-specific material retains its original geographic scope and source date; it must not be assumed applicable everywhere.",
   "format": "semantic-html",
   "conversion": {
-    "tables": 310,
+    "tables": 311,
     "figures": 207,
     "nativeCharacters": 1353309,
     "verifiedNativePages": 266,
@@ -87,6 +87,16 @@
       "omitTextExact": "(MGH)",
       "retainTextExact": "*Biphasic",
       "reason": "Retain the source-native biphasic qualifier for the energy table; remove only the institutional suffix. Old mask removed most of Biphasic and left the opening asterisk/initial/closing parenthesis."
+    }
+  ],
+  "readerRepairs": [
+    {
+      "pdfPage": 164,
+      "note": "The visible categories and work-up comparison was transcribed as a native table. The original diagram retains the treatment relationships and glossary."
+    },
+    {
+      "pdfPage": 204,
+      "note": "Screening and diagnostic prose and the eleven DSM-5-TR criteria were reflowed separately from their original source columns."
     }
   ]
 }

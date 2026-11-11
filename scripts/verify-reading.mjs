@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {renderBlocks,blockText,escapeHtml} from '../folio/content.mjs';
-import {enumerationPlan,sliceRuns,textOf,cleanTitle,splitHeading,tableSizing} from '../folio/reading.mjs';
+import {enumerationPlan,sliceRuns,textOf,cleanTitle,splitHeading,tableSizing,readingSections} from '../folio/reading.mjs';
 import {readingPlans} from '../folio/reading-plans.mjs';
 import {attributionMarkup} from '../folio/about.mjs';
 const read=async path=>JSON.parse(await readFile(new URL(path,import.meta.url),'utf8'));
@@ -46,3 +46,60 @@ const rendered=renderBlocks([dm],{title:'Non-insulin agents'});assert.match(rend
 console.log('Verified centralized credits, clean citation headings, 20 source-reviewed subtype groups and 9 conditional guards, repaired table shapes, punctuation and medication associations.');
 
 assert.equal(cleanTitle('CT CHEST'),'CT Chest');assert.equal(cleanTitle('Ct Chest'),'CT Chest');assert.equal(cleanTitle('HFREF MANAGEMENT'),'HFrEF Management');
+
+assert.equal(cleanTitle('Renal Tubular Acidosis (Rta)'),'Renal Tubular Acidosis (RTA)');
+assert.equal(cleanTitle('ANCA-Associated Small-Vessel Vasculitis (Aav)'),'ANCA-Associated Small-Vessel Vasculitis (AAV)');
+assert.equal(cleanTitle('Proceed As Tolerated for all patients'),'Proceed As Tolerated for all patients');
+
+const panel=id=>pages.flatMap(p=>p.panels).find(p=>p.id===id);
+const panelMarkup=id=>{
+ const data=panel(id);
+ return renderBlocks(data.readerBlocks||data.blocks);
+};
+const sickleCell=panelMarkup('p130-2');
+assert.match(sickleCell,/<p>Consult inpatient hematology/);
+assert.match(sickleCell,/ED arrival ± fluids/);
+assert.match(sickleCell,/0\.02-0\.05mg\/kg \(max 1\.5mg\)/);
+assert.doesNotMatch(sickleCell,/If uncontrolled,|<p>[”).]+<\/p>/);
+assert.equal(renderBlocks([
+ {type:'paragraph',runs:[{t:'Dose .5mg/kg; (+), (-), and -3.'}]},
+ {type:'paragraph',runs:[{t:'”).'}]}
+]),'<p>Dose .5mg/kg; (+), (-), and -3.</p>');
+for(const [id,phrase] of [
+ ['p27-1','Escalating inotropes/pressors'],
+ ['p48-2','Control airway if dyspneic'],
+ ['p56-3','COVID-19: RECOVERY trial'],
+ ['p242-1','pad count (monitors bleeding quantity)']
+])assert.ok(panelMarkup(id).includes(phrase),id);
+
+const overview=tables(164).find(t=>t.id==='table-164-overview');
+assert.deepEqual([overview.rows,overview.cols],[3,5]);
+for(const [r,c,phrase] of [
+ [0,1,'Inflammatory Arthritis'],[1,1,'RA, seronegative spondyloarthropathy'],
+ [1,2,'systemic sclerosis'],[2,3,'Small: ANCA'],[2,4,'Sarcoid: Ca']
+])assert.ok(blockText(overview.cells.find(cell=>cell.row===r&&cell.col===c).blocks).includes(phrase),phrase);
+assert.match(panelMarkup('p164-0'),/diagram-0164-00\.webp/);
+
+const alcohol=cat.topics.find(t=>t.id==='alcohol-use-disorder-withdrawal-204');
+assert.deepEqual(readingSections(alcohol).map(s=>[s.title,s.parts.map(({panel})=>panel.id)]),[
+ ['Substance Use - General Principles',['p204-0']],
+ ['SUD Levels of Care',['p204-2']],
+ ['Alcohol Use Disorder (AUD)',['p204-3','p205-0']],
+ ['Alcohol Withdrawal Syndrome',['p205-1','p206-0']]
+]);
+const criteria=panelMarkup('p204-0').match(/<ol>(.*?)<\/ol>/)?.[1];
+assert.ok(criteria,'DSM-5-TR criteria appear together in one ordered list');
+assert.deepEqual([...criteria.matchAll(/<li value="(\d+)"/g)].map(m=>Number(m[1])),Array.from({length:11},(_,i)=>i+1));
+assert.doesNotMatch(criteria,/Risk Factors|Screening:|CAGE/);
+assert.match(panelMarkup('p204-2'),/“detox” → CSS → TSS → long-term residential tx → sober living/);
+
+for(const topic of cat.topics){
+ const sections=readingSections(topic);
+ assert.deepEqual(sections.flatMap(s=>s.parts.map(({panel})=>panel.id)),
+  topic.pages.flatMap(p=>p.panels.map(s=>s.id)),`All source parts remain reachable in ${topic.id}`);
+ assert.equal(new Set(sections.map(s=>s.title.toLowerCase())).size,sections.length,
+  `Distinct section labels in ${topic.id}`);
+ for(const {id,parts} of sections)
+  for(const {panel} of parts.slice(1))assert.equal(panel.continuesSection,id);
+}
+console.log('Verified acronym casing, preserved clinical symbols, omission cleanup, rheumatology table associations, alcohol criteria and progression, and section navigation for all 210 topics.');
