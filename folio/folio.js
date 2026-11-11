@@ -1,4 +1,3 @@
-import {cardiologyMarkup,cardiologyEntries,cardiologyTitle,resolveCardiologyId,cardiologyChapterSections} from './cardiology.mjs?v=20261111-acs';
 import {renderBlocks,escapeHtml as esc} from './content.mjs?v=20261111-acs';
 import {cleanTitle} from './reading.mjs?v=20261110-procedures';
 import {attributionMarkup} from './about.mjs?v=20261110-procedures';
@@ -6,6 +5,8 @@ import {notesForTable,walkBlocks} from './notes.mjs?v=20261110-procedures';
 import {scoreTopic as score} from './search.mjs';
 const main=document.querySelector('main'),$=s=>document.querySelector(s);
 let cardiologyActive=false,cardiologyId='',cardiologyQuery='';
+let cardiologyReader,cardiologyImport;
+
 let catalog,category='all',query='',view='browse',selected=null,activePanel='all',facet='all',saved=new Set(),zoomScale=1;
 const sectionTitle=s=>/^source content$/i.test(s.title)?'Overview':cleanTitle(s.title)||'Overview';
 const readingContext=(s,p)=>({screeningCards:true,title:sectionTitle(s),titleRuns:s.titleRuns||[{t:s.title}],pdfPage:p.pdfPage});
@@ -60,6 +61,25 @@ function render(){
 }
 function jumpToNote(id){const target=document.getElementById(id);if(!target)return false;for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;target.scrollIntoView({behavior:'smooth',block:'center'});target.focus({preventScroll:true});return true;}
 function renderCardiology(){
+ if(!cardiologyReader){
+  if(cardiologyImport)return;
+  main.innerHTML='<div class="loading" role="status">Opening the Cardiology Reference…</div>';
+  cardiologyImport=import('./cardiology.mjs?v=redbook-2022-23')
+   .then(reader=>{
+    cardiologyReader=reader;
+    if(cardiologyActive)renderCardiology();
+   })
+   .catch(()=>{
+    if(cardiologyActive){
+     main.innerHTML='<div class="empty"><h1>The Cardiology Reference could not be opened.</h1><button id="retry-cardiology">Try again</button></div>';
+     $('#retry-cardiology').addEventListener('click',renderCardiology);
+    }
+   })
+   .finally(()=>{cardiologyImport=null;});
+  return;
+ }
+ const {cardiologyMarkup,cardiologyEntries,cardiologyTitle,resolveCardiologyId}=cardiologyReader;
+ cardiologyId=resolveCardiologyId(cardiologyId);
  $('#browse-nav').textContent='General Medicine';$('#saved-nav').hidden=true;$('.folio-brand small').textContent='CARDIOLOGY REFERENCE';
  const node=cardiologyEntries.find(n=>n.id===cardiologyId);document.title=`${node?cardiologyTitle(node.title)+' · ':''}Cardiology Reference · Folio`;
  main.innerHTML=cardiologyMarkup(cardiologyId,cardiologyQuery);
@@ -69,18 +89,32 @@ function renderCardiology(){
  main.querySelectorAll('[data-procedure-anchor]').forEach(button=>button.addEventListener('click',()=>{const target=document.getElementById(button.dataset.procedureAnchor);target?.scrollIntoView({behavior:'smooth',block:'start'});target?.focus({preventScroll:true});}));
  $('[data-clear-cardiology]')?.addEventListener('click',()=>{cardiologyQuery='';renderCardiology();$('#cardiology-search').focus();});
 }
-function route(){if($('#zoom-dialog').open)$('#zoom-dialog').close();const id=decodeURIComponent(location.hash.slice(1));if(id==='cardiology-reference'||id.startsWith('cardiology-reference/')){const nextId=resolveCardiologyId(id.split('/')[1]||'');if(!cardiologyActive||nextId!==cardiologyId)cardiologyQuery='';cardiologyActive=true;cardiologyId=nextId;selected=null;render();scrollTo({top:0,behavior:'instant'});focusMain();return;}cardiologyActive=false;selected=catalog?.topics.find(t=>t.id===id)||null;if(!selected&&/^fn(?:ref)?-/.test(id))selected=catalog?.topics.find(t=>t.pages.some(p=>p.panels.some(s=>[...walkBlocks(s.blocks)].some(b=>b.footnote?.id===id||b.runs?.some(r=>r.noteRefId===id)))))||null;const c=catalog?.categories.find(c=>'system/'+c.id===id);if(c){category=c.id;view='browse';}else if(!selected){category='all';}activePanel='all';facet='all';render();scrollTo({top:0,behavior:'instant'});focusMain();if(selected&&/^fn(?:ref)?-/.test(id))jumpToNote(id);}
+function route(){if($('#zoom-dialog').open)$('#zoom-dialog').close();const id=decodeURIComponent(location.hash.slice(1));if(id==='cardiology-reference'||id.startsWith('cardiology-reference/')){const nextId=id.split('/')[1]||'';if(!cardiologyActive||nextId!==cardiologyId)cardiologyQuery='';cardiologyActive=true;cardiologyId=nextId;selected=null;render();scrollTo({top:0,behavior:'instant'});focusMain();return;}cardiologyActive=false;selected=catalog?.topics.find(t=>t.id===id)||null;if(!selected&&/^fn(?:ref)?-/.test(id))selected=catalog?.topics.find(t=>t.pages.some(p=>p.panels.some(s=>[...walkBlocks(s.blocks)].some(b=>b.footnote?.id===id||b.runs?.some(r=>r.noteRefId===id)))))||null;const c=catalog?.categories.find(c=>'system/'+c.id===id);if(c){category=c.id;view='browse';}else if(!selected){category='all';}activePanel='all';facet='all';render();scrollTo({top:0,behavior:'instant'});focusMain();if(selected&&/^fn(?:ref)?-/.test(id))jumpToNote(id);}
 function showAboutOverview(){
  let box=$('#cardiology-about');if(!box){box=document.createElement('div');box.id='cardiology-about';$('#about-dialog').append(box);}
  box.hidden=!cardiologyActive;
- if(cardiologyActive){box.innerHTML='<div class="kicker">ABOUT CARDIOLOGY REFERENCE</div><h2 id="cardiology-about-title">Cardiology Reference</h2><p>A separate reference workspace for fellows and specialists within Folio. The cardiac procedures overview and Acute Coronary Syndromes and Ischemic Heart Disease are available to read. The remaining sections are listed in the contents.</p><p>Search is limited to this manual. General Medicine remains a separate collection. This is an educational reference, not a validated clinical tool; check current guidance and local policy before clinical use.</p><button class="primary-button" id="cardiology-source">Source ↗</button><p id="cardiology-source-note" hidden>Contents are based on the supplied “Cardiology Manual - TOC.pdf” (2 pages). Overview of Cardiac Procedures replaces its introductory section and two chapters at the creator’s request. Procedure text comes from two supplied screenshots; institution-specific policy references, unit restrictions and coverage/admission workflows are omitted. No replacement medication-hold protocol has been authored. The ACS chapter comes from the supplied Cardiology Housestaff Manual – ACS, book pages 11–37, credited to Erik Dove and Peyton Hanson. The transcript omits institution policies and local unit, coverage and admission workflows. The supplied excerpt does not identify an edition or publication date.</p>';$('#cardiology-source').addEventListener('click',()=>{$('#cardiology-source-note').hidden=false;});$('#about-overview').hidden=true;$('#about-credits').hidden=true;$('#about-dialog').setAttribute('aria-labelledby','cardiology-about-title');return;}
+ if(cardiologyActive){
+  const source=cardiologyReader?.cardiologyContents.redbookSource;
+  box.innerHTML=`<div class="kicker">ABOUT CARDIOLOGY REFERENCE</div>
+   <h2 id="cardiology-about-title">Cardiology Reference</h2>
+   <p>A searchable cardiology manual for fellows and specialists. The Red Book chapters preserve the 2022–23 edition. Check current guidance and local policy before clinical use.</p>
+   <details><summary class="primary-button">Source and credits</summary>
+   <p>Book pages 38–189 come from the supplied <em>Cardiology Housestaff Manual · The Red Book</em>, 2022–23. The figures and complex source tables can be enlarged. Local unit workflows, paging instructions, and institution-specific policies were removed.</p>
+   <p>Red Book excerpt contributors include ${esc(source?.contributors.join(', ')||'the authors credited in the manual')}.</p>
+   <p>Erik Dove and Peyton Hanson are credited for the supplied ACS excerpt, book pages 11–37. The overview of cardiac procedures was transcribed from the supplied screenshots.</p></details>`;
+  $('#about-overview').hidden=true;
+  $('#about-credits').hidden=true;
+  $('#about-dialog').setAttribute('aria-labelledby','cardiology-about-title');
+  $('#about-dialog').scrollTop=0;
+  return;
+ }
  $('#about-overview').hidden=false;$('#about-credits').hidden=true;$('#about-dialog').setAttribute('aria-labelledby','about-title');$('#about-dialog').scrollTop=0; }
 function openAbout(){showAboutOverview();$('#about-dialog').showModal();}
 function openCredits(){const box=$('#about-credits');box.innerHTML=attributionMarkup(catalog.metadata.attribution);$('#about-overview').hidden=true;box.hidden=false;$('#about-dialog').setAttribute('aria-labelledby','credits-title');$('#credits-back').addEventListener('click',()=>{showAboutOverview();$('#attribution-open').focus();});$('#about-dialog').scrollTop=0;$('#credits-back').focus();}
 function openZoom(id){const p=selected.pages.find(p=>p.panels.some(s=>s.id===id)),s=p.panels.find(s=>s.id===id);showZoom(sectionTitle(s),renderBlocks(s.blocks,{...readingContext(s,p),expand:false,idPrefix:'focus-'}));}
 function findTable(blocks,id){for(const b of blocks){if(b.type==='table'&&b.id===id)return b;const match=findTable([...(b.blocks||[]),...(b.columns||[]).flat(),...(b.cells||[]).flatMap(c=>c.blocks)],id);if(match)return match;}return null;}
 function openTable(id){
- if(cardiologyActive){for(const s of cardiologyChapterSections(cardiologyId)){const b=findTable(s.blocks,id);if(b){const title=cardiologyTitle(b.caption||s.title);showZoom(title,renderBlocks([b,...notesForTable(b,s.blocks)],{title,expand:false,idPrefix:'focus-'}));return;}}return;}
+ if(cardiologyActive){const {cardiologyChapterSections,cardiologyTitle}=cardiologyReader;for(const s of cardiologyChapterSections(cardiologyId)){const b=findTable(s.blocks,id);if(b){const title=cardiologyTitle(b.caption||s.title);showZoom(title,renderBlocks([b,...notesForTable(b,s.blocks)],{title,expand:false,idPrefix:'focus-'}));return;}}return;}
  if(!selected)return;for(const p of selected.pages)for(const s of p.panels){const b=findTable(s.blocks,id);if(b){showZoom(cleanTitle(b.caption||sectionTitle(s)),renderBlocks([b,...notesForTable(b,s.blocks)],{...readingContext(s,p),expand:false,idPrefix:'focus-',screeningCards:false}));return;}}}
 function showZoom(title,html){zoomScale=1;$('#zoom-title').textContent=title;$('#zoom-content').innerHTML=`<div class="zoom-canvas clinical-text">${html}</div>`;bindReadingEvents($('#zoom-content'));setZoom(1);if(!$('#zoom-dialog').open)$('#zoom-dialog').showModal();}
 function openFigure(src,label){zoomScale=1;$('#zoom-title').textContent=label;$('#zoom-content').innerHTML=`<div class="zoom-canvas figure-canvas"><img src="${esc(src)}" alt="${esc(label)}"></div>`;setZoom(1);if(!$('#zoom-dialog').open)$('#zoom-dialog').showModal();}

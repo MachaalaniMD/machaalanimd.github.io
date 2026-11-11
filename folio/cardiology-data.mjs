@@ -1,4 +1,4 @@
-// Contents and supplied procedure text; changes to the original TOC are recorded below.
+// Cardiology Reference contents and source attribution.
 export const cardiologyContents={
   "title": "Cardiology Reference",
   "status": "partial-content",
@@ -217,6 +217,12 @@ export const cardiologyContents={
           "children": []
         },
         {
+          "id": "hfref-43",
+          "title": "Heart Failure With Reduced Ejection Fraction (HFrEF)",
+          "page": 43,
+          "children": []
+        },
+        {
           "id": "hfpef-45",
           "title": "HFpEF",
           "page": 45,
@@ -227,6 +233,12 @@ export const cardiologyContents={
             575.55,
             422.37
           ],
+          "children": []
+        },
+        {
+          "id": "acute-decompensated-heart-failure-46",
+          "title": "Acute Decompensated Heart Failure",
+          "page": 46,
           "children": []
         },
         {
@@ -294,6 +306,12 @@ export const cardiologyContents={
               "children": []
             }
           ]
+        },
+        {
+          "id": "heart-failure-references-59",
+          "title": "Heart Failure References",
+          "page": 59,
+          "children": []
         }
       ]
     },
@@ -460,9 +478,9 @@ export const cardiologyContents={
           "tocPdfPage": 1,
           "tocBox": [
             47.02,
-            742.0,
+            742,
             575.55,
-            753.0
+            753
           ],
           "children": []
         },
@@ -612,6 +630,12 @@ export const cardiologyContents={
           "children": []
         },
         {
+          "id": "vascular-medicine-references-160",
+          "title": "Vascular Medicine References",
+          "page": 160,
+          "children": []
+        },
+        {
           "id": "quick-reference-guide-vascular-medicine-163",
           "title": "Quick Reference Guide: Vascular Medicine",
           "page": 163,
@@ -678,6 +702,43 @@ export const cardiologyContents={
           "children": []
         },
         {
+          "id": "coarctation-of-the-aorta-172",
+          "title": "Coarctation of the Aorta",
+          "page": 172,
+          "children": []
+        },
+        {
+          "id": "tetralogy-of-fallot-173",
+          "title": "Tetralogy of Fallot",
+          "page": 173,
+          "children": []
+        },
+        {
+          "id": "transposition-of-the-great-arteries-174",
+          "title": "Transposition of the Great Arteries",
+          "page": 174,
+          "children": []
+        },
+        {
+          "id": "fontan-physiology-177",
+          "title": "Systemic Ventricle Physiology and Fontan Palliation",
+          "page": 177,
+          "children": []
+        },
+        {
+          "id": "eisenmenger-syndrome-178",
+          "title": "Left-to-Right Shunting and Eisenmenger Syndrome",
+          "page": 178,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "cardio-obstetrics-181",
+      "title": "Cardio-Obstetrics",
+      "page": 181,
+      "children": [
+        {
           "id": "basic-physiology-of-pregnancy-181",
           "title": "Basic Physiology of Pregnancy",
           "page": 181,
@@ -730,6 +791,12 @@ export const cardiologyContents={
           "children": []
         },
         {
+          "id": "hypertensive-disorders-of-pregnancy-186",
+          "title": "Hypertensive Disorders of Pregnancy",
+          "page": 186,
+          "children": []
+        },
+        {
           "id": "arrhythmias-in-pregnancy-187",
           "title": "Arrhythmias in Pregnancy",
           "page": 187,
@@ -758,7 +825,7 @@ export const cardiologyContents={
       ]
     }
   ],
-  "tocNote": "Original contents order is retained except the introductory section and its two chapters, replaced by Overview of Cardiac Procedures at the user’s request. Chapter text is available for Acute Coronary Syndromes and Ischemic Heart Disease.",
+  "tocNote": "Contents follow the supplied Red Book headings. The overview of cardiac procedures replaces the local rotation introduction.",
   "procedureSourceImages": [
     {
       "file": "codex-clipboard-835c7c85-baf7-4892-a295-0de60b237bef.png",
@@ -768,5 +835,29 @@ export const cardiologyContents={
       "file": "codex-clipboard-3b6b2b38-5fcb-4bf4-9135-bd4e82021526.png",
       "sha256": "8597e7c006e916558341f5b1863e5c4359fcb349d5274449bbd108d4b9ab9a00"
     }
-  ]
+  ],
+  "redbookSource": {
+    "title": "Cardiology Housestaff Manual · The Red Book",
+    "edition": "2022–23",
+    "bookPages": [
+      38,
+      189
+    ],
+    "pdfPages": 152,
+    "sha256": "14813dd97e0c8f682cca63819969fb17a96daef4cfac113dba8b030ab7892bb9",
+    "contributors": [
+      "Smirthi Sukumar",
+      "Lakotah Hardie",
+      "Kyle Saysana",
+      "Kate Khan",
+      "Omar Khan",
+      "Chris Valle",
+      "Krishan Sharma",
+      "Max Quinn",
+      "Chris Marnell",
+      "Anna O’Kelly",
+      "Adi Achanta",
+      "Nelson Hsieh"
+    ]
+  }
 };

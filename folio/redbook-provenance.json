@@ -1,0 +1,837 @@
+{
+  "source": {
+    "title": "Cardiology Housestaff Manual · The Red Book",
+    "edition": "2022–23",
+    "bookPages": [
+      38,
+      189
+    ],
+    "pdfPages": 152,
+    "sha256": "14813dd97e0c8f682cca63819969fb17a96daef4cfac113dba8b030ab7892bb9",
+    "contributors": [
+      "Smirthi Sukumar",
+      "Lakotah Hardie",
+      "Kyle Saysana",
+      "Kate Khan",
+      "Omar Khan",
+      "Chris Valle",
+      "Krishan Sharma",
+      "Max Quinn",
+      "Chris Marnell",
+      "Anna O’Kelly",
+      "Adi Achanta",
+      "Nelson Hsieh"
+    ]
+  },
+  "omissions": {
+    "40": [
+      "Local unit reference in INTERMACS description"
+    ],
+    "46": [
+      "Unit reference"
+    ],
+    "51": [
+      "Local cardiogenic shock activation and pager"
+    ],
+    "53": [
+      "Local escalation contacts",
+      "Local removal policy and unresolved hold duration",
+      "Unresolved timing placeholder in IABP removal instruction"
+    ],
+    "55": [
+      "Local device availability"
+    ],
+    "56": [
+      "Local VAD pager",
+      "Local pager number",
+      "Local VAD pager",
+      "Local pager number",
+      "Local VAD paging instructions",
+      "Local VAD paging instructions"
+    ],
+    "58": [
+      "Local histology workflow"
+    ],
+    "70": [
+      "Local sedation coverage",
+      "Local unit reference"
+    ],
+    "74": [
+      "Local dosing workflow"
+    ],
+    "91": [
+      "Local device availability"
+    ],
+    "104": [
+      "Local equipment inventory"
+    ],
+    "113": [
+      "Local equipment inventory"
+    ],
+    "140": [
+      "Institutional alias for Wilkins score"
+    ],
+    "150": [
+      "Local pulmonary embolism team activation and extension"
+    ],
+    "163": [
+      "Local pulmonary embolism team and extension"
+    ],
+    "181": [
+      "Broken linked picture fields in the supplied PDF"
+    ]
+  },
+  "blankBookPages": [
+    114,
+    166,
+    189
+  ],
+  "pages": [
+    {
+      "bookPage": 38,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 39,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 40,
+      "tables": 1,
+      "figures": 1
+    },
+    {
+      "bookPage": 41,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 42,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 43,
+      "tables": 1,
+      "figures": 1
+    },
+    {
+      "bookPage": 44,
+      "tables": 0,
+      "figures": 2
+    },
+    {
+      "bookPage": 45,
+      "tables": 1,
+      "figures": 3
+    },
+    {
+      "bookPage": 46,
+      "tables": 1,
+      "figures": 2
+    },
+    {
+      "bookPage": 47,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 48,
+      "tables": 0,
+      "figures": 2
+    },
+    {
+      "bookPage": 49,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 50,
+      "tables": 0,
+      "figures": 2
+    },
+    {
+      "bookPage": 51,
+      "tables": 1,
+      "figures": 1
+    },
+    {
+      "bookPage": 52,
+      "tables": 0,
+      "figures": 2
+    },
+    {
+      "bookPage": 53,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 54,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 55,
+      "tables": 1,
+      "figures": 1
+    },
+    {
+      "bookPage": 56,
+      "tables": 3,
+      "figures": 0
+    },
+    {
+      "bookPage": 57,
+      "tables": 0,
+      "figures": 2
+    },
+    {
+      "bookPage": 58,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 59,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 60,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 61,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 62,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 63,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 64,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 65,
+      "tables": 0,
+      "figures": 3
+    },
+    {
+      "bookPage": 66,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 67,
+      "tables": 0,
+      "figures": 3
+    },
+    {
+      "bookPage": 68,
+      "tables": 0,
+      "figures": 2
+    },
+    {
+      "bookPage": 69,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 70,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 71,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 72,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 73,
+      "tables": 1,
+      "figures": 1
+    },
+    {
+      "bookPage": 74,
+      "tables": 2,
+      "figures": 0
+    },
+    {
+      "bookPage": 75,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 76,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 77,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 78,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 79,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 80,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 81,
+      "tables": 0,
+      "figures": 4
+    },
+    {
+      "bookPage": 82,
+      "tables": 0,
+      "figures": 2
+    },
+    {
+      "bookPage": 83,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 84,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 85,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 86,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 87,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 88,
+      "tables": 0,
+      "figures": 2
+    },
+    {
+      "bookPage": 89,
+      "tables": 0,
+      "figures": 3
+    },
+    {
+      "bookPage": 90,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 91,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 92,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 93,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 94,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 95,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 96,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 97,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 98,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 99,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 100,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 101,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 102,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 103,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 104,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 105,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 106,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 107,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 108,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 109,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 110,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 111,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 112,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 113,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 115,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 116,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 117,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 118,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 119,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 120,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 121,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 122,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 123,
+      "tables": 0,
+      "figures": 2
+    },
+    {
+      "bookPage": 124,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 125,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 126,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 127,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 128,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 129,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 130,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 131,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 132,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 133,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 134,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 135,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 136,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 137,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 138,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 139,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 140,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 141,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 142,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 143,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 144,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 145,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 146,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 147,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 148,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 149,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 150,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 151,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 152,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 153,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 154,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 155,
+      "tables": 2,
+      "figures": 1
+    },
+    {
+      "bookPage": 156,
+      "tables": 2,
+      "figures": 0
+    },
+    {
+      "bookPage": 157,
+      "tables": 2,
+      "figures": 0
+    },
+    {
+      "bookPage": 158,
+      "tables": 2,
+      "figures": 1
+    },
+    {
+      "bookPage": 159,
+      "tables": 2,
+      "figures": 0
+    },
+    {
+      "bookPage": 160,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 161,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 162,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 163,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 164,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 165,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 167,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 168,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 169,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 170,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 171,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 172,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 173,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 174,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 175,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 176,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 177,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 178,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 179,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 180,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 181,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 182,
+      "tables": 0,
+      "figures": 0
+    },
+    {
+      "bookPage": 183,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 184,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 185,
+      "tables": 0,
+      "figures": 1
+    },
+    {
+      "bookPage": 186,
+      "tables": 1,
+      "figures": 1
+    },
+    {
+      "bookPage": 187,
+      "tables": 1,
+      "figures": 0
+    },
+    {
+      "bookPage": 188,
+      "tables": 0,
+      "figures": 1
+    }
+  ],
+  "unmappedGlyphs": []
+}
