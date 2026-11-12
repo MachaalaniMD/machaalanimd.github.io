@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {renderBlocks,blockText,escapeHtml} from '../folio/content.mjs';
+import {renderBlocks,blockText,escapeHtml,renderRuns} from '../folio/content.mjs';
 import {enumerationPlan,sliceRuns,textOf,cleanTitle,splitHeading,tableSizing,readingSections} from '../folio/reading.mjs';
 import {readingPlans} from '../folio/reading-plans.mjs';
 import {attributionMarkup} from '../folio/about.mjs';
@@ -103,3 +103,51 @@ for(const topic of cat.topics){
   for(const {panel} of parts.slice(1))assert.equal(panel.continuesSection,id);
 }
 console.log('Verified acronym casing, preserved clinical symbols, omission cleanup, rheumatology table associations, alcohol criteria and progression, and section navigation for all 210 topics.');
+
+const catalogText=JSON.stringify(cat);
+for(const local of [
+ 'myositis panel 3','order separately for faster','fn-p170-49','fn-p170-50',
+ 'diagram-0196-00.webp','order from Central Supply','SPEP panel” order',
+ 'upload rhythm strips into Epic','scan into Epic','On outpt Invitae genetic panel'
+])assert.ok(!catalogText.includes(local),`No local ordering detail: ${local}`);
+for(const host of ['mgb.ellucid.com','hospitalpolicies.ellucid.com','ppd.partners.org','oi.mgh.harvard.edu','partnershealthcare.sharepoint.com']){
+ assert.equal(renderRuns([{t:'Institutional label',href:`https://${host}/test`}]),'Institutional label');
+}
+assert.match(renderRuns([{t:'Journal',href:'https://pubmed.ncbi.nlm.nih.gov/32559294/'}]),/<a href=/);
+assert.match(js,/metadata\.topics,'Topics'/);
+assert.match(js,/categories\.length,'Systems'/);
+assert.match(js,/metadata\.conversion\.tables,'Tables'/);
+assert.match(js,/metadata\.conversion\.figures,'Figures'/);
+assert.doesNotMatch(js,/thoughtfully organized/);
+
+const neuro=panelMarkup('p196-3');
+assert.match(neuro,/<h3><strong>Apnea Testing<\/strong><\/h3>/i);
+assert.match(neuro,/10\.1212\/WNL\.0000000000207740/);
+assert.doesNotMatch(neuro,/Set PEEP|Disconnect vent|Separate Protocol for ECMO|order evoked potentials/i);
+
+const ams=panelMarkup('p188-2');
+const tests=ams.slice(ams.indexOf('Helpful diagnostic tests'));
+const diagnosticItems=[...tests.matchAll(/<li>(.*?)<\/li>/g)].map(m=>m[1].replace(/<[^>]+>/g,''));
+for(const name of ['rEEG:','LTM:','MRI with contrast:','Lumbar puncture (']){
+ assert.ok(diagnosticItems.some(item=>item.startsWith(name)),name);
+}
+assert.equal((tests.match(/<li>/g)||[]).length,4);
+
+const stroke=panelMarkup('p191-0');
+assert.match(stroke,/<h3><strong>Inpatient Post-Stroke Care<\/strong><\/h3>/);
+assert.match(stroke.replace(/<[^>]+>/g,''),/MS, MOG, NMO\), Toxins\/Trauma/);
+assert.match(stroke,/34708996/);
+assert.match(stroke,/pro-drug by CYP2C19\. LoF in CYP2C19 → ↓/);
+assert.doesNotMatch(panelMarkup('p192-0'),/LoF in CYP2C19/);
+const strokeTopic=cat.topics.find(t=>t.id==='stroke-tia-191');
+assert.deepEqual(readingSections(strokeTopic)[0].parts.map(({panel})=>panel.id),
+ ['p191-0','p192-secondary-prevention']);
+assert.match(panelMarkup('p43-2'),/Acid–Base Interpretation/);
+assert.match(panelMarkup('p50-1'),/Interpreting D-dimer/);
+assert.match(panelMarkup('p118-0'),/diagram-0118-00.webp/);
+assert.doesNotMatch(panelMarkup('p118-0'),/T E S T I NG Sporothrix/);
+const chronic=panel('p165-0').blocks.find(b=>b.caption==='Chronic Arthritis Syndromes');
+assert.equal(chronic.cols,5);
+assert.match(blockText(chronic.cells.find(c=>c.row===1&&c.col===4).blocks),/Tai Chi/);
+assert.match(blockText(chronic.cells.find(c=>c.row===2&&c.col===4).blocks),/T\. whipplei/);
+console.log('Verified institution-specific redactions, collection counts, the stroke continuation, diagnostic test bullets, restored source layouts, and the public apnea testing reference.');

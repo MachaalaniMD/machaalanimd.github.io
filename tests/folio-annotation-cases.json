@@ -249,7 +249,7 @@
       "sourceBox": [
         54.24,
         558.54,
-        81.0,
+        81,
         627.9
       ],
       "sourceLines": [
@@ -269,7 +269,7 @@
       "sourceBox": [
         54.24,
         627.9,
-        81.0,
+        81,
         685.8
       ],
       "sourceLines": [
@@ -287,14 +287,6 @@
     {
       "pdfPage": 9,
       "sourceCharacterBag": {
-        "#": 2,
-        "(": 43,
-        ")": 43,
-        "+": 6,
-        ",": 108,
-        "-": 28,
-        ".": 37,
-        "/": 17,
         "0": 66,
         "1": 47,
         "2": 29,
@@ -305,6 +297,14 @@
         "7": 2,
         "8": 6,
         "9": 8,
+        "#": 2,
+        "(": 43,
+        ")": 43,
+        "+": 6,
+        ",": 108,
+        "-": 28,
+        ".": 37,
+        "/": 17,
         ":": 41,
         ";": 13,
         "<": 10,
@@ -375,14 +375,6 @@
     {
       "pdfPage": 10,
       "sourceCharacterBag": {
-        "%": 8,
-        "(": 49,
-        ")": 49,
-        "+": 3,
-        ",": 85,
-        "-": 34,
-        ".": 34,
-        "/": 16,
         "0": 44,
         "1": 56,
         "2": 50,
@@ -393,6 +385,14 @@
         "7": 10,
         "8": 14,
         "9": 12,
+        "%": 8,
+        "(": 49,
+        ")": 49,
+        "+": 3,
+        ",": 85,
+        "-": 34,
+        ".": 34,
+        "/": 16,
         ":": 38,
         ";": 19,
         "<": 6,
@@ -466,578 +466,6 @@
   ],
   "footnoteGroups": [
     {
-      "id": "myositis-antibody-panel",
-      "context": {
-        "topic": "Autoantibodies",
-        "pdfPage": 170,
-        "printedPage": "168",
-        "panelId": "p170-0",
-        "panelTitle": "Source content",
-        "panelPath": [
-          "topics",
-          134,
-          "pages",
-          0,
-          "panels",
-          0
-        ]
-      },
-      "noteBlock": {
-        "catalogPath": [
-          "topics",
-          134,
-          "pages",
-          0,
-          "panels",
-          0,
-          "blocks",
-          1
-        ],
-        "sourceBlockType": "paragraph",
-        "exactText": "* ordered as part of “myositis panel 3”; panel also includes other less common myositis antibodies ^ order separately for faster results if desired",
-        "sourceLines": [
-          [
-            54.02,
-            750.58,
-            408.03,
-            760.58
-          ],
-          [
-            54.02,
-            762.08,
-            215.75,
-            772.08
-          ]
-        ],
-        "table": null,
-        "cell": null
-      },
-      "associationScope": {
-        "kind": "preceding-table-and-immediate-trailing-note",
-        "tableId": "table-170-1",
-        "tablePath": [
-          "topics",
-          134,
-          "pages",
-          0,
-          "panels",
-          0,
-          "blocks",
-          0
-        ],
-        "notePath": [
-          "topics",
-          134,
-          "pages",
-          0,
-          "panels",
-          0,
-          "blocks",
-          1
-        ],
-        "note": "HMGCR has no source marker and must remain unlinked."
-      },
-      "sourceVisualVerified": true,
-      "notes": [
-        {
-          "marker": "*",
-          "start": 0,
-          "end": 99,
-          "exactText": "* ordered as part of “myositis panel 3”; panel also includes other less common myositis antibodies ",
-          "runSlices": [
-            {
-              "t": "* ordered as part of “myositis panel 3”; panel also includes other less common myositis antibodies "
-            }
-          ],
-          "referenceAnchors": [
-            {
-              "catalogPath": [
-                "topics",
-                134,
-                "pages",
-                0,
-                "panels",
-                0,
-                "blocks",
-                0,
-                "cells",
-                65,
-                "blocks",
-                0
-              ],
-              "sourceBlockType": "heading",
-              "exactText": "Jo-1*^",
-              "sourceLines": [
-                [
-                  64.28,
-                  504.0,
-                  89.06,
-                  514.0
-                ]
-              ],
-              "table": {
-                "path": [
-                  "topics",
-                  134,
-                  "pages",
-                  0,
-                  "panels",
-                  0,
-                  "blocks",
-                  0
-                ],
-                "id": "table-170-1",
-                "sourceBox": [
-                  54.275,
-                  60.05499999999997,
-                  558.23,
-                  748.98
-                ]
-              },
-              "cell": {
-                "row": 19,
-                "col": 0,
-                "rowspan": 1,
-                "colspan": 1,
-                "sourceBox": [
-                  54.27,
-                  490.9,
-                  99.05,
-                  525.4
-                ]
-              },
-              "label": "Jo-1",
-              "marker": "*",
-              "markerStart": 4,
-              "markerEnd": 5,
-              "markerRuns": [
-                {
-                  "b": true,
-                  "t": "*"
-                }
-              ]
-            },
-            {
-              "catalogPath": [
-                "topics",
-                134,
-                "pages",
-                0,
-                "panels",
-                0,
-                "blocks",
-                0,
-                "cells",
-                69,
-                "blocks",
-                0
-              ],
-              "sourceBlockType": "heading",
-              "exactText": "Mi-2*",
-              "sourceLines": [
-                [
-                  66.78,
-                  532.75,
-                  86.22,
-                  542.75
-                ]
-              ],
-              "table": {
-                "path": [
-                  "topics",
-                  134,
-                  "pages",
-                  0,
-                  "panels",
-                  0,
-                  "blocks",
-                  0
-                ],
-                "id": "table-170-1",
-                "sourceBox": [
-                  54.275,
-                  60.05499999999997,
-                  558.23,
-                  748.98
-                ]
-              },
-              "cell": {
-                "row": 20,
-                "col": 0,
-                "rowspan": 1,
-                "colspan": 1,
-                "sourceBox": [
-                  54.27,
-                  525.4,
-                  99.05,
-                  548.65
-                ]
-              },
-              "label": "Mi-2",
-              "marker": "*",
-              "markerStart": 4,
-              "markerEnd": 5,
-              "markerRuns": [
-                {
-                  "b": true,
-                  "t": "*"
-                }
-              ]
-            },
-            {
-              "catalogPath": [
-                "topics",
-                134,
-                "pages",
-                0,
-                "panels",
-                0,
-                "blocks",
-                0,
-                "cells",
-                73,
-                "blocks",
-                0
-              ],
-              "sourceBlockType": "heading",
-              "exactText": "MDA-5*^",
-              "sourceLines": [
-                [
-                  59.52,
-                  550.25,
-                  93.56,
-                  560.25
-                ]
-              ],
-              "table": {
-                "path": [
-                  "topics",
-                  134,
-                  "pages",
-                  0,
-                  "panels",
-                  0,
-                  "blocks",
-                  0
-                ],
-                "id": "table-170-1",
-                "sourceBox": [
-                  54.275,
-                  60.05499999999997,
-                  558.23,
-                  748.98
-                ]
-              },
-              "cell": {
-                "row": 21,
-                "col": 0,
-                "rowspan": 1,
-                "colspan": 1,
-                "sourceBox": [
-                  54.27,
-                  548.65,
-                  99.05,
-                  560.23
-                ]
-              },
-              "label": "MDA-5",
-              "marker": "*",
-              "markerStart": 5,
-              "markerEnd": 6,
-              "markerRuns": [
-                {
-                  "b": true,
-                  "t": "*"
-                }
-              ]
-            },
-            {
-              "catalogPath": [
-                "topics",
-                134,
-                "pages",
-                0,
-                "panels",
-                0,
-                "blocks",
-                0,
-                "cells",
-                77,
-                "blocks",
-                0
-              ],
-              "sourceBlockType": "heading",
-              "exactText": "TIF1g*",
-              "sourceLines": [
-                [
-                  64.03,
-                  562.27,
-                  88.97,
-                  572.27
-                ]
-              ],
-              "table": {
-                "path": [
-                  "topics",
-                  134,
-                  "pages",
-                  0,
-                  "panels",
-                  0,
-                  "blocks",
-                  0
-                ],
-                "id": "table-170-1",
-                "sourceBox": [
-                  54.275,
-                  60.05499999999997,
-                  558.23,
-                  748.98
-                ]
-              },
-              "cell": {
-                "row": 22,
-                "col": 0,
-                "rowspan": 1,
-                "colspan": 1,
-                "sourceBox": [
-                  54.27,
-                  560.23,
-                  99.05,
-                  572.42
-                ]
-              },
-              "label": "TIF1g",
-              "marker": "*",
-              "markerStart": 5,
-              "markerEnd": 6,
-              "markerRuns": [
-                {
-                  "b": true,
-                  "t": "*"
-                }
-              ]
-            },
-            {
-              "catalogPath": [
-                "topics",
-                134,
-                "pages",
-                0,
-                "panels",
-                0,
-                "blocks",
-                0,
-                "cells",
-                81,
-                "blocks",
-                0
-              ],
-              "sourceBlockType": "heading",
-              "exactText": "SRP*",
-              "sourceLines": [
-                [
-                  66.53,
-                  579.78,
-                  86.69,
-                  589.78
-                ]
-              ],
-              "table": {
-                "path": [
-                  "topics",
-                  134,
-                  "pages",
-                  0,
-                  "panels",
-                  0,
-                  "blocks",
-                  0
-                ],
-                "id": "table-170-1",
-                "sourceBox": [
-                  54.275,
-                  60.05499999999997,
-                  558.23,
-                  748.98
-                ]
-              },
-              "cell": {
-                "row": 23,
-                "col": 0,
-                "rowspan": 1,
-                "colspan": 1,
-                "sourceBox": [
-                  54.27,
-                  572.42,
-                  99.05,
-                  595.67
-                ]
-              },
-              "label": "SRP",
-              "marker": "*",
-              "markerStart": 3,
-              "markerEnd": 4,
-              "markerRuns": [
-                {
-                  "b": true,
-                  "t": "*"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "marker": "^",
-          "start": 99,
-          "end": 147,
-          "exactText": "^ order separately for faster results if desired",
-          "runSlices": [
-            {
-              "t": "^ order separately for faster results if desired"
-            }
-          ],
-          "referenceAnchors": [
-            {
-              "catalogPath": [
-                "topics",
-                134,
-                "pages",
-                0,
-                "panels",
-                0,
-                "blocks",
-                0,
-                "cells",
-                65,
-                "blocks",
-                0
-              ],
-              "sourceBlockType": "heading",
-              "exactText": "Jo-1*^",
-              "sourceLines": [
-                [
-                  64.28,
-                  504.0,
-                  89.06,
-                  514.0
-                ]
-              ],
-              "table": {
-                "path": [
-                  "topics",
-                  134,
-                  "pages",
-                  0,
-                  "panels",
-                  0,
-                  "blocks",
-                  0
-                ],
-                "id": "table-170-1",
-                "sourceBox": [
-                  54.275,
-                  60.05499999999997,
-                  558.23,
-                  748.98
-                ]
-              },
-              "cell": {
-                "row": 19,
-                "col": 0,
-                "rowspan": 1,
-                "colspan": 1,
-                "sourceBox": [
-                  54.27,
-                  490.9,
-                  99.05,
-                  525.4
-                ]
-              },
-              "label": "Jo-1",
-              "marker": "^",
-              "markerStart": 5,
-              "markerEnd": 6,
-              "markerRuns": [
-                {
-                  "b": true,
-                  "t": "^"
-                }
-              ]
-            },
-            {
-              "catalogPath": [
-                "topics",
-                134,
-                "pages",
-                0,
-                "panels",
-                0,
-                "blocks",
-                0,
-                "cells",
-                73,
-                "blocks",
-                0
-              ],
-              "sourceBlockType": "heading",
-              "exactText": "MDA-5*^",
-              "sourceLines": [
-                [
-                  59.52,
-                  550.25,
-                  93.56,
-                  560.25
-                ]
-              ],
-              "table": {
-                "path": [
-                  "topics",
-                  134,
-                  "pages",
-                  0,
-                  "panels",
-                  0,
-                  "blocks",
-                  0
-                ],
-                "id": "table-170-1",
-                "sourceBox": [
-                  54.275,
-                  60.05499999999997,
-                  558.23,
-                  748.98
-                ]
-              },
-              "cell": {
-                "row": 21,
-                "col": 0,
-                "rowspan": 1,
-                "colspan": 1,
-                "sourceBox": [
-                  54.27,
-                  548.65,
-                  99.05,
-                  560.23
-                ]
-              },
-              "label": "MDA-5",
-              "marker": "^",
-              "markerStart": 6,
-              "markerEnd": 7,
-              "markerRuns": [
-                {
-                  "b": true,
-                  "t": "^"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "reconstructionExact": true
-    },
-    {
       "id": "asthma-controller-table",
       "context": {
         "topic": "PFTs & Asthma",
@@ -1069,7 +497,7 @@
         "exactText": "*Biologics: anti-IL4R-alpha, anti-IgE, anti-IL5, anti-TSLP. **LABA w/o ICS ↑ rates of death (CHEST2006;129:15;NEJM2010;362:1169).",
         "sourceLines": [
           [
-            54.0,
+            54,
             592.34,
             536.45,
             602.36
@@ -1168,7 +596,7 @@
                   54.19153658536585,
                   410.5574347826087,
                   561.4243902439025,
-                  585.0
+                  585
                 ]
               },
               "cell": {
@@ -1273,7 +701,7 @@
                   54.19153658536585,
                   410.5574347826087,
                   561.4243902439025,
-                  585.0
+                  585
                 ]
               },
               "cell": {
@@ -1339,13 +767,13 @@
         "exactText": "*Transpulmonary gradient (TPG) = mPAP – PCWP; nl <12 **Diastolic pulmonary gradient (DPG) = PA diastolic (PAd) – PCWP; nl <7",
         "sourceLines": [
           [
-            54.0,
+            54,
             139.74,
             245.13,
             148.74
           ],
           [
-            54.0,
+            54,
             150.07,
             294.33,
             159.07
@@ -1675,7 +1103,7 @@
                   337.08,
                   182.56,
                   364.48,
-                  192.0
+                  192
                 ]
               ],
               "table": {
@@ -1759,7 +1187,7 @@
         "exactText": "*** Prolactin elevation can also be due to stalk compression (often mild, < 100 ng/ml) and other physiologic causes (pregnancy, exercise, stress, eating) vs. pathologic causes (hypothyroidism, cirrhosis, renal failure, meds [e.g. dopamine antagonists])",
         "sourceLines": [
           [
-            54.0,
+            54,
             432.41,
             535.62,
             440.39
@@ -1813,7 +1241,7 @@
               "exactText": "Causes: hyperfuctioning pituitary adenoma ***",
               "sourceLines": [
                 [
-                  54.0,
+                  54,
                   292.76,
                   222.67,
                   302.78
@@ -1934,13 +1362,13 @@
         "exactText": "* Typical use: % women who will have pregnancy in 1 year on this method (perfect use in parentheses); ∑Newer formulations like Slynd maintain efficacy with 24h missed window (Curr Obstet Gyn Rep 2022;11); ^Estrogen-progestin methods can be used continuously to avoid withdrawal bleed.",
         "sourceLines": [
           [
-            54.0,
+            54,
             796.06,
             552.61,
             805.5
           ],
           [
-            54.0,
+            54,
             806.83,
             513.17,
             815.83
@@ -2023,7 +1451,7 @@
                 "rowspan": 1,
                 "colspan": 1,
                 "sourceBox": [
-                  198.0,
+                  198,
                   408.72,
                   247.5,
                   432.18
@@ -2294,13 +1722,13 @@
         "exactText": "^Strongly encourage smoking cessation to attenuate risk. Consult UCSF guide for risk-benefit analysis after VTE. Transdermal route may ↓VTE in age >45 or previous VTE **Treatment with 5-alpha reductase inhibitors may reverse some testosterone effect",
         "sourceLines": [
           [
-            54.0,
+            54,
             688.2,
             544.38,
             697.2
           ],
           [
-            54.0,
+            54,
             698.52,
             414.83,
             707.52
@@ -2759,7 +2187,7 @@
         "sourceBox": [
           130.5,
           512.94,
-          558.0,
+          558,
           572.82
         ]
       },
@@ -3081,8 +2509,8 @@
     },
     {
       "pdfPage": 8,
-      "characterDigest": "418d202b560d9deb4f61d54d60aaffd1e9ec7b7210fd56b330b8eca010d5a554",
-      "priorStyleDigest": "d56116d2490fedf9a9f94d959a157fbefd1784e68a3c9f06fa2dbdeb93d271a7"
+      "characterDigest": "77e67ac9040923d1c15d71a0a8271bad2015f74770b11353362167cb8fe5d49a",
+      "priorStyleDigest": "14adc37d61d59077459a77aa68367b44a7ee56e9ed989e3cca2d30dd26e1f027"
     },
     {
       "pdfPage": 11,
@@ -3136,8 +2564,8 @@
     },
     {
       "pdfPage": 21,
-      "characterDigest": "6fb8d114b71d0cbbd56488e2d7be53e6f67e6860cc531f715d245dd1581379e6",
-      "priorStyleDigest": "2484e6af1711982ea7e8bc4fe58f64984a51ffa6dc46224a68a8a46098d046a7"
+      "characterDigest": "0355787147b31b2f6e42854f4a6647b32d9937c79885fc4f3597cd71df1fac84",
+      "priorStyleDigest": "f9d127dfd5d34a2c6011900ccbbecc641f8f291a4d943d0221c96b81c162f468"
     },
     {
       "pdfPage": 22,
@@ -3151,8 +2579,8 @@
     },
     {
       "pdfPage": 24,
-      "characterDigest": "268a0a2bebda658b066c3d7c55631fb40e8dd8a22dcec349d867e317d85eb80e",
-      "priorStyleDigest": "693d7b7b6f9e2d58e4510234a5b2cb18fef458282436c7f9ac59dd3871c7850f"
+      "characterDigest": "5bb958cc4a24cb99d782748e0abceed1c3ab7168d91d41c8d5d9b437f98687c5",
+      "priorStyleDigest": "28399f86aca7e6d82bbc96ba3971561a055964d01a0868871f384d74a083a941"
     },
     {
       "pdfPage": 25,
@@ -3510,8 +2938,8 @@
     },
     {
       "pdfPage": 97,
-      "characterDigest": "125f68313fb687f8c7765066516dfd355e7259d2ad00248f68e9135ea34dcd9c",
-      "priorStyleDigest": "b3bb2950decc6fb7babe4ce8757d7cd3e1aae6105e8fbc068a58d488f34c6979"
+      "characterDigest": "2881f981232f17f8a6993b3ffa09be05f86fdc325e9eede5170b398c7d247807",
+      "priorStyleDigest": "0a559cb4ec0a3728441a73cf134f596dbe46cc5227a1303baca9480626ced5d9"
     },
     {
       "pdfPage": 98,
@@ -3615,8 +3043,8 @@
     },
     {
       "pdfPage": 118,
-      "characterDigest": "dd61232401507eb07fc18d56ba47abd15e7f3e73fa6519aedce5e347de8dc0ba",
-      "priorStyleDigest": "9bfe186635282a0473ad69cc30d8e31dfa0b0e203a8b48044de65703f786d03e"
+      "characterDigest": "80e0fd026a7f0bf9aa06f140f0a6d15e84a7f8664d7f8dcff9c13577c66c4622",
+      "priorStyleDigest": "765f9a6ae3b81aa83f9619f1be9fd7c37f48626c7c4bcbfd70cc486e9465f9e9"
     },
     {
       "pdfPage": 119,
@@ -3724,8 +3152,8 @@
     },
     {
       "pdfPage": 140,
-      "characterDigest": "6fc72f5168ebc6fbe0df4b28bbf5709e9d3ddcdc11b62d7e44bb7cbee91cbc12",
-      "priorStyleDigest": "86a3839589cdd3b4ba72dead038e73498a6deeeaf8a09665b768f771029b67eb"
+      "characterDigest": "ae763b5c989caca43edf49da0eae5a8c962c63f9d38bfc485c6108d887552ae3",
+      "priorStyleDigest": "339c401da63aac18651008c3b7fd09d5472545e5ad1c5317569f1264ba878d16"
     },
     {
       "pdfPage": 141,
@@ -3739,8 +3167,8 @@
     },
     {
       "pdfPage": 143,
-      "characterDigest": "61680726e9b5fa96b03f9874e75726caf9d5c7d032e216d93decbae72e5b96e2",
-      "priorStyleDigest": "871d8671a13beb3aea3658ac417242adb61e2c7b2745c1480d9d4a310b3cf62f"
+      "characterDigest": "77e6be65d69d3ab9c9708c742745cc6d6db5937af88cd52f42a07bc53ea927c2",
+      "priorStyleDigest": "d4ca1d2fe86d2ccb0b37c503f53804a399e8a224bec5e8867c2700b29c4b4677"
     },
     {
       "pdfPage": 144,
@@ -3759,8 +3187,8 @@
     },
     {
       "pdfPage": 147,
-      "characterDigest": "dab26edd81d3eafbdafa797ad9bd26e385f8787abbf5efce762ffed9265f5381",
-      "priorStyleDigest": "dc9d345be61102d6f0eae51b55a35405d0d55287fc6f4e6a743ce3d735fe478c"
+      "characterDigest": "928e2990a7870e7e181f8cf50b0b152d29041a30d24c345c035d0f8a9a067fc3",
+      "priorStyleDigest": "303c52f44116cfa3a5a1e1be087bc6acabf61921701b37128337a4ccb61932b9"
     },
     {
       "pdfPage": 148,
@@ -3814,8 +3242,8 @@
     },
     {
       "pdfPage": 158,
-      "characterDigest": "a32f4bea559e8d043af4dcc83cfa8fb3e562bc705a57e8138291c5ca61aa6d26",
-      "priorStyleDigest": "0125d47631401b803c9b904940839d656ec5e7f33e9bb2e94b98329308b39600"
+      "characterDigest": "f5bcf1d3b562898908effc288cc9f99e49c190f24158b27350f8607ed5212076",
+      "priorStyleDigest": "d839313f48490814464236fbddb01e3f41987385986d679e8baadeb75bbf4b8c"
     },
     {
       "pdfPage": 159,
@@ -3829,8 +3257,8 @@
     },
     {
       "pdfPage": 161,
-      "characterDigest": "5d658d55605a2279e25b1e9e2b778915153a6c4d556cc25e07915af939f86c29",
-      "priorStyleDigest": "1c329e70ad7d2933ced93c51eec9399668f1c1634f152866db4af74e2ccf0843"
+      "characterDigest": "5d2c3f2d8555b579f379a506b3ff5c2f899b1f7855d000dfaf6b42747fc39f73",
+      "priorStyleDigest": "bc9428e0dae2da413424dcc8f1d87be7b71131100e7e761f125f00778e16ae29"
     },
     {
       "pdfPage": 162,
@@ -3874,8 +3302,8 @@
     },
     {
       "pdfPage": 170,
-      "characterDigest": "7a8dae739a15f1b5ace3d71f1d749aab3c838eef76d6c005b170e3533831e182",
-      "priorStyleDigest": "f62437cfcd84c0e7e56190e2c5e3ba284cf52c68b1aba36fe7ebde3366dfe562"
+      "characterDigest": "6c413eaa1419b914db232cb94881b0d92c53cbd54e84b37f800303876ffb5655",
+      "priorStyleDigest": "a4d64d409962c4c087f87888ca1510e53ad791c2c1e49440a47673ecd7c460e6"
     },
     {
       "pdfPage": 171,
@@ -3959,8 +3387,8 @@
     },
     {
       "pdfPage": 187,
-      "characterDigest": "83182ecc9c1f441878febbfc994e0f9337a364e86cf58263e366408b34cfc2a7",
-      "priorStyleDigest": "8e0915ed9c0f028b6b9dccc3a6b72f1d1be316e57cdb493657173a9d9c0b20a8"
+      "characterDigest": "22d4e075d22f5882e87985db901f348e1649be01163c6bc1871da32d971ec93d",
+      "priorStyleDigest": "96d954eb75df075a21768b4e31ba62aa68843f8cb1828db1e04fe34b63506c49"
     },
     {
       "pdfPage": 188,
@@ -3979,13 +3407,13 @@
     },
     {
       "pdfPage": 191,
-      "characterDigest": "cd3829040f40900e028f5c7c74fe7b88d7100cafac18f492d96d149c70d03f60",
-      "priorStyleDigest": "60cd8bed6e423848f3d4ac92a980aa27b6ca65480e3c03bda343ebcbedf858a3"
+      "characterDigest": "3a622d24b85c1129e81fcabf287dc5cb392a9cff70d9e9b514a7c6dfcaee8189",
+      "priorStyleDigest": "442ea543fe3fcc41a9c72a74c0bbf361458f23ac685bb3298b1381bc8cd8034d"
     },
     {
       "pdfPage": 192,
-      "characterDigest": "f832a3c8e3ed0fc1d921ebdedb9740797e35714a2b285cb084851434fe17218d",
-      "priorStyleDigest": "d07da0c34726b328fa208bf78ac1cd423167016b32fc87b4f119e64008219dfc"
+      "characterDigest": "9feefb296c113b827028ba9d354e97cd9c2924f0f3624a3de2da2da2db7cf291",
+      "priorStyleDigest": "fa327518fc61d3befbff1f012ff9a65e3e1b7602d09c1cfbb8ec676b2101c472"
     },
     {
       "pdfPage": 193,
@@ -4004,8 +3432,8 @@
     },
     {
       "pdfPage": 196,
-      "characterDigest": "370a15c9a56408c4e17fcffdf35a913b5e074867779e274c04ae3c80ba0f0ba3",
-      "priorStyleDigest": "8fb42a80021cd1e05cedb26744613e90fcb96a8da7a123ef2ddbb20fde79e4d4"
+      "characterDigest": "6e116a086b4793d8521fb7db88efb91295a48048731cb8ac2bb2b38887f0faf3",
+      "priorStyleDigest": "58e892daadc07569528a461dc223702f02666caa4d191091522d24b8ebea2b2e"
     },
     {
       "pdfPage": 197,
@@ -4069,8 +3497,8 @@
     },
     {
       "pdfPage": 209,
-      "characterDigest": "1107963ba3120317d273b002e469a6db892884e71d1eb28c5f7f4459cc26e48f",
-      "priorStyleDigest": "5c423269e636127b1a498743ddb4f60021caa2dc04bb681f0690d83dd835f229"
+      "characterDigest": "4d45704f22b439b448749981de751b0246b2132ceda2c5b880961d26028e7ddc",
+      "priorStyleDigest": "725bd7914dea4b721e3c8d18e805a7e9dd62c884791dd123ee7b4f56026e83cb"
     },
     {
       "pdfPage": 210,
@@ -4338,8 +3766,8 @@
     },
     {
       "pdfPage": 263,
-      "characterDigest": "4ed756d883ccb5767d3f2d2096e98f8ae40c1d7e98185fd8c067ab19f382a006",
-      "priorStyleDigest": "f97f100b6afd58cbb3902ea88a7572d9f5ff41de45a3d09aac4bbba5e8d384ab"
+      "characterDigest": "f38db517a957b3a8d9047385a6acd814e0e7c589441c830537fde306c77ab924",
+      "priorStyleDigest": "bb7ae2a7e395e2a1b0ba365a0594a1a5ed14e14981914ed556575c08ef299e28"
     },
     {
       "pdfPage": 264,

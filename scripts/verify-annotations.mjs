@@ -33,13 +33,14 @@ for(const group of cases.footnoteGroups){
   }
  }
 }
-assert.equal(reviewedRefs,20);
+assert.equal(reviewedRefs,13);
 for(const [phrase,definition]of[['Adenosine*','hearttransplant'],['IV BB or Dilt**','**avoidifHFrEF'],['Oral vs IV BB or Dilt*','*avoidifHFrEF'],['(rhythm,rate)**','possiblecardioversion']]){
  const b=blocks(7).find(b=>text(b).includes(phrase)),id=b.runs.find(r=>r.noteId)?.noteId,note=blocks(7).find(b=>b.footnote?.id===id);assert.ok(note&&norm(text(note)).includes(definition),`Scope repeated marker to source branch: ${phrase}`);
 }
 for(const c of cases.negativeMarkers){const b=blocks(c.context.pdfPage).find(b=>norm(text(b))===norm(c.exactText));assert.ok(b,`Source negative found: ${c.exactText}`);assert.ok(!b.footnote&&!b.runs.some(r=>r.noteId),c.reason);}
 const auto=page(170).panels[0],table=auto.blocks.find(b=>b.type==='table'),notes=notesForTable(table,auto.blocks);
-assert.equal(notes.length,2);assert.deepEqual(notes.map(n=>n.footnote.refs.length),[5,2]);assert.ok(!blocks(170).find(b=>text(b)==='HMGCR').runs.some(r=>r.noteId));
+assert.equal(notes.length,0);assert.ok(blocks(170).every(b=>!b.footnote&&!b.runs?.some(r=>r.noteId)));
+for(const name of ['Jo-1','Mi-2','MDA-5','TIF1g','SRP','HMGCR'])assert.ok(blocks(170).some(b=>text(b)===name),name);
 const noteIds=new Set(),refIds=new Set();let refs=0,noteCount=0;
 for(const p of pages){const markup=renderBlocks(p.panels.flatMap(s=>s.blocks),{pdfPage:p.pdfPage}),ids=[...markup.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size,`Unique DOM ids, PDF${p.pdfPage}`);
  for(const b of blocks(p.pdfPage)){
@@ -47,12 +48,15 @@ for(const p of pages){const markup=renderBlocks(p.panels.flatMap(s=>s.blocks),{p
   for(const r of b.runs||[])if(r.noteId){refs++;assert.ok(!refIds.has(r.noteRefId));refIds.add(r.noteRefId);assert.ok(markup.includes(`id="${r.noteId}"`));}
  }
 }
-assert.equal(noteCount,86);assert.equal(refs,24);
-const expanded=renderBlocks([table,...notes],{expand:false,idPrefix:'focus-'});
-for(const n of notes){assert.ok(expanded.includes(`id="focus-${n.footnote.id}"`));for(const ref of n.footnote.refs)assert.ok(expanded.includes(`id="focus-${ref}"`));}
+assert.equal(noteCount,84);assert.equal(refs,17);
+const asthma=page(46).panels.find(s=>s.blocks.some(b=>b.type==='table'&&notesForTable(b,s.blocks).length));
+const asthmaTable=asthma.blocks.find(b=>b.type==='table'&&notesForTable(b,asthma.blocks).length);
+const asthmaNotes=notesForTable(asthmaTable,asthma.blocks);
+const expanded=renderBlocks([asthmaTable,...asthmaNotes],{expand:false,idPrefix:'focus-'});
+for(const n of asthmaNotes){assert.ok(expanded.includes(`id="focus-${n.footnote.id}"`));for(const ref of n.footnote.refs)assert.ok(expanded.includes(`id="focus-${ref}"`));}
 assert.ok(!renderRuns([{t:'*',noteId:'bad"><script>',noteRefId:'x'}]).includes('<a'));
 const js=await readFile(new URL('../folio/folio.js',import.meta.url),'utf8');assert.match(js,/jumpToNote/);assert.match(js,/parent\.open=true/);
-console.log('Verified visible ECG source characters, rotated labels and row associations, trauma exam rows, 86 separate note paragraphs, 24 source-reviewed marker links, repeated-symbol scopes, formula guards and focus-dialog IDs.');
+console.log('Verified visible ECG source characters, rotated labels and row associations, trauma exam rows, 84 separate note paragraphs, 17 source-reviewed marker links, repeated-symbol scopes, formula guards and focus-dialog IDs.');
 
 const uti=blocks(112).find(b=>b.id==='table-112-1');assert.ok(uti.cells.every(c=>!c.header));const utiHtml=renderBlocks([uti]);assert.match(utiHtml,/<ul>/);assert.match(blockText([uti]),/Uncomplicated UTI/);assert.ok(!/<th[ >]/.test(utiHtml));
 

@@ -1,5 +1,5 @@
-import {renderBlocks,escapeHtml as esc} from './content.mjs?v=reader-cleanup';
-import {cleanTitle,readingSections} from './reading.mjs?v=reader-cleanup';
+import {renderBlocks,escapeHtml as esc} from './content.mjs?v=reference-layout';
+import {cleanTitle,readingSections} from './reading.mjs?v=reference-layout';
 import {attributionMarkup} from './about.mjs?v=20261110-procedures';
 import {notesForTable,walkBlocks} from './notes.mjs?v=20261110-procedures';
 import {scoreTopic as score} from './search.mjs';
@@ -20,11 +20,23 @@ function status(s){$('#live-status').textContent=s;}
 function setHash(id){if(location.hash.slice(1)!==id)location.hash=id;else route();}
 function home(){cardiologyActive=false;cardiologyQuery='';selected=null;category='all';query='';view='browse';activePanel='all';facet='all';if(location.hash)history.replaceState(null,'',location.pathname+location.search);render();scrollTo({top:0,behavior:'instant'});}
 function updateSave(id){if(saved.has(id))saved.delete(id);else saved.add(id);$('#saved-count').textContent=saved.size;status(saved.has(id)?'Added to this session’s reading list.':'Removed from reading list.');render();}
+function collectionStats(){
+ const {metadata,categories}=catalog;
+ const counts=[
+  [metadata.topics,'Topics'],
+  [categories.length,'Systems'],
+  [metadata.conversion.tables,'Tables'],
+  [metadata.conversion.figures,'Figures']
+ ];
+ return `<dl class="collection-stats" aria-label="Folio collection counts">${counts.map(([count,label])=>
+  `<div><dt>${label}</dt><dd>${count}</dd></div>`
+ ).join('')}</dl>`;
+}
 function browseMarkup(){
  const isIndex=view==='browse'&&!query&&category==='all',chapter=catalog.categories.find(c=>c.id===category);
  const list=catalog.topics.filter(t=>(query||category==='all'||t.categoryId===category)&&(view!=='saved'||saved.has(t.id))).map(t=>({t,n:score(t,query)})).filter(x=>x.n>0).sort((a,b)=>query?b.n-a.n:catalog.topics.indexOf(a.t)-catalog.topics.indexOf(b.t)).map(x=>x.t);
  const title=query?'Find your next answer.':view==='saved'?'Your reading list.':chapter?chapter.title:'A manual of medicine.';
- return `<section class="directory-intro"><div><div class="kicker">THE MEDICINE MANUAL</div><h1>${esc(title)}</h1><p>${isIndex?'Choose a system. Find a topic. Get to the part you need.':query?`Searching all ${catalog.metadata.topics} topics.`:view==='saved'?'A little space for the topics you want to come back to this session.':`${chapter?.count||list.length} topics to explore.`}</p></div><div class="collection-stamp"><strong>${catalog.metadata.topics}</strong><span>topics, thoughtfully organized</span></div></section>
+ return `<section class="directory-intro"><div><div class="kicker">THE MEDICINE MANUAL</div><h1>${esc(title)}</h1><p>${isIndex?'Choose a system. Find a topic. Get to the part you need.':query?`Searching all ${catalog.metadata.topics} topics.`:view==='saved'?'A little space for the topics you want to come back to this session.':`${chapter?.count||list.length} topics to explore.`}</p></div>${isIndex?collectionStats():''}</section>
  <section class="find-section"><div class="folio-search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="topic-search" type="search" autocomplete="off" aria-label="Search the manual" placeholder="Search a condition, medication or test…" value="${esc(query)}">${query?'<button id="clear-query" aria-label="Clear search">×</button>':'<kbd>/</kbd>'}</div></section>
  ${isIndex?`<section class="systems-directory" aria-labelledby="systems-title"><div class="directory-label"><h2 id="systems-title">Explore the systems</h2><span>${catalog.categories.length} chapters</span></div><div class="system-grid">${catalog.categories.map((c,i)=>`<button class="system-tile" data-category="${c.id}" aria-label="${esc(c.title)}, ${c.count} topics"><span class="system-number">${String(i+1).padStart(2,'0')}</span><span class="system-title">${esc(c.title)}</span><span class="system-count">${c.count}</span><span class="system-arrow" aria-hidden="true">↗</span></button>`).join('')}</div></section><a class="cardiology-entry" href="#cardiology-reference"><strong>Cardiology Reference</strong><span>Contents for fellows and specialists</span><b aria-hidden="true">↗</b></a>`:
  `<div class="directory-trail"><button data-systems>All systems</button><span>/</span><span>${esc(query?'Search':view==='saved'?'Reading list':chapter?.title||'Topics')}</span><strong>${list.length} topic${list.length===1?'':'s'}</strong></div><section class="topic-list" aria-label="Medical topics">${list.map((t,i)=>`<article class="topic-row"><button class="open-topic" data-open="${t.id}"><span class="topic-index">${String(i+1).padStart(2,'0')}</span><span class="topic-name"><h2>${esc(topicTitle(t))}</h2>${query||view==='saved'?`<small>${esc(t.category)}</small>`:''}</span><span class="topic-arrow" aria-hidden="true">→</span></button><button class="save-topic ${saved.has(t.id)?'saved':''}" data-save="${t.id}" aria-label="${saved.has(t.id)?'Remove':'Save'} ${esc(topicTitle(t))}" aria-pressed="${saved.has(t.id)}">${saved.has(t.id)?'◆':'◇'}</button></article>`).join('')||`<div class="empty"><h2>${view==='saved'?'Nothing saved yet.':'No matching topics.'}</h2><p>${view==='saved'?'Use the bookmark beside a topic to keep it for this session.':'Try a condition, abbreviation or broader term.'}</p><button data-systems>Browse systems →</button></div>`}</section>`}`;
@@ -109,7 +121,7 @@ function renderCardiology(){
  if(!cardiologyReader){
   if(cardiologyImport)return;
   main.innerHTML='<div class="loading" role="status">Opening the Cardiology Reference…</div>';
-  cardiologyImport=import('./cardiology.mjs?v=reader-cleanup')
+  cardiologyImport=import('./cardiology.mjs?v=reference-layout')
    .then(reader=>{
     cardiologyReader=reader;
     if(cardiologyActive)renderCardiology();
@@ -184,4 +196,4 @@ let printBranches=[];
 addEventListener('beforeprint',()=>{printBranches=[...document.querySelectorAll('.pathway-branch')].map(el=>({el,open:el.open}));printBranches.forEach(({el})=>el.open=true);});
 addEventListener('afterprint',()=>{printBranches.forEach(({el,open})=>el.open=open);printBranches=[];});
 if(location.hash.startsWith('#cardiology-reference'))route();
-try{const response=await fetch('catalog.json?v=reader-cleanup');if(!response.ok)throw Error('Catalog unavailable');catalog=await response.json();if(!cardiologyActive)route();}catch(e){if(!cardiologyActive)main.innerHTML='<div class="empty"><h1>The collection could not be loaded.</h1><p>Reload the page to try again.</p><button onclick="location.reload()">Reload</button></div>';}
+try{const response=await fetch('catalog.json?v=reference-layout');if(!response.ok)throw Error('Catalog unavailable');catalog=await response.json();if(!cardiologyActive)route();}catch(e){if(!cardiologyActive)main.innerHTML='<div class="empty"><h1>The collection could not be loaded.</h1><p>Reload the page to try again.</p><button onclick="location.reload()">Reload</button></div>';}

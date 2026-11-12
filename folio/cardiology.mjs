@@ -1,9 +1,9 @@
 import {cardiacProcedures} from './cardiac-procedures.mjs?v=20261110-procedures';
 import {cardiologyContents} from './cardiology-data.mjs?v=redbook-2022-23';
-import {escapeHtml as esc, blockText, renderBlocks} from './content.mjs?v=reader-cleanup';
+import {escapeHtml as esc, blockText, renderBlocks} from './content.mjs?v=reference-layout';
 import {redbookChapters} from './redbook-content.mjs?v=redbook-2022-23';
-import {acsChapters} from './acs-content.mjs?v=reader-cleanup';
-import {cleanTitle as generalTitle} from './reading.mjs?v=reader-cleanup';
+import {acsChapters} from './acs-content.mjs?v=reference-layout';
+import {cleanTitle as generalTitle} from './reading.mjs?v=reference-layout';
 export {cardiologyContents};
 export const cardiologyTitle=t=>generalTitle(t).replace(/\b(?:MCS|LT|IABP|PFO|ASD|VSD|PPCM|MINOCA|SCAD|BMS|DES|LCA|RCA|RAO|LAO|LMCA|STEMI|NSTEMI|ECG|IVUS|OCT|FFR)\b/gi,w=>w.toUpperCase()).replace(/\bLCX\b/gi,'LCx');
 const cleanTitle=cardiologyTitle;

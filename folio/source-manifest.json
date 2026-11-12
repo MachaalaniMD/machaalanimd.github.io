@@ -39,7 +39,7 @@
     "nativeCharacters": 1353309,
     "verifiedNativePages": 266,
     "date": "2026-11-07",
-    "sections": 809,
+    "sections": 810,
     "transcribedFigureTablePages": [
       30,
       47,
@@ -97,6 +97,55 @@
     {
       "pdfPage": 204,
       "note": "Screening and diagnostic prose and the eleven DSM-5-TR criteria were reflowed separately from their original source columns."
+    },
+    {
+      "pdfPage": 43,
+      "note": "Separated the acid–base inset from the adjacent clinical list."
+    },
+    {
+      "pdfPage": 50,
+      "note": "Separated the D-dimer inset from the imaging and risk stratification text."
+    },
+    {
+      "pdfPage": 118,
+      "note": "Reflowed the diagnostic text and separated the original antifungal spectrum inset."
+    },
+    {
+      "pdfPage": 165,
+      "note": "Restored the chronic arthritis table treatment column and row associations."
+    },
+    {
+      "pdfPage": 170,
+      "note": "Removed institution-specific antibody panel ordering notes and the seven linked markers."
+    },
+    {
+      "pdfPage": 188,
+      "note": "Separated four individually labeled diagnostic tests into a native list."
+    },
+    {
+      "pdfPage": 191,
+      "note": "Separated the stroke-mimic inset and rejoined the DAPT sentence with the continuation on PDF 192."
+    },
+    {
+      "pdfPage": 196,
+      "note": "Removed the local apnea testing chart and ordering instructions. Linked to the AAN/AAP/CNS/SCCM consensus guideline (2023)."
+    },
+    {
+      "pdfPages": [
+        8,
+        21,
+        24,
+        97,
+        140,
+        143,
+        147,
+        158,
+        161,
+        187,
+        209,
+        263
+      ],
+      "note": "Removed institution-specific instructions and references, including a local order bundle, a lab vendor note and catheter supply locations."
     }
   ]
 }
