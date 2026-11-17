@@ -19,6 +19,34 @@ function prose(runs,context,isList=false){
 }
 function styledHeading(runs,context){const raw=textOf(runs),trimmed=sliceRuns(runs,raw.length-raw.trimStart().length,raw.trimEnd().length),desired=[...cleanTitle(raw)].filter(c=>! /\s/.test(c));if(desired.length!==[...textOf(trimmed)].filter(c=>! /\s/.test(c)).length)return renderRuns(trimmed,context);let at=0;return renderRuns(trimmed.map(r=>({...r,t:[...r.t].map(c=>/\s/.test(c)?c:desired[at++]).join('')})),context);}
 function heading(runs,context){const h=splitHeading(runs);context.references.push(...h.references);if(!context.inTable&&cleanTitle(h.text).toLowerCase()===context.title?.toLowerCase())return '';return h.text?context.inTable?`<div class="cell-heading">${renderRuns(h.main,context)}</div>`:`<h3>${styledHeading(h.main,context)}</h3>`:'';}
+// Source PDF columns are reading-order groups. Prose and tables reflow as one
+// column; only figures and paired callouts keep a side-by-side arrangement.
+const onlyFigures=col=>col.length>0&&col.every(b=>b.type==='figure');
+const onlyCallouts=col=>col.length>0&&col.every(b=>b.type==='callout'&&!b.branchLabel);
+const hasTable=bs=>bs.some(b=>b.type==='table'||(b.columns||[]).some(hasTable)||hasTable(b.blocks||[]));
+export function columnsClass(b){
+ if(b.columns.every(col=>col.length===1&&col[0].branchLabel))return 'branch-columns';
+ if(b.columns.every(onlyFigures))return 'figure-columns';
+ if(b.columns.length===2&&!b.columns.some(hasTable)&&b.columns.filter(onlyFigures).length===1)return onlyFigures(b.columns[0])?'media-columns media-first':'media-columns';
+ if(b.columns.length<=3&&b.columns.every(onlyCallouts)&&!b.columns.some(hasTable))return 'callout-columns';
+ return 'text-columns';
+}
+// A sentence that wrapped beneath a side table or figure in the PDF continues
+// in the next paragraph. Rejoin it (whitespace only) before the table.
+const mediaOnly=col=>col.length>0&&col.every(b=>b.type==='table'||b.type==='figure');
+const openParens=t=>(t.match(/\(/g)||[]).length>(t.match(/\)/g)||[]).length;
+export function joinContinuation(b,next){
+ if(b?.type!=='columns'||b.columns.length!==2||next?.type!=='paragraph'||!next.runs||next.displayText||next.footnote)return null;
+ const at=mediaOnly(b.columns[1])&&!mediaOnly(b.columns[0])?0:mediaOnly(b.columns[0])&&!mediaOnly(b.columns[1])?1:-1;
+ if(at<0)return null;
+ const col=b.columns[at],last=col.at(-1);
+ if(!last?.runs||last.displayText||last.footnote||!['paragraph','list-item'].includes(last.type))return null;
+ const prev=textOf(last.displayRuns||last.runs).trim(),following=textOf(next.displayRuns||next.runs).trim();
+ if(!(openParens(prev)||/^[a-z0-9]/.test(following)||/(?:[,(\/–-]|\b(?:the|of|for|and|or|to|with|w\/|in|at|by))$/i.test(prev)))return null;
+ const joined={...last,[last.displayRuns?'displayRuns':'runs']:[...(last.displayRuns||last.runs),{t:' '},...(next.displayRuns||next.runs)]};
+ const columns=b.columns.map((c,k)=>k===at?[...c.slice(0,-1),joined]:c);
+ return {...b,columns};
+}
 function hasBranches(blocks){return blocks.some(b=>b.branchLabel||hasBranches(b.blocks||[])||(b.columns||[]).some(hasBranches));}
 function cellContent(cell,context){if(cell.header&&cell.blocks.every(b=>b.runs&&!b.footnote))return cell.blocks.map(b=>{const h=splitHeading(b.displayRuns||b.runs);context.references.push(...h.references);return renderRuns(h.main,context);}).join(' ');return renderBlocks(cell.blocks,{...context,inTable:true});}
 function visibleBlock(block){
@@ -35,7 +63,8 @@ export function renderBlocks(blocks=[],context={}){
  if(outer){context={...context,_rendering:true,references:[...(context.references||[])]};if(context.titleRuns)context.references.push(...splitHeading(context.titleRuns).references);}
  let result=outer&&hasBranches(blocks)?'<div class="pathway-controls"><button data-toggle-branches aria-expanded="false">Expand all branches</button></div>':'';
  for(let i=0;i<blocks.length;i++){
-  const b=blocks[i];
+  let b=blocks[i];
+  const joined=joinContinuation(b,blocks[i+1]);if(joined){b=joined;i++;}
   if(b.type==='list-item'&&/^\s*[•◦▪]\s*[.;,]\s*$/.test(textOf(b.runs)))continue;
   if(b.footnote){const id=noteDomId(b.footnote.id,context),refs=b.footnote.refs||[];result+=`<p class="clinical-footnote" id="${esc(id)}" tabindex="-1">${renderRuns(b.runs,context)}${refs.length?` <span class="footnote-returns">${refs.map((ref,j)=>`<a class="footnote-back" href="#${esc(ref)}" data-note-target="${esc(noteDomId(ref,context))}" aria-label="Return to reference ${j+1} for footnote ${esc(b.footnote.marker)}">↩${refs.length>1?j+1:''}</a>`).join(' ')}</span>`:''}</p>`;continue;}
   if(b.flowArrowBefore)result+='<div class="flow-arrow" aria-hidden="true">↓</div>';
@@ -46,7 +75,7 @@ export function renderBlocks(blocks=[],context={}){
    const mode=kind(b),tag=mode==='bullet'?'ul':'ol';let items='';
    do{const item=blocks[i],sourceText=textOf(item.runs),marker=sourceText.match(/^\s*(\d+|[a-z])[.)]\s/),value=marker?(mode==='letter'?marker[1].charCodeAt(0)-96:Number(marker[1])):null,subpoint=/^\s*[◦○o]\s/.test(sourceText);if(!/^\s*[•◦▪]\s*[.;,”“]+\s*$/.test(sourceText))items+=`<li${value?` value="${value}"`:''}${subpoint?' class="subpoint"':''}${item.sourceIndent!==undefined?` style="margin-left:${Math.min(3,item.sourceIndent/18)}em"`:''}>${item.displayText?esc(item.displayText):prose(item.displayRuns||item.runs,context,true)}</li>`;i++;}while(i<blocks.length&&blocks[i].type==='list-item'&&kind(blocks[i])===mode);i--;
    result+=`<${tag}${mode==='letter'?' type="a"':''}>${items}</${tag}>`;
-  }else if(b.type==='columns')result+=`<div class="${b.columns.every(col=>col.length===1&&col[0].branchLabel)?'branch-columns':'text-columns'}">${b.columns.map(col=>`<div>${renderBlocks(col,context)}</div>`).join('')}</div>`;
+  }else if(b.type==='columns')result+=`<div class="${columnsClass(b)}">${b.columns.map(col=>`<div>${renderBlocks(col,context)}</div>`).join('')}</div>`;
   else if(b.type==='callout'){
    if(b.branchLabel){const first=b.blocks[0],hasLabel=first?.runs&&textOf(first.runs).trim().toLowerCase()===b.branchLabel.toLowerCase();result+=`<details class="pathway-branch" data-question="${esc(b.question||'')}"><summary><span class="branch-label">${hasLabel?renderRuns(first.runs,context):esc(b.branchLabel)}</span><span>${esc(b.question||'')}</span></summary><div class="branch-content">${renderBlocks(hasLabel?b.blocks.slice(1):b.blocks,context)}</div></details>`;}
    else{const first=b.blocks[0],hasCondition=b.conditionLabel&&first?.runs&&textOf(first.runs).trim().toLowerCase()===b.conditionLabel.toLowerCase();result+=`<div class="source-callout">${hasCondition?`<div class="callout-condition"><strong class="branch-label">${renderRuns(first.runs,context)}</strong><span>${esc(b.conditionQuestion)}</span></div>`:''}${renderBlocks(hasCondition?b.blocks.slice(1):b.blocks,context)}</div>`;}
@@ -59,7 +88,8 @@ export function renderBlocks(blocks=[],context={}){
    const label=cleanTitle(tableTitle?.text||b.caption||context.title||'Table'),sizes=tableSizing(b);
    const rows=Array.from({length:b.rows},(_,row)=>row===0&&titleCell?'':`<tr>${b.cells.filter(c=>c.row===row).sort((a,b)=>a.col-b.col).map(c=>{const tag=c.header?'th':'td';return `<${tag}${c.header?` scope="${c.scope||'col'}"`:''}${c.colspan>1?` colspan="${c.colspan}"`:''}${c.rowspan>1?` rowspan="${c.rowspan}"`:''}${c.color?` class="risk-cell risk-${esc(c.color)}"`:c.col===0?' class="row-label"':''}>${c.color?`<span class="sr-only">${esc(c.color)}</span>`:''}${cellContent(c,context)}</${tag}>`;}).join('')}</tr>`).join('');
    const continuedHeader=b.continuationHeaders?`<thead><tr>${b.continuationHeaders.map((text,i)=>`<th scope="col"${!text?' aria-label="Condition"':''}>${esc(text)}</th>`).join('')}</tr></thead>`:'';
-   result+=`<div class="table-block"><div class="table-tools">${(titleCell||context.showTableCaptions&&b.caption)&&label.toLowerCase()!==context.title?.toLowerCase()?`<h3>${esc(label)}</h3>`:'<span></span>'}${b.id&&context.expand!==false?`<button data-table="${esc(b.id)}" aria-label="Expand table: ${esc(label)}">Expand table ↗</button>`:''}</div><div class="table-wrap" role="region" aria-label="${esc(label)}" tabindex="0"><table style="min-width:${sizes.reduce((a,b)=>a+b,0)}px"><caption class="sr-only">${esc(label)}</caption><colgroup>${sizes.map(w=>`<col style="width:${w}px">`).join('')}</colgroup>${continuedHeader}<tbody>${rows}</tbody></table></div></div>`;
+   const total=sizes.reduce((a,b)=>a+b,0),fit=total<=560?' table-compact':'',stick=b.cols>=3&&sizes[0]<=180?' sticky-first':'';
+   result+=`<div class="table-block${fit}${stick}"${fit?` style="--fit:${Math.round(Math.min(760,Math.max(360,total*1.7)))}px"`:''}><div class="table-tools">${(titleCell||context.showTableCaptions&&b.caption)&&label.toLowerCase()!==context.title?.toLowerCase()?`<h3>${esc(label)}</h3>`:'<span></span>'}${b.id&&context.expand!==false?`<button data-table="${esc(b.id)}" aria-label="Expand table: ${esc(label)}">Expand table ↗</button>`:''}</div><div class="table-frame"><div class="table-wrap" role="region" aria-label="${esc(label)}" tabindex="0"><table style="min-width:${total}px"><caption class="sr-only">${esc(label)}</caption><colgroup>${sizes.map(w=>`<col style="width:${w}px">`).join('')}</colgroup>${continuedHeader}<tbody>${rows}</tbody></table></div></div></div>`;
   }else if(b.type==='spectrum')result+=`<div class="spectrum-wrap" role="region" aria-label="Antibiotic spectrum chart" tabindex="0"><div class="spectrum"><div class="spectrum-head">${b.headers.map(h=>`<span style="grid-column:span ${h.colspan}">${esc(h.text)}</span>`).join('')}</div>${b.rows.map(r=>`<div class="spectrum-row">${Array.from({length:5},(_,col)=>{const filled=r.coverageSegments.some(s=>col>=s.col&&col<s.col+s.colspan);return `<span class="spectrum-cell"${filled?` style="background:rgb(${r.sourceFillRGB.map(v=>Math.round(v*255)).join(',')})"`:''}></span>`;}).join('')}<span class="spectrum-label">${esc(r.text)}</span></div>`).join('')}</div></div>`;
   else if(b.type==='figure'){const label=cleanTitle(b.label?.replace(/\s*·\s*source p\..*$/i,'').replace(/(?:Original )?source (?:figure|diagram|table)\s*[·:]?\s*(?:PDF page|p\.)?\s*\d*(?:\s*·.*)?/ig,'').trim()||context.title||'Illustration');result+=(b.optional?`<details class="source-diagram"><summary>View ${/table/i.test(b.optionalLabel||'')?'table illustration':'diagram'} ↗</summary>`:'')+`<figure class="clinical-figure"><button data-figure="${esc(b.src)}" data-figure-label="${esc(label)}" aria-label="Enlarge ${esc(label)}"><img src="${esc(b.src)}" width="${b.width}" height="${b.height}" alt="${esc(b.alt||label)}" loading="lazy"></button>${b.references?.length?`<figcaption><ul>${b.references.map(r=>`<li>${renderRuns([r],context)}</li>`).join('')}</ul></figcaption>`:''}</figure>`+(b.optional?'</details>':'');}
  }
