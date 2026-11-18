@@ -195,7 +195,7 @@ function renderCardiology(){
  if(!cardiologyReader){
   if(cardiologyImport)return;
   main.innerHTML='<div class="loading" role="status">Opening the Cardiology Reference…</div>';
-  cardiologyImport=import('./cardiology.mjs?v=folio-2611')
+  cardiologyImport=import('./cardiology.mjs?v=folio-2611b')
    .then(reader=>{cardiologyReader=reader;if(cardiologyActive)renderCardiology();})
    .catch(()=>{if(cardiologyActive){main.innerHTML='<div class="empty"><h1>The Cardiology Reference could not be opened.</h1><button id="retry-cardiology" class="primary-button">Try again</button></div>';$('#retry-cardiology').addEventListener('click',renderCardiology);}})
    .finally(()=>{cardiologyImport=null;});
@@ -346,4 +346,4 @@ addEventListener('beforeprint',()=>{printBranches=[...document.querySelectorAll(
 addEventListener('afterprint',()=>{printBranches.forEach(({el,open})=>el.open=open);printBranches=[];});
 applyTheme();
 if(location.hash.startsWith('#cardiology-reference'))route();
-try{const response=await fetch('catalog.json?v=reference-layout');if(!response.ok)throw Error('Catalog unavailable');catalog=await response.json();if(!cardiologyActive)route();(window.requestIdleCallback||setTimeout)(()=>buildIndex());}catch(e){if(!cardiologyActive)main.innerHTML='<div class="empty"><h1>The collection could not be loaded.</h1><p>Reload the page to try again.</p><button class="primary-button" onclick="location.reload()">Reload</button></div>';}
+try{const response=await fetch('catalog.json?v=layout-2611b');if(!response.ok)throw Error('Catalog unavailable');catalog=await response.json();if(!cardiologyActive)route();(window.requestIdleCallback||setTimeout)(()=>buildIndex());}catch(e){if(!cardiologyActive)main.innerHTML='<div class="empty"><h1>The collection could not be loaded.</h1><p>Reload the page to try again.</p><button class="primary-button" onclick="location.reload()">Reload</button></div>';}

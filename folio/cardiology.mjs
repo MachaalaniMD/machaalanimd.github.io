@@ -1,7 +1,7 @@
 import {cardiacProcedures} from './cardiac-procedures.mjs?v=20261110-procedures';
 import {cardiologyContents} from './cardiology-data.mjs?v=redbook-2022-23';
 import {escapeHtml as esc, blockText, renderBlocks} from './content.mjs?v=folio-2611';
-import {redbookChapters} from './redbook-content.mjs?v=redbook-2022-23';
+import {redbookChapters} from './redbook-content.mjs?v=redbook-2611b';
 import {acsChapters} from './acs-content.mjs?v=folio-2611';
 import {cleanTitle as generalTitle} from './reading.mjs?v=reference-layout';
 export {cardiologyContents};
