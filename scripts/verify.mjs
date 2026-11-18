@@ -69,3 +69,4 @@ await import('./verify-compact.mjs');
 await import('./verify-annotations.mjs');
 
 await import('./verify-cardiology.mjs');
+await import('./verify-editions.mjs');

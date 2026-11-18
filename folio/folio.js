@@ -1,4 +1,4 @@
-import {renderBlocks,blockText,escapeHtml as esc} from './content.mjs?v=folio-2611';
+import {renderBlocks,blockText,escapeHtml as esc} from './content.mjs?v=folio-ed1';
 import {cleanTitle,readingSections} from './reading.mjs?v=reference-layout';
 import {attributionMarkup} from './about.mjs?v=20261110-procedures';
 import {notesForTable,walkBlocks} from './notes.mjs?v=20261110-procedures';
@@ -10,10 +10,10 @@ let catalog,view='home',category='',selected=null,saved=new Set(),recent=[],zoom
 let cardiologyActive=false,cardiologyId='',cardiologyQuery='',cardiologyReader,cardiologyImport;
 let searchIndex=null,searchResults=[],searchActive=0,spy=null,spyFrame=0;
 const sectionCache=new Map();
-const topicTitle=topic=>cleanTitle(topic.title);
+const topicTitle=topic=>topic.editedTitle||cleanTitle(topic.title);
 const shout=t=>t.length>4&&!/[a-z]/.test(t)&&/[A-Z]{3}/.test(t);
 const sectionsOf=topic=>{if(!sectionCache.has(topic.id))sectionCache.set(topic.id,readingSections(topic).map(s=>shout(s.title)?{...s,title:cleanTitle(s.title)}:s));return sectionCache.get(topic.id);};
-const readingContext=(panel,page,title)=>({screeningCards:true,title,titleRuns:panel.titleRuns||[{t:panel.title}],pdfPage:page.pdfPage});
+const readingContext=(panel,page,title)=>({screeningCards:true,edited:!!panel.edited,title,titleRuns:panel.titleRuns||[{t:panel.title}],pdfPage:page.pdfPage});
 const plain=s=>String(s).toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,'');
 const pad=n=>String(n).padStart(2,'0');
 const icon={
@@ -88,6 +88,15 @@ function renderSectionParts(section,parts=section.parts,context={}){
   return panel.id===section.id||context.idPrefix?content:`<div id="${esc(panel.id)}">${content}</div>`;
  }).join('');
 }
+// Edited topics replace the converted book text; the source stays as t.sourcePages.
+const runText=bs=>bs.map(b=>b.runs?b.runs.map(r=>r.t).join(''):b.blocks?runText(b.blocks):b.cells?b.cells.map(c=>runText(c.blocks)).join(' '):'').join(' ');
+function applyEditions(cat,editions={}){
+ for(const t of cat.topics){const e=editions[t.id];if(!e)continue;
+  const first=t.pages[0];t.sourcePages=t.pages;t.edited=true;t.summary=e.summary||'';t.summaryRuns=e.summaryRuns;if(e.title)t.editedTitle=e.title;
+  t.pages=[{pdfPage:first.pdfPage,printedPage:first.printedPage,panels:e.sections.map(s=>({edited:true,id:s.id,title:s.title,readerTitle:s.title,titleRuns:[{t:s.title}],blocks:s.blocks}))}];
+  t.text=[e.summary,...e.sections.map(s=>s.title+' '+runText(s.blocks))].join(' ');}
+ return cat;
+}
 function readerMarkup(topic){
  const sections=sectionsOf(topic),siblings=catalog.topics.filter(t=>t.categoryId===topic.categoryId);
  const i=catalog.topics.indexOf(topic),prev=catalog.topics[i-1],next=catalog.topics[i+1];
@@ -101,7 +110,7 @@ function readerMarkup(topic){
   <aside class="reader-nav" aria-label="${esc(topic.category)} topics"><a class="reader-nav-head" href="#system/${topic.categoryId}"><small>System</small>${esc(topic.category)}</a><ol>${siblings.map(t=>`<li><a href="#${t.id}"${t===topic?' aria-current="page"':''}>${esc(topicTitle(t))}</a></li>`).join('')}</ol></aside>
   <div class="reader-main">
    ${breadcrumb([[topic.category,'#system/'+topic.categoryId],[topicTitle(topic)]])}
-   <header class="reader-heading"><div class="kicker">${esc(topic.category)}</div><h1>${esc(topicTitle(topic))}</h1>
+   <header class="reader-heading"><div class="kicker">${esc(topic.category)}</div><h1>${esc(topicTitle(topic))}</h1>${topic.summaryRuns?`<div class="reader-summary">${renderBlocks([{type:'paragraph',runs:topic.summaryRuns}])}</div>`:''}
     <div class="reader-tools">${saveButton(topic,true)}<div class="text-size" role="group" aria-label="Text size"><button data-size="-1" aria-label="Smaller text">A−</button><button data-size="1" aria-label="Larger text">A+</button></div><span class="reader-meta">${sections.length} section${sections.length===1?'':'s'}</span></div>
    </header>
    <div class="mobile-contents"><button id="open-contents" type="button">${icon.list}<span id="current-section">Contents</span><b aria-hidden="true">▾</b></button></div>
@@ -195,7 +204,7 @@ function renderCardiology(){
  if(!cardiologyReader){
   if(cardiologyImport)return;
   main.innerHTML='<div class="loading" role="status">Opening the Cardiology Reference…</div>';
-  cardiologyImport=import('./cardiology.mjs?v=folio-2611b')
+  cardiologyImport=import('./cardiology.mjs?v=folio-ed1')
    .then(reader=>{cardiologyReader=reader;if(cardiologyActive)renderCardiology();})
    .catch(()=>{if(cardiologyActive){main.innerHTML='<div class="empty"><h1>The Cardiology Reference could not be opened.</h1><button id="retry-cardiology" class="primary-button">Try again</button></div>';$('#retry-cardiology').addEventListener('click',renderCardiology);}})
    .finally(()=>{cardiologyImport=null;});
@@ -346,4 +355,4 @@ addEventListener('beforeprint',()=>{printBranches=[...document.querySelectorAll(
 addEventListener('afterprint',()=>{printBranches.forEach(({el,open})=>el.open=open);printBranches=[];});
 applyTheme();
 if(location.hash.startsWith('#cardiology-reference'))route();
-try{const response=await fetch('catalog.json?v=layout-2611b');if(!response.ok)throw Error('Catalog unavailable');catalog=await response.json();if(!cardiologyActive)route();(window.requestIdleCallback||setTimeout)(()=>buildIndex());}catch(e){if(!cardiologyActive)main.innerHTML='<div class="empty"><h1>The collection could not be loaded.</h1><p>Reload the page to try again.</p><button class="primary-button" onclick="location.reload()">Reload</button></div>';}
+try{const [response,edited]=await Promise.all([fetch('catalog.json?v=layout-2611b'),import('./editions.mjs?v=ed-1').catch(()=>({editions:{}}))]);if(!response.ok)throw Error('Catalog unavailable');catalog=applyEditions(await response.json(),edited.editions);if(!cardiologyActive)route();(window.requestIdleCallback||setTimeout)(()=>buildIndex());}catch(e){if(!cardiologyActive)main.innerHTML='<div class="empty"><h1>The collection could not be loaded.</h1><p>Reload the page to try again.</p><button class="primary-button" onclick="location.reload()">Reload</button></div>';}

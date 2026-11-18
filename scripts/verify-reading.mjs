@@ -54,7 +54,8 @@ assert.equal(cleanTitle('Proceed As Tolerated for all patients'),'Proceed As Tol
 const panel=id=>pages.flatMap(p=>p.panels).find(p=>p.id===id);
 const panelMarkup=id=>{
  const data=panel(id);
- return renderBlocks(data.readerBlocks||data.blocks);
+ // Readability spans (sentence breaks, quiet citations) are presentation only.
+ return renderBlocks(data.readerBlocks||data.blocks).replace(/<\/span><span class="sent">/g,' ').replace(/<span class="(?:sent|cite)">/g,'').replace(/<span class="enum-lead">/g,'');
 };
 const sickleCell=panelMarkup('p130-2');
 assert.match(sickleCell,/<p>Consult inpatient hematology/);

@@ -9,13 +9,44 @@ function publicReference(href){
  try{host=new URL(href).hostname;}catch{return false;}
  return !/(?:^|\.)(?:ellucid\.com|partners\.org|partnershealthcare\.sharepoint\.com|mgh\.harvard\.edu|mgb\.org|mghwhitebook\.app)$/.test(host);
 }
-export function renderRuns(runs=[],context={}){return runs.map(r=>{let text=esc(r.t);if(r.u&&!r.href)text=`<span class="source-underline">${text}</span>`;if(r.b)text=`<strong>${text}</strong>`;if(r.i)text=`<em>${text}</em>`;if(r.sup)text=`<sup>${text}</sup>`;else if(r.sub)text=`<sub>${text}</sub>`;const target=noteDomId(r.noteId,context),ref=noteDomId(r.noteRefId,context);if(target&&ref)text=`<a class="footnote-ref" href="#${esc(r.noteId)}" id="${esc(ref)}" data-note-target="${esc(target)}" aria-label="Footnote ${esc(r.t)}"><sup>${text}</sup></a>`;else if(publicReference(r.href))text=`<a href="${esc(r.href)}" target="_blank" rel="noreferrer">${text}</a>`;return text;}).join('');}
+export function renderRuns(runs=[],context={}){return runs.map(r=>{let text=esc(r.t);if(r.u&&!r.href)text=`<span class="source-underline">${text}</span>`;if(r.cite)text=`<span class="cite">${text}</span>`;if(r.b)text=`<strong>${text}</strong>`;if(r.i)text=`<em>${text}</em>`;if(r.sup)text=`<sup>${text}</sup>`;else if(r.sub)text=`<sub>${text}</sub>`;const target=noteDomId(r.noteId,context),ref=noteDomId(r.noteRefId,context);if(target&&ref)text=`<a class="footnote-ref" href="#${esc(r.noteId)}" id="${esc(ref)}" data-note-target="${esc(target)}" aria-label="Footnote ${esc(r.t)}"><sup>${text}</sup></a>`;else if(publicReference(r.href))text=`<a href="${esc(r.href)}" target="_blank" rel="noreferrer">${text}</a>`;return text;}).join('');}
 function listRuns(runs){const text=textOf(runs);const m=text.match(/^\s*(?:[•▪◦●○]|o(?=\s)|[-–](?!\d)|(?:\d+|[a-z])[.)](?=\s))\s*/);return sliceRuns(runs,m?m[0].length:0,text.length);}
+// Readability rules for converted book text (display only; source runs are unchanged).
+const CITE=/\((?=[^()]*\b(?:19|20)\d{2}\b)[^()]{3,160}\)/g;
+function markCitations(runs){
+ const text=textOf(runs),ranges=[...text.matchAll(CITE)].filter(m=>/\b(?:NEJM|JAMA|Lancet|BMJ|Circ|JACC|Chest|CHEST|Ann|AJ[A-Z]|Blood|JCO|Gastro|Hepatology|CID|Crit|CCM|ERJ|Thorax|Stroke|Neurology|Kidney|JASN|CJASN|AHA|ACC|ESC|IDSA|ATS|ADA|USPSTF|ACG|AGA|KDIGO|NCCN|Rev|J |Am |Eur|Int|Med|guideline|Guideline|Cochrane|Mayo|Clin|Endo|Diab|Thromb|Haem|Heart|Rheum|Arthritis|Lupus|Infect|Pain|Psych|Hosp|Surg|Radiol|Proc)/.test(m[0]));
+ if(!ranges.length)return runs;
+ const out=[];let at=0;
+ for(const m of ranges){out.push(...sliceRuns(runs,at,m.index),...sliceRuns(runs,m.index,m.index+m[0].length).map(r=>({...r,cite:true})));at=m.index+m[0].length;}
+ out.push(...sliceRuns(runs,at,text.length));return out;
+}
+// "… 1) x, 2) y or 3) z" written inline becomes a short list.
+function inlineEnumeration(text){
+ const marks=[...text.matchAll(/(?:^|[\s:;,(])(\(?(\d{1,2})\))\s+(?=\S)/g)].map(m=>({at:m.index+m[0].indexOf(m[1]),n:+m[2],len:m[1].length}));
+ let seq=[];for(const m of marks){if(m.n===1)seq=[m];else if(seq.length&&m.n===seq.at(-1).n+1)seq.push(m);}
+ if(seq.length<2||text.length<90)return null;
+ return {prefix:[0,seq[0].at],items:seq.map((m,i)=>[m.at+m.len,i+1<seq.length?seq[i+1].at:text.length])};
+}
+const ABBR=/(?:\b(?:e\.g|i\.e|vs|etc|approx|pts?|Dr|St|Fig|No|incl|max|min|esp|dx|tx|hx|sx|w|b\/c|cf|al|Ref|Jr|Sr|mg|mL|U|mo|yr|yrs|wk|wks|hr|hrs|ca|resp|appt|dept|gr|int|ext|sat|neg|pos|nl|abx|approx|Ave|Ca|Na|K|Mg|Cl|vol|Vol|ed|Ed|eds|J|Med|Am|Engl|Int|Clin|Rev|Soc)|\b[A-Z])$/;
+function sentenceBreaks(text,min=300){
+ if(text.length<min)return [];
+ const cuts=[];const re=/[.!?](?=\s+[A-Z(“"↑↓])/g;let m;
+ while((m=re.exec(text))){const before=text.slice(Math.max(0,m.index-12),m.index);if(ABBR.test(before)||/\d$/.test(before)&&/^\s+\d/.test(text.slice(m.index+1)))continue;
+  let depth=0;for(let i=0;i<m.index;i++){if(text[i]==='(')depth++;else if(text[i]===')')depth=Math.max(0,depth-1);}if(depth)continue;cuts.push(m.index+1);}
+ return cuts.length>=(min<300?1:2)?cuts:[];
+}
+const sentences=(rs,context,min)=>{const t=textOf(rs),cuts=sentenceBreaks(t,min);if(!cuts.length)return renderRuns(markCitations(rs),context);const pts=[0,...cuts,t.length];return pts.slice(0,-1).map((a,i)=>`<span class="sent">${renderRuns(markCitations(sliceRuns(rs,a,pts[i+1])),context).trim()}</span>`).join('');};
 function prose(runs,context,isList=false){
  runs=cleanReadingRuns(runs);
- const plan=enumerationPlan(runs,context),display=rs=>renderRuns(isList?listRuns(rs):rs,context);
- if(!plan)return display(runs);
- return `${display(sliceRuns(runs,...plan.prefix))}<ul class="sibling-subtypes" data-reading-plan="${esc(plan.id)}">${plan.items.map(([a,b])=>`<li>${renderRuns(sliceRuns(runs,a,b),context)}</li>`).join('')}</ul>${plan.suffix[1]>plan.suffix[0]?`<div class="shared-qualifier">${renderRuns(sliceRuns(runs,...plan.suffix),context)}</div>`:''}`;
+ const plan=enumerationPlan(runs,context),display=rs=>renderRuns(markCitations(isList?listRuns(rs):rs),context);
+ if(plan)return `${display(sliceRuns(runs,...plan.prefix))}<ul class="sibling-subtypes" data-reading-plan="${esc(plan.id)}">${plan.items.map(([a,b])=>`<li>${renderRuns(markCitations(sliceRuns(runs,a,b)),context)}</li>`).join('')}</ul>${plan.suffix[1]>plan.suffix[0]?`<div class="shared-qualifier">${renderRuns(sliceRuns(runs,...plan.suffix),context)}</div>`:''}`;
+ if(context.edited)return display(runs);
+ const shown=isList?listRuns(runs):runs,text=textOf(shown);
+ const en=inlineEnumeration(text);
+ if(en){const pre=textOf(sliceRuns(shown,...en.prefix)).trim();return `${pre?`<span class="enum-lead">${sentences(sliceRuns(shown,...en.prefix),context,120)}</span>`:''}<ol class="inline-enum">${en.items.map(([a,b])=>`<li>${renderRuns(markCitations(sliceRuns(shown,a,b)),context).replace(/(?:,|;|\s)*(?:\s(?:<em>)?(?:or|and)(?:<\/em>)?)?\s*$/,'')}</li>`).join('')}</ol>`;}
+ const cuts=sentenceBreaks(text);
+ if(cuts.length){const pts=[0,...cuts,text.length];return pts.slice(0,-1).map((a,i)=>`<span class="sent">${renderRuns(markCitations(sliceRuns(shown,a,pts[i+1])),context).trim()}</span>`).join('');}
+ return renderRuns(markCitations(shown),context);
 }
 function styledHeading(runs,context){const raw=textOf(runs),trimmed=sliceRuns(runs,raw.length-raw.trimStart().length,raw.trimEnd().length),desired=[...cleanTitle(raw)].filter(c=>! /\s/.test(c));if(desired.length!==[...textOf(trimmed)].filter(c=>! /\s/.test(c)).length)return renderRuns(trimmed,context);let at=0;return renderRuns(trimmed.map(r=>({...r,t:[...r.t].map(c=>/\s/.test(c)?c:desired[at++]).join('')})),context);}
 function heading(runs,context){const h=splitHeading(runs);context.references.push(...h.references);if(!context.inTable&&cleanTitle(h.text).toLowerCase()===context.title?.toLowerCase())return '';return h.text?context.inTable?`<div class="cell-heading">${renderRuns(h.main,context)}</div>`:`<h3>${styledHeading(h.main,context)}</h3>`:'';}
@@ -68,7 +99,7 @@ export function renderBlocks(blocks=[],context={}){
   if(b.type==='list-item'&&/^\s*[•◦▪]\s*[.;,]\s*$/.test(textOf(b.runs)))continue;
   if(b.footnote){const id=noteDomId(b.footnote.id,context),refs=b.footnote.refs||[];result+=`<p class="clinical-footnote" id="${esc(id)}" tabindex="-1">${renderRuns(b.runs,context)}${refs.length?` <span class="footnote-returns">${refs.map((ref,j)=>`<a class="footnote-back" href="#${esc(ref)}" data-note-target="${esc(noteDomId(ref,context))}" aria-label="Return to reference ${j+1} for footnote ${esc(b.footnote.marker)}">↩${refs.length>1?j+1:''}</a>`).join(' ')}</span>`:''}</p>`;continue;}
   if(b.flowArrowBefore)result+='<div class="flow-arrow" aria-hidden="true">↓</div>';
-  if(b.type==='paragraph'){const inner=b.displayText?esc(b.displayText):prose(b.displayRuns||b.runs,context);result+=inner.includes('<ul')?`<div class="prose-group${b.style==='lead'?' source-lead':''}">${inner}</div>`:`<p${b.style==='lead'?' class="source-lead"':''}>${inner}</p>`;}
+  if(b.type==='paragraph'){const inner=b.displayText?esc(b.displayText):prose(b.displayRuns||b.runs,context);result+=/<(?:ul|ol)[ >]/.test(inner)?`<div class="prose-group${b.style==='lead'?' source-lead':''}">${inner}</div>`:`<p${b.style==='lead'?' class="source-lead"':b.style==='section-lead'?' class="section-lead"':''}>${inner}</p>`;}
   else if(b.type==='heading')result+=heading(b.displayRuns||b.runs,context);
   else if(b.type==='list-item'){
    const kind=block=>/^\s*\d+[.)]\s/.test(textOf(block.runs))?'number':/^\s*[a-z][.)]\s/.test(textOf(block.runs))?'letter':'bullet';
@@ -78,7 +109,7 @@ export function renderBlocks(blocks=[],context={}){
   }else if(b.type==='columns')result+=`<div class="${columnsClass(b)}">${b.columns.map(col=>`<div>${renderBlocks(col,context)}</div>`).join('')}</div>`;
   else if(b.type==='callout'){
    if(b.branchLabel){const first=b.blocks[0],hasLabel=first?.runs&&textOf(first.runs).trim().toLowerCase()===b.branchLabel.toLowerCase();result+=`<details class="pathway-branch" data-question="${esc(b.question||'')}"><summary><span class="branch-label">${hasLabel?renderRuns(first.runs,context):esc(b.branchLabel)}</span><span>${esc(b.question||'')}</span></summary><div class="branch-content">${renderBlocks(hasLabel?b.blocks.slice(1):b.blocks,context)}</div></details>`;}
-   else{const first=b.blocks[0],hasCondition=b.conditionLabel&&first?.runs&&textOf(first.runs).trim().toLowerCase()===b.conditionLabel.toLowerCase();result+=`<div class="source-callout">${hasCondition?`<div class="callout-condition"><strong class="branch-label">${renderRuns(first.runs,context)}</strong><span>${esc(b.conditionQuestion)}</span></div>`:''}${renderBlocks(hasCondition?b.blocks.slice(1):b.blocks,context)}</div>`;}
+   else{const first=b.blocks[0],hasCondition=b.conditionLabel&&first?.runs&&textOf(first.runs).trim().toLowerCase()===b.conditionLabel.toLowerCase();result+=`<div class="source-callout${b.tone?` tone-${esc(b.tone)}`:''}">${hasCondition?`<div class="callout-condition"><strong class="branch-label">${renderRuns(first.runs,context)}</strong><span>${esc(b.conditionQuestion)}</span></div>`:''}${renderBlocks(hasCondition?b.blocks.slice(1):b.blocks,context)}</div>`;}
   }
   else if(b.type==='table'&&b.presentation==='screening-cards'&&context.screeningCards){
    result+=`<div class="screening-tools"><button data-table="${esc(b.id)}">Expand table ↗</button></div><div class="screening-cards">${screeningGroups(b).map(g=>g.band?`<div class="screening-band">${renderBlocks(g.band,context)}</div>`:`<section class="screening-card"><div class="screening-card-title">${renderBlocks([{type:'heading',runs:g.label.flatMap((b,i)=>[...(i?[{t:' '}]:[]),...(b.runs||[])])}],context)}</div>${g.parts.map(part=>`<div class="screening-age-band"><div class="screening-age-label">Ages shown: ${esc(part.ages.join(' · '))}</div>${renderBlocks(part.blocks,context)}</div>`).join('')}</section>`).join('')}</div>`;
