@@ -43,3 +43,13 @@ The verifier checks page/topic coverage; native HTML block types; all table-grid
 GitHub Pages uses `.github/workflows/pages.yml`. Every push to `main` runs the verifier, stages only the public site files and deploys the resulting static artifact. No secrets are stored in this source.
 
 Source-formatting boundaries are derived from source line positions, hanging indents, list markers and title typography, rather than a blanket continuation tolerance. `scripts/folio_text_structure.py` records the authoring rule; it requires pdfplumber in the optional PDF-authoring environment. `tests/folio-structure-cases.json` records source-reviewed boundary and wrap regression examples checked against the shipped data by CI.
+
+## Folio editions
+
+Folio is an edited reference, not a copy of the book. Rewritten topics live in
+`folio/editions/<topic-id>.md` (syntax at the top of `scripts/build-editions.mjs`).
+After editing, run `node scripts/build-editions.mjs` to regenerate
+`folio/editions.mjs`. An edited topic replaces the converted book text in the
+reader and in search; the converted text stays in `catalog.json` as the source
+record. `node scripts/verify.mjs` checks that editions are current and reports any
+clinical number from the source that an edit dropped.
