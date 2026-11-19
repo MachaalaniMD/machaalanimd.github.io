@@ -1,6 +1,6 @@
 import {renderBlocks,blockText,escapeHtml as esc} from './content.mjs?v=folio-ed1';
 import {cleanTitle,readingSections} from './reading.mjs?v=reference-layout';
-import {attributionMarkup} from './about.mjs?v=20261110-procedures';
+import {attributionMarkup} from './about.mjs?v=inspired1';
 import {notesForTable,walkBlocks} from './notes.mjs?v=20261110-procedures';
 import {scoreTopic as score} from './search.mjs';
 
@@ -46,7 +46,7 @@ function homeMarkup(){
  const savedTopics=topics.filter(t=>saved.has(t.id));
  const shelf=(title,list,href)=>list.length?`<section class="shelf"><div class="section-label"><h2>${title}</h2>${href?`<a href="${href}">View all</a>`:''}</div><div class="shelf-row">${list.slice(0,6).map(t=>`<a class="shelf-card" href="#${t.id}"><small>${esc(t.category)}</small><strong>${esc(topicTitle(t))}</strong></a>`).join('')}</div></section>`:'';
  return `<section class="hero">
-  <div class="kicker">Internal medicine reference · ${esc(metadata.edition)} edition</div>
+  <div class="kicker">Internal medicine reference</div>
   <h1>The medicine manual, <em>easy to find your way around.</em></h1>
   <p class="lede">${metadata.topics} topics across ${categories.length} systems. Search everything at once, or browse by system.</p>
   ${searchTrigger(true)}
@@ -298,7 +298,7 @@ function showAboutOverview(){
   const source=cardiologyReader?.cardiologyContents.redbookSource;
   box.innerHTML=`<div class="kicker">About Cardiology Reference</div>
    <h2 id="cardiology-about-title">Cardiology Reference</h2>
-   <p>A searchable cardiology manual for fellows and specialists. The Red Book chapters preserve the 2022–23 edition. Check current guidance and local policy before clinical use.</p>
+   <p>A searchable cardiology manual for fellows and specialists. Includes the cardiology fellows’ Red Book chapters.</p>
    <details><summary class="primary-button">Source and credits</summary>
    <p>Book pages 38–189 come from the supplied <em>Cardiology Housestaff Manual · The Red Book</em>, 2022–23. The figures and complex source tables can be enlarged. Local unit workflows, paging instructions, and institution-specific policies were removed.</p>
    <p>Red Book excerpt contributors include ${esc(source?.contributors.join(', ')||'the authors credited in the manual')}.</p>

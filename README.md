@@ -3,7 +3,7 @@
 Static source for https://machaalanimd.github.io/. The collection introduces Sage and Folio, without accounts, analytics, a backend or persistent user-state storage.
 
 - Sage: the separate repository/site at `/sage/`.
-- Folio: `/folio/`, a searchable reader for the supplied 2025–26 manual.
+- Folio: `/folio/`, a quick internal medicine reference inspired by the MGH White Book.
 
 ## Folio
 
