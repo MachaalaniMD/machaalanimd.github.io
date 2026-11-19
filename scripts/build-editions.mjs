@@ -21,6 +21,7 @@ const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const dir=resolve(root,'folio/editions');
 
 export function inline(src){
+ src=src.replace(/\\\*/g,'\u0001');
  const runs=[];let i=0;
  const push=(t,st={})=>{if(!t)return;const last=runs.at(-1);if(last&&JSON.stringify({...last,t:0})===JSON.stringify({...st,t:0}))last.t+=t;else runs.push({...st,t});};
  const re=/\*\*(.+?)\*\*|\*(.+?)\*|\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)|\{([^}]+)\}/g;let m;
@@ -33,7 +34,7 @@ export function inline(src){
   i=m.index+m[0].length;
  }
  push(src.slice(i));
- return runs.map(r=>Object.fromEntries(Object.entries(r).filter(([,v])=>v!==undefined)));
+ return runs.map(r=>Object.fromEntries(Object.entries({...r,t:r.t.replace(/\u0001/g,'*')}).filter(([,v])=>v!==undefined)));
 }
 import {readFileSync} from 'node:fs';
 function webpSize(file){const b=readFileSync(file);const kind=b.toString('ascii',12,16);
